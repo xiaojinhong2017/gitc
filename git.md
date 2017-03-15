@@ -216,7 +216,7 @@ _ You **can** combine them _
   * Describe my changes
   * Mention all the members of my team
     * Ask for feedback
-    ```
+```
  效果：
 1. Make my changes
 1. Fix bug
