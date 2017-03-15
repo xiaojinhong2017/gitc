@@ -228,7 +228,7 @@ _ You **can** combine them _
   * Mention all the members of my team
     * Ask for feedback
 ## 任务列表
- ```sh
+```sh
 - [x] Finish my changes
 - [ ] Push my commits to GitHub
 - [ ] Open a pull request
