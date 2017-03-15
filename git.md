@@ -86,6 +86,7 @@ $ git diff  commitID-1 commitID-2
 $ rm -rf hello.c
 $ git status
 $ git checkout hello.c
+```
 2.从版本库里删除文件（真正删除文件）
 ```sh
 $ git rm hello.c(or)rm hello.c
@@ -109,6 +110,7 @@ a.out
 -----
 $ git add
 $ git commit
+```
 ## github
 1.注册github帐号
    注册邮箱注意不要使用qq邮箱
@@ -118,7 +120,7 @@ $ git commit
 $ git clone https://github.com/user.name/gitc.git
 ```
 4.将本地仓库与github进行同步，将本地提交到服务器上
-```.sh
+```sh
 $ git push origin master
 input username:
 input password:
@@ -161,12 +163,18 @@ __This will also be bold__
 _You **can** combine them_
 ```
 效果:
-*This text will be italic*
-_This will also be italic_
-**This text will be bold**
-__This will also be bold**
-~~this text will be delede~~
-_You **can** combine them_
+
+* This text will be italic *
+
+_ This will also be italic _
+
+** This text will be bold **
+
+__ This will also be bold __
+
+~~ this text will be  ~~
+
+_ You **can** combine them _
 ## 列表
 ## 无序列表
 主要使用-和*来标记无序列表
