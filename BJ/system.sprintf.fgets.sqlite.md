@@ -22,6 +22,20 @@ char*whom = "APPLE";
 sprints(s,"%s love %s", who, whom);//产生："i love APPLE"这字符串写到s中去;
 sprints(s,"%10.3f",3.1415626);//产生："3.142"
 ```
+# fgets函数
+```sh
+示例代码：
+char *fgets(char *s, int size, FILE *stream);
+功能： 就是一次读取一行，遇到'\n'就立刻返回。返回值为NULL时表示文件读取结束
+参数：
+s， 用于存放读取的字符串（传递数组名即可）   
+size， 指定读取一次最多读取到的字节个数
+stearm，直接填写stdin即可
+比如： fgets(buf, 64, stdin);从标准输入读入一行
+```
+具体说明
+
+[fgets网址](http://baike.baidu.com/link?url=hjGrGQplavP7w_O37jrzgpOy4UHFpQyTRLsnOJ4Hupg8Fv95oib_X7YKrF-tzAysrwddKdH9lD-G0X1nljDyv_)
 # Sqlite
 1.sqlite 是什么 ？
 
