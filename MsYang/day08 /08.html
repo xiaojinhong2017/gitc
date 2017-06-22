@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style type="text/css">
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+
+    	#usermesg {
+    		width: 600px;
+    		margin: 50px auto;
+    	}
+
+    	#error-1 {
+    		color: red;
+    		font-size: 16px;
+    		display: none;
+    	}
+    </style>
+</head>
+
+<body>
+    <form id="usermesg" action="#" method="get">
+        <h2>用户名:<input type="text" name="username" >  <span id="error-1">用户名不能为空</span></h2>
+        <h2>密码:<input type="password" name="passwd" placeholder="密码为数字字母组合" ></h2>
+        <h2>
+        性别:<input type="radio" value="0" name="gender">男
+        	<input type="radio" value="1" name="gender">女
+        </h2>
+
+        <h2>
+		爱好：<input  type="checkbox" value="0" name="read">读书
+		<input type="checkbox" value="1" name="listen">听歌
+		<input type="checkbox" value="2" name="sport">运动
+		</h2>
+
+		<textarea name="note" cols="60" rows="10"></textarea><br><br>
+
+        <input type="button" value="添加默认文本值" id="defautValue">
+		<button>提交</button>
+		<input type="reset" >
+    </form>
+</body>
+
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+
+  $("#defautValue").click(function () {
+  	 $("#usermesg textarea[name=note]").val("文本输入区域。。。。。");
+  });
+
+
+  //点击了提交相关的按钮之后，都会触发表单元素的submit事件
+  $("#usermesg").submit(function(){
+
+  	var name = $("#usermesg input[name=username]").val();
+  	var passwd = $("#usermesg input[name=passwd]").val();
+
+
+    //一定使用 :checked去获取选中元素的值
+  	var gender = $("#usermesg input[name=gender]:checked").val();
+
+  	var hobby1 =  $("#usermesg input[name=read]:checked").val();
+  	var hobby2 =  $("#usermesg input[name=listen]:checked").val();
+  	var hobby3 =  $("#usermesg input[name=sport]:checked").val();
+
+
+/*
+  	console.log("name = ", name);
+  	console.log("gender = ", gender);
+  	console.log("passwd = ", passwd);
+  	console.log("hobby1 = ", hobby1);
+  	console.log("hobby2 = ", hobby2);
+  	console.log("hobby3 = ", hobby3);*/
+
+
+   if (name == ""){
+   	 $("#error-1").show();
+
+    //当判断表单数据有问题时，我们阻止表单的提交，默认情况下是直接提交。
+  	return false;
+   }
+
+  //默认情况下，执行操作之后继续完成提交
+  });
+	
+</script>
+
+</html>

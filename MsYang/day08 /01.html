@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加多个处理函数</title>
+	<style type="text/css">
+		.f, .f1 {
+			width: 500px;
+			height: 200px;
+			background: yellow;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="f">ffff</div>
+
+	<div class="f1">f1f1f1</div>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+
+	    // click可以添加多个处理函数
+		$(".f").click(function() {
+			console.log("first click ...");
+		});
+
+		$(".f").click(function() {
+			console.log("two click ...");
+
+			//直接触发元素的click事件
+			$(".f1").click();
+		});
+
+		$(".f1").click(function(){
+			$(this).css("background", "red");
+		});
+
+	</script>
+</body>
+</html>

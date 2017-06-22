@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>其他</title>
+  <style type="text/css">
+    body {
+      height: 2000px;
+    }
+  </style>
+</head>
+<body>
+
+
+ <div id="nav">
+   <a href="#">就带回家</a>
+   <a href="#">就带回家</a>
+   <a href="#">就带回家</a>
+
+   <p class="pid">skjgkejhkjh</p>
+ </div>
+
+ <p id="pid">skjgkejhkjh</p>
+
+
+ <ul>
+   <li>111</li>
+   <li>222</li>
+   <li id="third">333</li>
+   <li>444</li>
+   <li>555</li>
+   <p>就是感觉好家伙空间看</p>
+ </ul>
+
+
+ <script src="./js/jquery-3.0.0.min.js"></script>
+ <script type="text/javascript">
+
+  $(function(){
+
+    console.log($("#nav").children("a"));
+    console.log($(".pid").parent("#nav"));
+    console.log($("#pid").parents());
+
+
+    console.log($("#third").siblings("li"));
+
+
+
+
+
+
+
+  });
+ 	
+ </script>
+	
+</body>
+</html>

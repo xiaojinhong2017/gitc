@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string类型</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	var a = "hello";
+	a = a + "world";
+	console.log(a);
+
+	console.log("html5" + "css3");
+	console.log("html5" + 123);//字符串拼接,原则是只要有个是字符串，都会变成字符串
+
+
+	//其他数据类型如何转换成字符串类型
+	var b = 100;
+	console.log(b);
+	console.log(b.toString());//变成字符串
+	console.log(b.toString(2));//"0110 0100"
+	console.log("" + b);
+
+	var c = false;
+	console.log(c.toString());
+	console.log("" + false);
+
+
+	var d = undefined;
+	var e = null;
+	// console.log(d.toString());
+	// console.log(e.toString());
+	console.log(String(d));
+</script>
+	
+</body>
+</html>

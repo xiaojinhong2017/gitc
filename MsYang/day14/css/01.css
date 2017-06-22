@@ -1,0 +1,28 @@
+/*
+comment
+*/
+@import url(../css/test.css);
+h2 {
+  color: blue; }
+
+h1 {
+  font-size: 50px;
+  color: #7bea14; }
+
+.class-one {
+  border-top: 1px solid #123; }
+
+.class-top {
+  color: red; }
+
+.class-two {
+  font-size: 5px;
+  color: blue; }
+
+.class-three {
+  font-size: 40px; }
+
+h4 {
+  font-size: 2em; }
+
+/*# sourceMappingURL=01.css.map */

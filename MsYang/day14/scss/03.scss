@@ -1,0 +1,90 @@
+
+.class-one {
+	color: red;
+	font-size: 40px;
+
+    //selector nest
+    .class-one-one {
+    	text-align:center;
+    	line-height: 100px;
+    }
+
+
+	li {
+		float: left;
+
+		&::before {
+			content: "helloworld";
+		}
+	}
+
+	a {
+		padding: 20px;
+		color: blue;
+
+        // !!! &
+		&:hover {
+			background: #123;
+		}
+	}
+}
+
+
+
+
+//attr nest
+.class-two {
+	border:{
+		style: solid;
+		left: {
+			width: 10px;
+			color: red;
+		}
+		right: {
+			width: 10px;
+			color: blue;
+		}
+		top: {
+			width: 10px;
+			color: pink;
+		}
+	}
+
+
+	background: {
+		color: red;
+		image: url("1.jpg");
+		repeat: no-repeat;
+	}
+}
+
+
+
+// @at-root 
+.class-three {
+	.parent-1 {
+		color: red;
+
+		@at-root .child-1 {
+			font-size: 20px;
+		}
+
+		@at-root {
+			.child-2 {
+				background: red;
+			}
+
+			.child-3 {
+				background: blue;
+			}
+		}
+	}
+}
+
+//@at-root media ??????
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用伪元素</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.clearfix::before, 
+		.clearfix::after {
+			content: "";
+			height: 0px;
+			clear: both;
+
+			display: block;
+			visibility: hidden;
+		}
+
+		.f li {
+			float: left;
+		}
+	</style>
+</head>
+<body>
+
+
+ <ul class="f clearfix ">
+ 	<li>1111</li>
+ 	<li>2222</li>
+ 	<li>3333</li>
+ 	<li>4444</li>
+ </ul>
+
+ <span>行元素</span>
+
+
+	
+</body>
+</html>

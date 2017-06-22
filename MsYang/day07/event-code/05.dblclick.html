@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dblclick事件</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			width: 500px;
+			height: 300px;
+			background: yellow;
+		}
+
+
+	</style>
+</head>
+<body>
+
+
+<div class="f">
+<button id="one">单击</button>
+<button id="two">双击</button>
+</div>
+
+</table>
+
+
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+
+    $("#one").click(function(){
+    	console.log("one 单击。。");
+    });
+    
+    $("#two").dblclick(function(){
+    	console.log("two  双击。。");
+    });
+
+    $(".f").click(function(){
+    	console.log(" f单击被触发。。。 ");
+    });
+
+
+
+
+</script>
+	
+</body>
+</html>

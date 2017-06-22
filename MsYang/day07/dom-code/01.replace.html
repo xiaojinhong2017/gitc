@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换, 包裹</title>
+</head>
+<body>
+
+<div class="list">
+   	<p>1111</p>
+   	<p>2222</p>
+   	<p>3333</p>
+</div>
+
+<!-- <ul class="list-1"></ul> -->
+
+<li>111</li>
+<li>222</li>
+<li>333</li>
+
+<script  src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+/********    替换           *******/
+// $("<h1>sgjhjdhkhj</h1>").replaceAll(".list p");
+$(".list p").replaceWith("<h1>kdsjgkjgkj</h1>");
+
+
+
+/********    包裹 *******/
+// $("li").wrap(".list-1");
+// $("li").wrap("<ul>");//对每个元素都单独进行包裹
+
+$("li").wrapAll("<ul>");
+
+
+
+
+
+</script>
+	
+</body>
+</html>

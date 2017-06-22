@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>navigator</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    // for (var prop in navigator) {
+    //   console.log(prop);
+    // }
+
+
+    console.log(navigator.userAgent);//浏览器代理
+    console.log(navigator.plugins);//浏览器的插件
+
+
+    console.log(navigator.userLanguage);// 用户默认语言
+    console.log(navigator.platform);// 操作系统平台
+    console.log(navigator.vendor);//浏览器厂商
+
+
+    //? 如何判断用户的系统平台，浏览器
+    console.log(/iphone/i.test(navigator.userAgent));
+    console.log(/ipad/i.test(navigator.userAgent));
+    console.log(/android/i.test(navigator.userAgent));
+
+
+    </script>
+
+  </body>
+</html>

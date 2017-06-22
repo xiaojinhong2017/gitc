@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>apply方法</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    var value = 0;
+    var obj = {
+      value: 100
+    };
+
+    function fun(arg1,arg2){
+      console.log(arg1,arg2);
+      console.log(this.value);
+    }
+
+    //apply方法，传递第二个参数只能是数组
+    fun.apply(null,[1,2]);
+
+    //call,apply异同？？？？？
+
+    </script>
+
+  </body>
+</html>

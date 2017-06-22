@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>docment的滚动事件</title>
+    <style>
+    body {
+      height: 2000px;
+      width: 2000px;
+    }
+
+    .go-top{
+      width: 50px;
+      height: 50px;
+      background: pink;
+      cursor: pointer;
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="go-top">Top</div>
+
+    <script src="./scroll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var goTop = document.getElementsByClassName('go-top')[0];
+
+    goTop.onclick = function () {
+      //指定让滚动条回到指定的位置
+      window.scrollTo(0,0);
+      this.style.display = "none";
+    };
+
+    window.onscroll = function (event) {
+      if (scroll().top > 200){
+        goTop.style.display = "block";
+       } else {
+         goTop.style.display = "none";
+       }
+     }
+    </script>
+
+  </body>
+</html>

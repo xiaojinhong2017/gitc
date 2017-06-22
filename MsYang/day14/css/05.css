@@ -1,0 +1,15 @@
+@media screen and (max-width: 500px) {
+  h1 {
+    color: blue; }
+
+  .class-one {
+    color: green; } }
+@media screen and (max-width: 1000px) {
+  ul li a {
+    color: blue;
+    text-align: center; }
+
+  div > p {
+    background: yellow; } }
+
+/*# sourceMappingURL=05.css.map */

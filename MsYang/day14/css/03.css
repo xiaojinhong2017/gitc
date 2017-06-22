@@ -1,0 +1,39 @@
+.class-one {
+  color: red;
+  font-size: 40px; }
+  .class-one .class-one-one {
+    text-align: center;
+    line-height: 100px; }
+  .class-one li {
+    float: left; }
+    .class-one li::before {
+      content: "helloworld"; }
+  .class-one a {
+    padding: 20px;
+    color: blue; }
+    .class-one a:hover {
+      background: #123; }
+
+.class-two {
+  border-style: solid;
+  border-left-width: 10px;
+  border-left-color: red;
+  border-right-width: 10px;
+  border-right-color: blue;
+  border-top-width: 10px;
+  border-top-color: pink;
+  background-color: red;
+  background-image: url("1.jpg");
+  background-repeat: no-repeat; }
+
+.class-three .parent-1 {
+  color: red; }
+  .child-1 {
+    font-size: 20px; }
+  .child-2 {
+    background: red; }
+
+  .child-3 {
+    background: blue; }
+
+/*# sourceMappingURL=03.css.map */

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+ <script>
+  //跨域请求的数据就是 data
+ 	function handler(data){
+ 		console.log("handler被调用了", data);
+ 	}
+
+ </script>
+
+  <!-- 当前的页面运行于 127.0.0.1:80 -->
+  <!--
+   jsonp只能发送 get 请求
+   script的特点时一旦加载成功就会立刻执行
+  -->
+
+ <script type="text/javascript" src="http://127.0.0.1:8000?callback=handler"></script>
+
+</body>
+</html>

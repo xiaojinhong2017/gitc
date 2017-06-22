@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float浮动</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.nav {
+			/*去掉项目符号*/
+			list-style: none;
+
+
+			/*
+			ul 的所有子元素都浮动了，但是ul又名没有设置高度，那么ul的高度就变为
+			0, 会导致后边的标准流元素也跟着移动，会对页面布局产生影响。
+			*/
+		}
+
+		.nav li {
+			background: yellow;
+
+
+			float: left;
+			margin-right: 10px;
+		}
+
+	</style>
+</head>
+<body>
+
+<ul class="nav">
+	<li>小米商城</li>
+	<li>MIUI</li>
+	<li>米聊</li>
+	<li>游戏</li>
+</ul>
+
+<p>看水果控看就看到看好极度恐慌看大家很快就都看好了咖啡等回家快乐就好了咖啡大家好</p>
+	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+/*	    * {
+	    	background: yellow;
+	    }
+
+*/	    
+
+		/* 标签选择器*/
+		h1 {
+			color: red;
+			font-size: 50px;
+		}
+
+         /*定义一个样式类名*/
+		.color-red {
+			color: blue;
+		}
+
+		.font-Big {
+			font-size: 100px;
+		}
+
+		#color-pink {
+			color: pink;
+		}
+
+
+        /* p元素必须属于div的后代元素*/
+        /*  后代选择器是从右向左寻找的*/
+		div p {
+			color: orange;
+		}
+
+		div p span {
+			color:red;
+		}
+
+
+	</style>
+</head>
+<body>
+
+<h1>这是h1标签</h1>
+
+
+<!-- 添加class为指定的类名,就拥有了指定类名的样式 -->
+<h1 class="color-red font-Big">这是h1标签</h1>
+
+
+<h2 class="color-red">这是h2</h2>
+
+
+<!-- id名称必须在当前页面是唯一的 -->
+<h3 id="color-pink">这是h3标签</h3>
+
+
+<p>这是body中的p元素</p>
+
+<div>
+	<p>这是div中p标签</p>
+    <div>
+		<p>这是div中p标签 <span>div--> p --> span</span></p>
+    </div>
+</div>
+
+
+</body>
+</html>

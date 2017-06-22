@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>justify-content  align-items</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+			margin-top: 50px;
+	        padding: 0px 50px;		
+			border: 1px dotted gray;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+
+			/* 水平对齐*/
+			justify-content: space-between;
+			/*justify-content: space-around;*/
+			/*justify-content: center;*/
+			/*justify-content:  flex-end;*/
+
+
+            /*设置垂直方向的对齐*/
+			align-items: center;
+			/*align-items: flex-end;*/
+
+		}
+
+		.f li {
+			width: 300px;
+			height: 100px;
+			border: 1px solid red;			
+		}
+
+		.f li:nth-child(1) {
+
+			/*设置每个元素自身，在垂直方向的对齐*/
+			align-self: flex-start;
+		}
+
+		.f li:nth-child(3) {
+			align-self: flex-end;
+		}
+	
+		</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+</head>
+<body>
+
+<div class="f">class=f</div>
+<div id="divId">id=divId</div>
+<div>标签div</div>
+
+
+<!-- 引入jquery文件 -->
+<script src="../js/jquery-3.0.0.min.js"></script>
+
+<!-- 在jquery库的基础上操作页面 -->
+<script type="text/javascript">
+	
+	/*
+	  $ == jQuery , 就是jQuery库提供的用于选择元素的接口
+	*/
+	console.log(jQuery("div"));
+	console.log($("div"));
+
+
+	console.log($("#divId"));
+	console.log($("*"));
+	console.log($(".f"));
+
+	console.log($("#divId, .f"));
+
+
+
+
+
+</script>
+	
+</body>
+</html>

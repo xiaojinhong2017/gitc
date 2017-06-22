@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>display</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			/*font-size:  0px;*/
+		}
+
+
+
+		 /*
+
+		 display属性可以让块元素和行元素进行相互转换
+
+		 */
+
+		.f {
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			margin-top: 40px;
+
+			display: inline-block; /*修改行内块元素*/
+		}
+
+
+		.s {
+			width: 600px;
+			height: 100px;
+			background: green;
+
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+
+<div class="f"></div>
+<div class="f"></div>
+	
+
+
+<span class="s">我是行元素，但是我要变成块元素！！！</span>
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> order 顺序</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+			margin-top: 50px;
+	        padding: 0px 50px;		
+			border: 1px dotted gray;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+
+			/* 水平对齐*/
+			justify-content: space-between;
+
+            /*设置垂直方向的对齐*/
+			align-items: center;
+
+		}
+
+		.f li {
+			width: 300px;
+			height: 100px;
+			border: 1px solid red;			
+		}
+
+		.f li:nth-child(1) {
+			order: 2 ;
+		}
+
+		.f li:nth-child(2) {
+
+			/*根据order的值进行从小到大的排序*/
+			order: 1;
+		}
+
+		.f li:nth-child(3) {
+			order: 3 ;
+		}
+
+		</style>
+
+		</style>
+
+		</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+	
+</body>
+</html>

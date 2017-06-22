@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex-shrink</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+			
+	        padding: 50px;		
+			border: 1px dotted gray;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+
+			/*设置子元素的排列方向，横向，纵向*/
+			/*flex-direction: column-reverse;*/
+			/*flex-direction: row-reverse;*/
+
+
+            /* 可以设置为不允许换行*/
+			flex-wrap: wrap;
+		}
+
+		.f li {
+			width: 400px;
+			height: 100px;
+			border: 1px solid red;			
+			flex-grow: 1;
+		}
+	
+		</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+	
+</body>
+</html>

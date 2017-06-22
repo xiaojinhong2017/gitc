@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .list {
+        height: 20px;
+        text-align: center;
+      }
+
+      .list li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        background: lightgray;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .show {
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <h1 class="show">等待点击 <span id="con">?</span></h1>
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var  lis = document.getElementsByClassName("list")[0].children;
+    var span = document.getElementById("con");
+
+    /*
+    for (var i = 0, len = lis.length; i < len ; i++) {
+      //立即函数：立即被调用，而且只被调用了一次
+      (function(arg){
+        console.log("arg = ", arg);
+        //解决了由于闭包导致的事件处理函数中使用同一个变量的问题
+        lis[arg].onclick = function(){
+          span.innerHTML = arg;
+        };
+      })(i);
+    }
+    */
+
+    /*
+    for (var i = 0, len = lis.length; i < len ; i++) {
+        //每一个li都添加了一个index属性，属性值是自己的i;
+        //只要是对象，就可以添加自定义的属性和方法
+        lis[i].index = i;
+        lis[i].onclick = function(){
+          span.innerHTML = this.index;
+        };
+    }
+    */
+
+    for (var i = 0, len = lis.length; i < len ; i++) {
+      //使用了jquery中的event.data
+      $(lis).eq(i).click(i, function(event){
+        span.innerHTML = event.data;//event.data就是传递进去的 i
+      });
+    }
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

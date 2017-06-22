@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>function</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    /*
+     函数的声明提升：函数的定义可以放在代码的任何位置，在运行时，javascript引擎
+     会将函数的声明提升到代码的顶部。
+    */
+  	
+  	var result = sum(1,2);
+  	console.log("result = ", result);
+
+  	 //函数声明(定义)
+  	function sum(arg1, arg2){
+  		return arg1 + arg2;
+  	}
+
+   
+    /**************************************************************/
+    /*
+      变量声明提升：定义的变量在运行时，会被提升到代码的顶部
+     */
+
+  	result = minus(10, 5);
+  	console.log("result = ", result);
+
+    //赋值方式定义的函数
+  	var minus = function (arg1, arg2){
+  		return arg1 - arg2;
+  	};
+
+  	/*
+  	 等价于如下代码：
+    var minus ;
+  	result = minus(10, 5);
+  	console.log("result = ", result);
+  	minus = function (arg1, arg2){
+  		return arg1 - arg2;
+  	};
+
+  	*/
+
+
+
+  </script>
+	
+</body>
+</html>

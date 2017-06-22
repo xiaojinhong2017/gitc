@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多个js库都有$符号的问题</title>
+</head>
+<body>
+	
+	 <h1>测试jQuery.noConflict()</h1>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <!--  假设有引入了一个其他的js库, 提供也是$符号 -->
+
+	<script type="text/javascript">
+
+	  // 第一种解决方法, 在jQuery中 $ == jQuery
+	  (function($){
+	  	//所有的jQuery操作，都写在该匿名函数内部。在内部$仍然是jQuery
+
+	  	$("h1").css("color", "red");
+	  })(jQuery);
+
+
+	  //第二种方法
+	  //以后所有的 $$都代表的是jQuery
+	  var $$ = jQuery.noConflict();
+	  $$("h1").css("background", "yellow");
+
+
+
+
+		
+	</script>
+
+</body>
+</html>

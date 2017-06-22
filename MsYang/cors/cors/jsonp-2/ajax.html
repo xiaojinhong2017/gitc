@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script src="/jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    //jsonp被指定的调用函数
+    function handler(data){
+      console.log("回调函数handler被调用",data);
+    }
+
+    //发送的请求  http://127.0.0.1:8000?callback=handler
+    $.ajax({
+      url:"http://127.0.0.1:8000/",
+      method: "get",
+      dataType: "jsonp",
+      jsonp: "callback",
+      jsonpCallback: "handler"
+    }).done(function(data, textStatus, jqXHR){
+      //此处的data为 服务端返回的函数调用(handler)的参数部分
+      console.log(data);
+    });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css的优先级，计算方法</title>
+	<style type="text/css">
+
+
+	/* 基本公式：!important > style(行内样式) > id > class > 标签 > 继承 > 浏览器的默认属性*/
+	/*
+	  多个选择器共同设置样式时：优先级的初始值 = 0
+	  出现一个id , 优先级的值 + 100
+	  出现一个class  , 优先级的值 + 10
+	  出现一个tag , 优先级的值 + 1
+	*/
+
+	p {
+		/*color: red;*/ /*此颜色的优先级 = 1*/
+		font-size: 50px;
+		color: red !important;
+	}
+
+	div p {
+		color: blue !important; /*此颜色的优先级 = 2*/
+	}
+
+	p.one {
+		color: orange; /*此颜色的优先级 = 11*/
+	}
+
+	div .two {
+		color: pink; /*此颜色的优先级 = 11*/
+	}
+
+	#p1 {
+		color: purple; /*此颜色的优先级 = 100*/
+	}
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+<div>
+	<p style="color:green;" id="p1" class="one two">说结构空间感慨</p>
+</div>
+
+
+
+
+	
+</body>
+</html>

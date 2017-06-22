@@ -1,0 +1,56 @@
+
+
+/*
+comment
+*/
+@import "./02.scss";
+@import "../css/test.css";
+
+$size: 50px;
+$color: rgb(123,234,20);
+
+h1 {
+
+	font-size: $size;
+	color: $color;
+}
+
+
+$borderDir: top;
+
+.class-one {
+	//borde-$borderDir: 1px solid red;
+	border-#{$borderDir}: 1px solid #123 ;
+}
+
+.class-#{$borderDir} {
+	color: red;
+}
+
+
+
+//list
+$px: 5px 10px 15px 20px;
+$colors: blue red green purple;
+$pxs: 50px 40px, 30px 20px;
+
+.class-two {
+	font-size: nth($px, 1);//select value
+	color: nth($colors, 1);
+}
+.class-three {
+	font-size: nth(nth($pxs, 1), 2);
+}
+
+
+// map
+$headings: (h4: 2em, h5: 1.5em, h6: 1.2em);
+h4 {
+	font-size: map-get($headings, h4); //get value
+}
+
+
+
+
+
+

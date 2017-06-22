@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<ul class="list">
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+</ul>
+
+<ul>
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+</ul>
+
+<script src="./js/jquery-3.0.0.min.js" ></script>
+<script type="text/javascript">
+
+    /*
+	$(".list li:eq(1)").css("color", "red");
+	console.log($(".list li").length);
+	*/
+
+	$("li:nth-child(1)").css("color", "red");
+
+
+    //创建一个标签
+	var newDom = $("<li></li>");
+    
+</script>
+
+</body>
+</html>

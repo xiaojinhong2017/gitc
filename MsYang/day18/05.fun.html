@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function test(){
+        console.log("test ...");
+      }
+
+      var ret = test();
+      console.log(ret);//undefined
+
+      console.log("-----函数的参数------");
+      function test1(arg1,arg2,arg3){
+        //arguments只能在函数内部使用！！！！！！
+        // console.log(arguments);//调用函数时，传入的实际参数
+        // console.log(arguments.length);//参数的个数
+        for(var i = 0; i < arguments.length; i++){
+          console.log(arguments[i]);
+        }
+      }
+      test1();
+      test1(1);
+      test1(1,2);
+      test1(1,2,3);
+      console.log("test1函数的形参个数 = ", test1.length);
+    </script>
+
+  </body>
+</html>

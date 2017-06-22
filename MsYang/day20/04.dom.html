@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="f">
+      <p>p11111</p>
+      <div id="s">div元素</div>
+      <p>p22222</p>
+      <p>p33333</p>
+      helloworld
+    </div>
+
+
+    <script type="text/javascript">
+    //节点访问，父节点，子节点，兄弟节点
+
+     var f = document.getElementById("f");
+     var s = document.getElementById("s");
+
+     console.log(s.parentNode === f);
+     console.log(document.parentNode);//null
+
+
+     console.log("---s的兄弟节点---");
+     console.log(s.nextSibling.nodeType);//包含文本节点
+     console.log(s.nextElementSibling);
+     console.log(s.previousElementSibling);
+
+
+     console.log("---f 的子节点---");
+     console.log(f.firstChild);
+     console.log(f.firstElementChild);
+
+     console.log(f.childNodes);
+     console.log(f.children[1]);
+
+    </script>
+  </body>
+</html>

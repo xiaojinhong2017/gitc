@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery中的css操作</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.stu {
+			width: 500px;
+			height: 400px;
+
+			margin: 0 auto;
+			border: 1px solid gray;
+
+            /*去掉表格单元格之间的间隙*/
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		.stu th,
+		.stu td {
+			border: 1px solid gray;
+		}
+
+
+	</style>
+</head>
+<body>
+
+<table class="stu">
+	<caption><h1>学生信息</h1></caption>
+	<tr>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>性别</th>
+	</tr>
+
+	<tr>
+		<td>李四</td>
+		<td>20</td>
+		<td>女</td>
+	</tr>
+	<tr>
+		<td>李四</td>
+		<td>20</td>
+		<td>女</td>
+	</tr>
+	<tr>
+		<td>李四</td>
+		<td>20</td>
+		<td>女</td>
+	</tr>
+	<tr>
+		<td>李四</td>
+		<td>20</td>
+		<td>女</td>
+	</tr>
+</table>
+
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+    /**  获得css值          **/
+	console.log($(".stu").css("width"));
+	console.log($(".stu").css("height"));
+
+	console.log($(".stu").css(["width", "height"]));
+
+    /**  设置css值          **/
+
+    // $(".stu tr:nth-child(2n)").css("background-color", "#f58220");
+    // $(".stu tr:even").css("background-color", "#f15b6c");
+    // $(".stu tr:even").css("color", "red");
+
+    //设置多个属性
+    $(".stu tr:even").css({
+    	"backgroundColor": "#f58200",
+    	"color": "red"
+    });
+
+
+    $(".stu, .stu tr, .stu td").css("border", "1px solid blue");
+
+
+
+</script>
+
+
+	
+</body>
+</html>

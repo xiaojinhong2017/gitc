@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>画布操作</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="601"></canvas>
+
+    <script type="text/javascript">
+
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+
+    ctx.rotate(10 * Math.PI/180);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(300,100,100,100);
+
+
+    //恢复角度,但是之前的图形都不会变
+    ctx.rotate(350 * Math.PI/180);
+    ctx.strokeRect(300,300,100,100);
+
+
+
+
+
+    </script>
+  </body>
+</html>

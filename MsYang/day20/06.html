@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="f">就水果卡</div>
+    <div id="f1"  class="test">f1元素</div>
+
+    <script type="text/javascript">
+    var f = document.getElementById("f");
+    var f1 = document.getElementById("f1");
+
+
+    //设置
+    f.setAttribute("class", "f1");
+    f.setAttribute("style", "color:red;background-color:yellow;");
+
+    //获得
+    console.log(f.getAttribute('id'));
+    console.log(f.getAttribute('class'));
+    console.log(f.getAttribute('style'));
+
+    //删除
+    f.removeAttribute('class');
+    f.removeAttribute('style');
+
+
+    //通过属性操作，操作自定义的属性
+    f.setAttribute('empty', 'true');
+    f.setAttribute('empty', 'false');
+
+
+    //通过DOM对象操作属性！！！！
+    console.log(f1.id);//f1, 属性
+    console.log(f1.getAttribute("id"));//f1, 特性
+
+    console.log(f1.class);//undefined, 属性
+    console.log(f1.className);//test, 属性
+    console.log(f1.getAttribute("class"));//test,特性
+
+    console.log(f1.setAttribute("style", "color:red;"));
+    console.log(f1.style);
+
+
+    
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

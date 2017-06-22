@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style type="text/css">
+    /* 
+         按照顺序： l, v, h, a
+     */
+
+    /*默认颜色*/
+    .two:link {
+        color: red;
+    }
+
+
+    /*访问之后的*/
+    .two:visited {
+        color: green;
+    }
+
+    /*鼠标放上去的颜色*/
+    div:hover,
+    .two:hover {
+        color: yellow;
+    }
+
+    /*点击的时刻*/
+    div:active,
+    .two:active {
+        color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="#">原始a标签</a>
+    <a class="two" href="#">使用伪类设置的a</a>
+
+
+    <div>说看到过看到建行卡的快回家</div>
+</body>
+
+</html>

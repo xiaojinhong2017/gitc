@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this !!!!!!!</title>
+  </head>
+  <body>
+
+    <button id="btn">点击</button>
+
+    <script type="text/javascript">
+
+        var value = 0;
+
+        var obj = {
+          value: 10,
+          handler: function(){
+            console.log(this.value);
+          }
+        };
+
+        var btn = document.getElementById("btn");
+        btn.value = 100;
+
+        /*
+        this, event.target, event.currentTarget????
+        */
+
+        /*
+        // (1) ===== (2)
+        btn.addEventListener("click",obj.handler ,false);//100
+        */
+
+        /*
+        // (2)
+        btn.addEventListener("click",function () {
+            console.log(this.value);
+        } ,false);//100
+        */
+
+        // (3)
+        btn.addEventListener("click",function(){
+          console.log(this);//btn
+          obj.handler();//10
+        } ,false);
+
+    </script>
+
+  </body>
+</html>

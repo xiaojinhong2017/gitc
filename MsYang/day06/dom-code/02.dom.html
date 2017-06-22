@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="f">
+        <div class="s">s子元素</div>
+    </div>
+    <div class="f1">
+        skjgkdjhkdjhkhjhkjh
+        <ul>
+            <li>1111</li>
+            <li>2222</li>
+        </ul>
+        <p>gjjdkhjkdhjk</p>
+    </div>
+
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    //获得元素内容
+    console.log($(".f").html());
+    console.log($(".s").html());
+
+    //设置元素内容,覆盖之前的所有内容
+    $(".s").html("<ul><li>111</li></ul>");
+
+
+    //获得文本
+    console.log($(".f1").text());
+
+    //设置文本
+   	$(".f1").text("<p>hello world f1</p>");
+
+    </script>
+</body>
+
+</html>

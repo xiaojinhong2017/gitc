@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>我是 iframe ...</h1>
+
+<script>
+    var data = {
+        name: '嵌套页面'
+    };
+
+    //window.parent 拿到父页面的window
+    console.log(JSON.parse(window.parent.name));
+
+    //window.name传递的是字符串，可以json的方法
+    window.name = JSON.stringify(data);
+
+</script>
+
+</body>
+</html>

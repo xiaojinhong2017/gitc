@@ -1,0 +1,40 @@
+
+@for $i from 1 to 3 {
+	.class-#{$i} {
+		font-size: 10px * $i;
+	}
+}
+
+
+@for $i from 4 through 10 {
+	.item-#{$i} {
+		font-size: 10px * $i;
+	}
+}
+
+
+
+$img: 1 2 3;
+@each $i in $img {
+	.class-#{$i} {
+		background-image: url('./image/#{$i}.jpg') no-repeat;
+	}
+}
+
+
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
+@each $key, $value in $headings {
+	#{$key} {
+		font-size: $value;
+	}
+}
+
+
+$backs:(1, no-repeat, 0px 0px),(2, repeat-x, 10px, 20px),(3 , repeat-y, 16px, 20px);
+@each $img, $repeat, $pos in $backs {
+	.box-#{$img} {
+		background-image: url("./image/#{$img}.jpg");
+		background-repeat: $repeat;
+		background-position: $pos;
+	}
+}

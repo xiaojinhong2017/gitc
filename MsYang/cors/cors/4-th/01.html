@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cors</title>
+</head>
+<body>
+
+<!-- 该代码运行于 127.0.0.1:80 端口 -->
+	
+	<script type="text/javascript">
+
+        //ie8兼容性代码
+		function createCORSRequest(method, url){
+			var xhr = new XMLHttpRequest();
+			if ("withCredentials" in xhr){
+				console.log("XMLHttpRequest...");
+				xhr.open(method, url, true);
+			} else if (typeof XDomainRequest != "undefined"){
+				console.log("XDomainRequest...");
+				vxhr = new XDomainRequest();
+				xhr.open(method, url);
+			} else {
+				xhr = null;
+			}
+			return xhr;
+		}
+
+		var request = createCORSRequest("get", "http://127.0.0.1:8000/test");
+		if (request){
+			request.onload = function(){
+				//收到跨域ajax响应之后的数据responseText
+				console.log(request.responseText);
+			};
+
+			request.onerror = function(){
+				console.log("request error .....");
+			}
+			request.send();
+		}
+
+</script>
+</body>
+</html>

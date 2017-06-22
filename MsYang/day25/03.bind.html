@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bind进行函数绑定</title>
+  </head>
+  <body>
+
+    <button id="btn">点击</button>
+
+    <script type="text/javascript">
+
+        var value = 0;
+
+        var obj = {
+          value: 10,
+          handler: function(){
+            console.log(this.value);
+          }
+        };
+
+        var btn = document.getElementById("btn");
+        btn.value = 100;
+
+        /*
+        将obj.handler方法绑定到了obj对象上，返回的newHandler就是绑定之后的新方法。
+        在新方法的内部，this永远等于obj
+        */
+        var newHandler = obj.handler.bind(obj);
+        btn.addEventListener("click", newHandler ,false);//
+
+        newHandler();//10
+
+    </script>
+
+  </body>
+</html>

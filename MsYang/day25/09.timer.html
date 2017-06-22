@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数节流:定时器</title>
+    <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+
+     table {
+       width: 500px;
+       border: 1px solid gray;
+       border-collapse: collapse;
+       text-align: center;
+     }
+
+     td,th,tr {
+       border: 1px solid gray;
+     }
+
+    </style>
+  </head>
+  <body>
+
+    <button id="btn">点击弹出提示框</button>
+    <table id="stus">
+      <tbody></tbody>
+    </table>
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $("#btn").click(function () {
+      alert("被点击");
+    });
+
+
+    var data = ["lisi", 20, 88];
+    var num = 0,timer;
+
+    function createTable(){
+      for (var i = 0 ; i < 100; i++){
+        $("#stus tbody").append("<tr><td>" + data[0] + "</td><td>" + data[1] + "</td><td>" + data[2] +  "</td></tr>");
+      }
+      num++;
+      if (num === 10000){
+        clearTimeout(timer);
+        return;
+      }
+      timer = setTimeout(createTable,1);
+    }
+
+    createTable();
+
+    /*
+    函数节流？
+    如何实现节流？
+    */
+    </script>
+
+  </body>
+</html>

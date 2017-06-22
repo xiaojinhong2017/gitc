@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin合并问题</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f, .f1 {
+			width: 200px;
+			height: 200px;
+		}
+
+
+		.f {
+			background: yellow;
+			margin-bottom: 100px;
+		}
+
+		.f1 {
+			background: blue;
+			margin-top: -50px;
+		}
+
+		span {
+			/*行元素默认是不能设置margin-top,bottom*/
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+
+
+<!--  外边距，是正，负的时候，是求和 -->
+<div class="f"></div>
+<div class="f1"></div>
+<span>行元素</span>
+	
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>颜色</title>
+	<style type="text/css">
+
+	     .f p, .f1 p {
+	     	width: 100px;
+	     	height: 100px;
+	     	background: #000;
+	     }
+
+
+		.f  {
+			/*color: rgb(255,0,0);*/
+			color: rgba(255,0,0,0.5);
+		}
+
+		.f1 {
+			color: red;
+			opacity: 0.5;/*属于全局的设置，所有后代都会受到影响*/
+		}
+
+		.f2 {
+			height: 100px;
+			background: rgba(255,0,0,0.5);/*后代元素不会有影响*/
+		}
+
+
+		.hs {
+			color: hsla(250,78%, 65%, 0.5);
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+<div class="f">
+   <h1>深加工快点回家</h1>
+   <p></p>
+</div>
+	
+<div class="f1">
+   <h1>深加工快点回家</h1>
+   <p></p>
+</div>
+
+<div class="f2">
+	<h1>深加工极度恐慌</h1>
+</div>
+
+
+<h1 class="hs">使用hsla设置文本颜色</h1>
+
+</body>
+</html>

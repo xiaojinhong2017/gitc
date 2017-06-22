@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>逻辑或</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      /*
+       逻辑或：短路特性，一旦遇到一个为真的表达式，那么后边不再计算
+      */
+      console.log(10 || 0);//10
+      console.log(0 || "hello" || 20);//"hello"
+      console.log(10 || 20);//10
+
+      var ret, m = 0;
+      ret = 0 || ++m || m++;
+      console.log("ret = ", ret);//1
+      console.log("m = ", m);//1
+
+
+      function test(arg){
+        arg = arg || 100;
+        console.log(arg);
+      }
+      test();
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>classList</title>
+  </head>
+  <body>
+
+    <div  id="f" class="one two three"></div>
+
+    <script type="text/javascript">
+    var f = document.querySelector('#f');
+    console.log(f.className);//字符串
+    // f.className = "one two three four";
+    // f.setAttribute("class", " one two three four");
+
+    //classList, add,remove,toggle
+    console.log(f.classList);
+    f.classList.add("four","five", "six");
+    f.classList.remove("five", "six");
+    f.classList.toggle("seven");
+    f.classList.toggle("seven");
+    console.log(f.classList.contains("four"));
+
+    
+    //自己实现一个类似于add的函数 ？？？？？
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

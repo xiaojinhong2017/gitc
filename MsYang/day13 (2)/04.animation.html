@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画的使用步骤</title>
+	<style type="text/css">
+		
+		.dfc {
+			width: 300px;
+			height: 300px;
+			background: url("./image/dfc.gif");
+			background-size: 300px 300px;
+
+
+			/* 2. 对元素应用动画*/
+			animation-name: zhuan;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite; /*infinite*/
+
+			/*animation-delay: 5s;*/
+		}
+
+		 .dfc:hover {
+		 	animation-play-state: paused; /*暂停*/
+		 }
+
+
+		/* 1. 创建动画序列*/
+		@keyframes zhuan {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="dfc"></div>
+	
+</body>
+</html>

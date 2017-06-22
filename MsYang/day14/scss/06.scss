@@ -1,0 +1,29 @@
+
+.class-one {
+	background: red;
+}
+
+#id {
+	width: 1000px;
+}
+
+
+.a {
+	color: blue;
+	font-size: 20px;
+}
+
+.b {
+
+	//inherit
+	@extend .a;
+	text-align: center;
+}
+
+
+.c {
+	@extend .b;
+	@extend #id;
+	height: 100px;
+	line-height: 100px;
+}

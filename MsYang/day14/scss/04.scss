@@ -1,0 +1,43 @@
+
+
+// no arg
+@mixin testMix{
+	margin: 50px auto;
+	text-align: center;
+}
+
+.class-one {
+	height: 100px;
+	line-height: 100px;
+	@include testMix;
+}
+
+.class-two {
+	@include testMix;
+}
+
+
+// default arg
+@mixin opacity($opacity:80, $fontSize:20px, $border: 1px dotted green){
+	opacity: $opacity / 100;
+	font-size: $fontSize * 1.2;
+	border: $border;
+}
+
+.class-three {
+	@include opacity(50, 30px);
+}
+.class-four{
+	@include opacity(60, 10px);
+}
+
+
+// ... !!!!!
+@mixin background($backs...){
+	background: $backs;
+}
+
+.class-five {
+	@include background(url("1.jpg") no-repeat 0px 0px, url("2.jpg") repeat-x 10px 20px,
+		url("3.jpg") repeat-y 20px 30px);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询</title>
+
+	<!-- 设置meta,用于媒体查询在移动端上显示效果 -->
+	<meta  name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body,html {
+			height: 100%;
+			background: lightblue;
+		}
+
+
+        /*max-width 屏幕的width的最大值， 必须是小于等于800px时才有如下的样式*/
+		@media screen and (max-width:800px) {
+			body {
+				background: yellow;
+			}
+		}
+
+		@media screen and (max-width:500px) {
+			body {
+				background: red;
+			}
+		}
+
+
+
+		.f {
+			color: pink;
+			font-size: 20px;
+		}
+
+		/* 媒体查询的代码，都写在原始样式的后边*/
+
+		/*min-width 屏幕的width的最小值， 必须是大于等于500px时才有如下的样式*/
+		@media screen and (min-width: 500px) and (max-width:800px) {
+			.f {
+				color: red;
+				font-size: 50px;
+			}
+		}
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+<div class="f">看收到就好g空间的建行卡</div>
+
+	
+</body>
+</html>

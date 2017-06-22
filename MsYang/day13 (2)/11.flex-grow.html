@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex-grow</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+			
+	        padding: 50px;		
+			border: 1px dotted gray;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+		}
+
+		.f li {
+			width: 300px;
+			height: 100px;
+			border: 1px solid red;
+
+			/* 用于设置元素的放大比例，按照比例进行分配*/
+			flex-grow: 1;
+		}
+		</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+	
+</body>
+</html>

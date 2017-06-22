@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	  div p {
+	  	color: yellow;
+	  	font-size: 30px;
+	  }
+
+       /*多个选择器共用，交集选择器*/
+	  div p.two {
+	  	color: blue;
+	  }
+
+
+      /* 将共同样式抽出来，并集选择器*/
+	  h1, span, strong {
+	  	color: purple;
+	  }
+
+       /*可以再次进行单独设置*/
+	  span {
+	  	font-size: 30px;
+	  }
+
+		
+	</style>
+</head>
+<body>
+
+<div>
+	<p>第1个</p>
+	<p class="two">第2个</p>
+	<p>第3个</p>
+</div>
+
+<p class="two">看大家回家</p>
+
+
+<h1>快睡觉看到机会</h1>
+<span>dkjhkdjhkdjhkjk</span>
+<strong>skgjdjhkjhkjhkhjjkjkj</strong>
+	
+</body>
+</html>

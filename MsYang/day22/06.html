@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义构造函数</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      function Person(name,age){
+        console.log(this);
+        this.name = name;
+        this.age = age;
+        this.getName = function(){
+          return this.name;
+        };
+        this.setName = function(newName){
+          this.name = newName;
+        };
+      }
+
+      /*
+      //直接调用Person的结果！！！！
+      var one = Person('lisi', 17);
+      console.log(one);//undefined
+      //在浏览器端的js中，所有的全局变量都是window的属性
+      console.log(window.name,window.age);
+      console.log(name,age);
+      */
+
+      var one = new Person('zhangsan', 19);
+      var two = new Person('zhangsan', 19);
+      console.log(one === two);//false
+
+      one.setName('zhangsi');
+      console.log(one.getName());
+
+
+      
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

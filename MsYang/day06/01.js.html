@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var a = 10;
+
+	function test(){
+		console.log(a);
+		var a = 100;
+
+		/*
+		 var a;
+		 console.log(a);//undefined
+		 a = 100;
+		*/
+	}
+
+
+	test();
+
+	isNaN(10);//false
+	isNaN("10");//false
+	isNaN("hello");//true
+
+	a = "hello";
+	if (a){
+		console.log("....");
+	}
+
+</script>
+	
+</body>
+</html>

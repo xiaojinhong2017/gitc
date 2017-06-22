@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      console.log(/^hello$/.test("heeyello"));//false
+      console.log(/^hello/.test("hello sdjhjsldk dkjhj21834768"));//true
+      console.log(/hello$/i.test("sdjhjsldk dkjhj21834768 hellO"));//true
+
+      console.log(/a*bcd/.test("abcd"));
+      console.log(/a*bcd/.test("aaaaabcd"));
+      // www.abcd.com wwww.a*bcd.com
+
+      console.log(/(hello)*abcdef/.test("hellohelloabcdef"));
+      console.log(/(hello)?abcdef/.test("hellohelloabcdef"));//true
+
+      console.log(/hello|world/.test("hello"));
+      console.log(/hello|world/.test("world"));
+
+
+    </script>
+
+  </body>
+</html>

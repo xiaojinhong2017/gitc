@@ -1,0 +1,14 @@
+
+@function fontSize($size){
+	// @return $size + 10;
+	@return $size * 1.5 ;
+}
+
+.class-one {
+	font-size: fontSize(20px);
+	color: darken(#123, 50%)
+}
+
+.class-two {
+	color: lighten(red, 50%);
+}

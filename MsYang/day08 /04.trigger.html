@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加、删除、触发自定义的事件</title>
+	<style type="text/css">
+		.f  {
+			width: 500px;
+			height: 200px;
+			background: yellow;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="f">ffff</div>
+	<button id="btn">点击使用trigger触发f的点击事件</button>
+
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+
+	    $(".f").on("click", function(){
+	    	$(this).css("background", "red");
+	    });
+
+	    $(".f").on("mouseover", function(){
+	    	$(this).css("border", "10px solid green");
+	    });
+
+        //注册一个自定义的事件，名称"hello"
+	    $(".f").on("hello", function(){
+	    	alert("I am hello event ...");
+	    });
+
+
+	   	$("#btn").click(function(event) {
+	   		// $(".f").trigger("click"); //$(".f").click()
+	   		$(".f").trigger("mouseover");
+
+	   		//触发自定义的事件
+	   		$(".f").trigger("hello");
+		});
+
+		
+	</script>
+</body>
+</html>

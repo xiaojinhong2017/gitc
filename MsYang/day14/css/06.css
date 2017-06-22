@@ -1,0 +1,18 @@
+.class-one {
+  background: red; }
+
+#id, .c {
+  width: 1000px; }
+
+.a, .b, .c {
+  color: blue;
+  font-size: 20px; }
+
+.b, .c {
+  text-align: center; }
+
+.c {
+  height: 100px;
+  line-height: 100px; }
+
+/*# sourceMappingURL=06.css.map */

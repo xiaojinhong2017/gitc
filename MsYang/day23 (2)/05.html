@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>组合继承(原型链继承+借用构造函数继承)</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      function Person(name,age){
+        this.name = name;
+        this.age = age;
+      }
+
+      Person.prototype.getName = function () {
+        return this.name;
+      }
+
+      Person.prototype.getAge = function () {
+        return this.age;
+      }
+
+
+      function Student(name,age,score) {
+        Person.call(this,name,age);
+        this.score = score;
+      }
+
+      Student.prototype = new Person();
+      Student.prototype.constructor = Student;
+      Student.prototype.getScore = function () {
+        return this.score;
+      };
+
+      var one = new Student('lisi', 18,80);
+      console.log(one);
+      console.log(one.getName());
+      console.log(one.getAge());
+      console.log(one.getScore());
+
+
+
+
+
+    </script>
+  </body>
+</html>

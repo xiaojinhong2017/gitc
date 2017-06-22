@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Math</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      var nums = [10,2,3,3,4,50];
+      console.log(Math.min(1,2,3,4,5));
+      console.log(Math.min(nums));//,不可以传递数组的!!NaN
+      // console.log(Math.min(...nums));//ES6新特性
+      console.log(Math.max(1,2,3,4,5));
+
+      //使用apply(arg1,Array)方法，让Math.min Math.max可以传递数组
+      console.log(Math.min.apply(null,nums));//2
+
+
+      //取整
+      console.log("-----取整-----");
+      console.log(Math.round(12.4));//12
+      console.log(Math.round(12.5));//13
+
+      console.log(Math.floor(25.9));
+      console.log(Math.floor(25.5));
+      console.log(Math.floor(25.1)); //25
+      console.log(Math.floor(-25.1)); //-26
+
+
+      console.log(Math.ceil(25.1)); //26
+      console.log(Math.ceil(-25.1)); //-25
+
+      for (var i = 0; i < 100 ; i++) {
+        console.log(Math.random());//真随机
+      }
+
+      //[65,96]范围
+      for (var i = 0; i < 100 ; i++) {
+        var ret = Math.floor(Math.random()* (96 - 65 + 1) + 65);
+        console.log(ret);
+      }
+
+
+      console.log(Math.sqrt(5));
+      console.log(Math.abs(-5));
+      console.log(Math.pow(2,10));
+      console.log(Math.sin(Math.PI/6));
+
+
+
+
+      /*
+      作业：
+      1. 验证码 字母、数字  6位????
+      2. 6.18 倒计时
+      3. 准确的钟表
+      */
+
+
+
+    </script>
+
+  </body>
+</html>

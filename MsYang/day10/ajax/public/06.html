@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .head{
+    height:88px;
+    width:100%;
+
+  }
+  .head-center{
+    width: 990px;
+    margin:0 auto;
+    height: 80px;
+  }
+  .jingling{
+    background: url(./jdlogo.png);
+    height: 50px;
+    width: 160px;
+    margin-top: 24px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: left;
+  }
+  .huanying{
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    font-size: 24px;
+    color: #333;
+     padding-left: 30px;
+     margin-top: 34px;
+    }
+    .wenjuan{
+      height: 30px;
+      width: 150px;
+      float: right;
+      position: relative;
+      top: 48px;
+      right:100px;
+      color: #666;
+      font-size: 12px;
+    }
+    .wenjuan:hover{
+      color: red;
+    }
+    .center{
+    height: 479px;
+    width: 100%;
+    background: #f77102;
+    }
+    .center-center{
+
+    height: 478px;
+    width: 990px;
+    margin: 0px auto;
+    background: url(./jd.jpg);
+    }
+    .login-form{
+      height: 361px;
+      width: 346px;
+      float: right;
+      position: relative;
+      top: 40px;
+      background: #fff;
+      z-index: 2;
+
+    }
+   .saoma{
+     height: 20px;
+     width: 168px;
+     font-size: 18px;
+     padding: 17px 2px;
+     text-align: center;
+     border-bottom: 1px solid #f4f4f4;
+     line-height: 20px;
+     color: #666;
+     border-right: 1px solid #f4f4f4;
+     float: left;
+   }
+   .saoma:hover{
+     color: red;
+     font-weight: bold;
+   }
+   .zhanghao{
+     height: 54px;
+     width: 172px;
+     font-size: 18px;
+     text-align: center;
+     border-bottom: 1px solid #f4f4f4;
+     line-height: 54px;
+     color: #666;
+     float: left;
+   }
+  .zhanghao:hover{
+    color: red;
+    font-weight: bold;
+  }
+
+  .hidden{
+    height: 23px;
+    margin-top: 58px;
+    margin-left: 19px;
+    margin-bottom: 5px;
+    width: 306px;
+    border: 1px solid red;
+    background-color: #ffebeb;
+  }
+  .a{
+    visibility: hidden;
+  }
+  .h{
+    height: 16px;
+    width: 16px;
+    background: url(./jdjlt.png);
+    background-position: -104px -49px;
+    margin:3px 15px;
+    float: left;
+  }
+  .hh{
+    height: 16px;
+    width: 150px;
+    float: left;
+    margin:3px 15px;
+    font-size: 12px;
+    color:#e4393c;
+  }
+  .mesg{
+    margin-left: 19px;
+    width: 306px;
+    height: 192px;
+  }
+  .usrname{
+    height: 40px;
+    width: 306px;
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #bdbdbd;
+  }
+  .usrpic{
+    width: 39px;
+    height: 39px;
+    border-right: 1px solid #bdbdbd;
+    background-image: url(./jdjlt.png);
+    background-position: 0px 0px;
+    float: left;
+  }
+  .mesg1{
+    line-height: 18px;
+    height: 18px;
+   padding: 10px 0 10px 20px;
+   width: 213px;
+  float: left;
+  font-size: 14px;
+  }
+  .mesg1 input{
+    border: none;
+    outline-style: none;
+  }
+  .passwd{
+    height: 40px;
+    width: 306px;
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #bdbdbd;
+
+  }
+  .pswdpic{
+    width: 39px;
+    height: 39px;
+    border-right: 1px solid #bdbdbd;
+    background-image: url(./jdjlt.png);
+    background-position: 73px 1px;
+    float: left;
+  }
+  .mesg2{
+    line-height: 18px;
+    height: 18px;
+   padding: 10px 0 10px 20px;
+   width: 213px;
+  float: left;
+  font-size: 14px;
+  }
+  .mesg2 input{
+    border: none;
+    outline-style: none;
+  }
+  .forget{
+    height :18px;
+    width:100px;
+    font-size: 12px;
+    float: right;
+    color: #666;
+    margin-bottom: 17px;
+
+  }
+ .login{
+   height: 34px;
+   width: 306px;
+   margin-top: 54px;
+   border: 1px solid #cb2a2d;
+
+ }
+ .login button{
+   width: 306px;
+   display: block;
+   background: #e4393c;
+   line-height: 33px;
+   color: #fff;
+   font-size: 20px;
+  border: none;
+ }
+ .chat{
+   height: 50px;
+   width: 306px;
+   margin: 30px 19px 0px 19px;
+   border-top: 1px solid #f4f4f4;
+   background: #fcfcfc;
+ }
+ .qq{
+   width: 68px;
+   height: 50px;
+   float: left;
+   position: relative;
+ }
+ .qqpic{
+   width: 19px;
+height: 18px;
+display: block;
+background: url(./QQ-weixin.png) no-repeat;
+float: left;
+margin-top: 15px;
+ }
+ .qqq a{
+   width: 19px;
+ height: 18px;
+ display: block;
+ float: left;
+ margin-top: 15px;
+ color: #666;
+ }
+ .weixin{
+   width: 70px;
+   height: 50px;
+   float: left;
+   position: relative;
+ }
+ .weixinpic{
+   width: 19px;
+height: 20px;
+display: block;
+background: url(./QQ-weixin.png) no-repeat;
+background-position:  -20px 0px;
+float: left;
+margin-top: 15px;
+ }
+ a{
+   text-decoration: none;
+ }
+ .wx a{
+   width: 50px;
+ height: 18px;
+ display: block;
+ float: left;
+ margin-top: 12px;
+ color: #666;
+ }
+ .rightnow{
+   height: 17px;
+   width: 90px;
+   margin-top: : 16px;
+   float: right;
+   position: relative;
+   top: 15px;
+   right: 2px;
+ }
+ .rnpic{
+   height: 17px;
+   width: 17px;
+   background-image: url(./jdjlt.png);
+   background-position: 136px 100px;
+   float: left;
+ }
+ .zhuce a{
+   height: 16px;
+   line-height: 18px;
+   color: #666;
+   float: left;
+ }
+ #footer{
+   width: 990px;
+   height: 86px;
+   margin: 20px auto;
+
+ }
+ .links a {
+   height: 18px;
+   width: 48px;
+   margin: 0px 10px;
+   color: #666;
+   text-decoration: none;
+   font-size: 12px;
+ }
+ .copyright{
+   text-align: center;
+   margin: 10px 0;
+   color: #666;
+   font-size: 12px;
+ }
+ a:hover{
+   text-decoration: underline;
+   color: red;
+ }
+  </style>
+
+</head>
+<body>
+
+<div class="head">
+  <div class="head-center">
+    <div class="jingling"></div>
+    <div class="huanying">欢迎注册</div>
+    <div class="wenjuan">登陆界面,问卷调查</div>
+  </div>
+  </div>
+  <div class="center">
+    <div class="center-center">
+    <div class="login-form">
+      <div class="saoma">
+        扫码登陆
+      </div>
+      <div class="zhanghao">帐号登陆</div>
+      <div class="hidden a">
+        <div class="h"></div>
+        <div class="hh">请输入密码</div>
+      </div>
+      <div class="mesg">
+        <form id="1" action="">
+          <div class="usrname">
+            <div class="usrpic"></div>
+            <div class="mesg1">
+              <input type="text" name="usrname" placeholder="邮箱/用户名/已验证手机">
+            </div>
+          </div>
+          <div class="passwd">
+            <div class="pswdpic"></div>
+            <div class="mesg2">
+              <input type="password" name="passwd" placeholder="密码">
+            </div>
+          </div>
+          <div class="forget">忘记密码</div>
+          <div class="login"><button>登陆</button></div>
+        </form>
+
+      </div>
+      <div class="chat">
+        <div class="qq">
+          <div class="qqpic"></div>
+          <div class="qqq"><a href="#">QQ</a></div>
+        </div>
+        <div class="weixin">
+          <div class="weixinpic"></div>
+          <div class="wx"><a href="#">微信</a></div>
+        </div>
+        <div class="rightnow">
+          <div class="rnpic"></div>
+          <div class="zhuce"><a href="#">立即注册</a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div id="footer">
+        <div class="links">
+            <a rel="nofollow" target="_blank" href="//www.jd.com/intro/about.aspx">
+                关于我们
+            </a>
+            |
+            <a rel="nofollow" target="_blank" href="//www.jd.com/contact/">
+                联系我们
+            </a>
+            |
+            <a rel="nofollow" target="_blank" href="//zhaopin.jd.com/">
+                人才招聘
+            </a>
+            |
+            <a rel="nofollow" target="_blank" href="//www.jd.com/contact/joinin.aspx">
+                商家入驻
+            </a>
+            |
+            <a rel="nofollow" target="_blank" href="//www.jd.com/intro/service.aspx">
+                广告服务
+            </a>
+            |
+            <a rel="nofollow" target="_blank" href="//app.jd.com/">
+                手机京东
+            </a>
+            |
+            <a target="_blank" href="//club.jd.com/links.aspx">
+                友情链接
+            </a>
+            |
+            <a target="_blank" href="//media.jd.com/">
+                销售联盟
+            </a>
+            |
+            <a href="//club.jd.com/" target="_blank">
+                京东社区
+            </a>
+            |
+            <a href="//gongyi.jd.com" target="_blank">
+                京东公益
+            </a>
+            |
+            <a target="_blank" href="//en.jd.com/" clstag="pageclick|keycount|20150112ABD|9">English Site</a>
+        </div>
+        <div class="copyright">
+            Copyright&nbsp;©&nbsp;2004-2017&nbsp;&nbsp;京东JD.com&nbsp;版权所有
+        </div>
+    </div>
+
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+ $("input").focus(function(){
+   $(".hidden").removeClass("a");
+ });
+
+
+ function createXHR() {
+        if (typeof XMLHttpRequest != "undefined") {
+            return new XMLHttpRequest();
+        } else if (typeof ActiveXObject != "undefined") {
+            if (typeof arguments.callee.activeXString != "string") {
+                var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                        "MSXML2.XMLHttp"
+                    ],
+                    i, len;
+                for (i = 0, len = versions.length; i < len; i++) {
+                    try {
+                        new ActiveXObject(versions[i]);
+                        arguments.callee.activeXString = versions[i];
+                        break;
+                    } catch (ex) {
+                        //跳过
+                    }
+                }
+            }
+            return new ActiveXObject(arguments.callee.activeXString);
+        } else {
+            throw new Error("No XHR object available.");
+        }
+    }
+    //拼接get方法传递的数据
+    function addURLParam(url, name, value) {
+        url += url.indexOf('?') == -1 ? '?' : '&';
+
+        //encodeURIComponent编码
+        url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        return url;
+    }
+
+
+$("#1").submit(function(){
+      var usrname = $("#1 input[name = usrname] ").val();
+      var passwd = $("#1 input[name = passwd]").val();
+      var url = addURLParam("http://127.0.0.1:8000/index","usrname", usrname);
+       url = addURLParam(url, "passwd",passwd);
+      var xhr = createXHR();
+      xhr.open("get",url,true);
+      xhr.send(null);
+      // xhr.onreadystatechange = function() {
+      //   if(xhr.readyState == 4)
+      //   {
+      //   //   console.log(xhr.response);
+      //   //   var obj = JSON.parse(xhr.response);
+      //   //   $("table tbody").append("<tr><td>"+obj.name+"</td><td>"+obj.age+"</td></tr>");
+      //   // }
+      //    $(".hidden").removeClass("a");
+      //       });
+      // };
+      return false;
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>转换</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			width: 500px;
+			height: 200px;
+			border: 1px solid red;
+			margin: 50px auto;
+
+			position: relative;
+		}
+
+		.s{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+            /* scale 以中心为参考点伸缩*/
+            /* translate 以默认的位置为参考点偏移, 百分比是相对于自身大小*/
+		    transform: translate(-50%, -50%) scale(1,1)  rotate(0deg);
+		}
+
+
+		.f1 {
+
+			width: 200px;
+			height: 100px;
+			background: green;
+
+			transform: translate(0px, 0px) skew(45deg, 0deg) scale(1,1);
+			transition: all 1s linear;
+		}
+
+		.f1:hover {
+			transform: translate(200px, 0) skew(90deg, 45deg) scale(0.5,0.4);
+		}
+	</style>
+</head>
+<body>
+
+<div class="f">
+<div class="s"></div>
+</div>
+
+<div class="f1"></div>
+
+	
+</body>
+</html>

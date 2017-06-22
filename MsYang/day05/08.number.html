@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数值类型</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var a = 123;  //10进制
+    var b = 0123; //8进制使用'0' 开头
+    var c = 0x123; //16进制，使用"0x"开头
+
+    console.log(a, b, c);
+
+
+    var a = 10.12;
+    var b = 0.12;
+	var c = .123; //不推荐
+    console.log(a, b, c);
+
+
+    var a = 3.5e7; //表示3.5 * 10^7
+	var b = 3.5e-7; //表示 3.5 * 10^-7
+    console.log(a, b);
+
+    console.log(0.1 + 0.2);// 不等于0.3
+
+    c = 100 + undefined;
+    console.log(typeof c);
+    console.log(c);
+
+
+    /******************************************/
+    a = 10;
+    b = 20;
+
+    console.log("a + b = ", a + b);
+    console.log("a - b = ", a - b);
+    console.log("a * b = ", a * b);
+    console.log("a % b = ", a % b);
+
+    // 除法，结果就是最终的商，可以带有小数
+    console.log("a / b = ", a / b);//0.5
+    console.log("20 / 10 = ", 20 / 10);//2
+    console.log("10 / 3 = ", 10 / 3);//
+
+
+</script>
+</body>
+
+</html>

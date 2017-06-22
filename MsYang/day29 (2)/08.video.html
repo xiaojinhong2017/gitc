@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>video</title>
+  </head>
+  <body>
+
+    <video id="video" controls poster="./image/1.jpg">
+      <source src="./video/fun.mp4" >
+    </video>
+    <br><br>
+
+    <button id="start">播放</button>
+    <button id="stop">暂停</button>
+    <button id="muted">静音</button>
+
+    <script type="text/javascript">
+    var video = document.querySelector('#video');
+    var start = document.querySelector('#start');
+    var stop = document.querySelector('#stop');
+    var muted = document.querySelector('#muted');
+    var duration ;
+
+    /*
+    文档： https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement
+    调节播放速度 : playbackRate += 0.1  -= 0.1
+    进退：
+    currentTime += 5
+    currentTime -= 5
+    声音： volume [0,1]
+    */
+
+    video.addEventListener("progress", function(){
+      duration = this.duration;
+    }, false);
+
+    video.addEventListener("timeupdate", function(){
+      console.log("当前播放时间： ", video.currentTime);//s
+    },false);
+
+    start.onclick = function () {
+      video.play();
+    };
+
+    stop.onclick = function () {
+      video.pause();
+    };
+
+    muted.onclick = function () {
+      video.muted = !video.muted;
+      this.innerHTML = video.muted === true ? "取消静音" : "静音";
+    };
+
+
+
+
+    </script>
+
+
+  </body>
+</html>

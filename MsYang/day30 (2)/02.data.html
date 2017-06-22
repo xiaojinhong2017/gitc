@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义属性</title>
+  </head>
+  <body>
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <div id="f"  data-one="hello" data-two="world" data-value-one="value1"></div>
+
+    <script type="text/javascript">
+    var f = document.querySelector('#f');
+    console.log(f.getAttribute("data-one"));
+
+    console.log(f.dataset);
+    f.dataset.one = "HELLO";
+    f.dataset.two= "WORLD";
+    console.log(f.dataset.valueOne);
+    //添加一个自定的属性
+    f.dataset.abcDef = "abcdef";
+
+
+    //jQuery中直接操作类似原生的Dataset的自定义属性
+    console.log($("#f").data("valueOne"));
+    console.log($("#f").data().valueOne);
+
+    //jQuery中通过data添加的属性，只能使用data访问，不会出现在自定义的标签属性上
+    console.log($("#f").data({"index": 100}).data());
+
+
+    </script>
+
+  </body>
+</html>

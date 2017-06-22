@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>正则表达式</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    //直接定义方式
+    /*
+    flag:
+    m
+    i
+    g
+    */
+    var pat = /hello/gim;
+    console.log(typeof pat);
+
+
+    //使用 RegExp
+    pat = new RegExp("hello","gim");
+    pat = new RegExp(/hello/,"gim");
+    console.log(pat);
+
+
+    /*******************常用匹配模式------------------*/
+    console.log(/hello/.test("helloworld"));//true
+    console.log(/hello/.test("world"));//false
+    console.log(/./.test("h\n\r"));//true
+
+    // "\"转义字符
+    console.log(/\d/.test("ajhghjh"));//false
+    console.log(/\D/.test("ajhghjh"));//true
+
+    console.log(/[abcdefg]/.test("wtutiu05958a"));//true
+    console.log(/[^123]/.test("123321"));//false
+    console.log(/[^123]/.test("1233210"));//true
+    console.log(/[a-z]/.test("jhkdjhk"));//true
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

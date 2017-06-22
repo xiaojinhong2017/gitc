@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>错误处理</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    try {
+        // fun();//语法错误，无法捕获，自己解决
+        var a = 100, b = 0;
+        var c = a / b; //除数可以为0
+        console.log(c);//Infinity
+
+        var ret = 2 * Number.MAX_VALUE;
+        console.log(ret);//Infinity
+
+        JSON.parse("helloworld");
+
+    } catch(error){
+      //instanceof用于测试某个对象是否是有一个指定的构造函数产生
+      if (error instanceof ReferenceError){
+        console.log("ReferenceError.....");
+      } else {
+        console.log(error);
+      }
+
+    }
+
+    console.log("after try catch....");
+
+    </script>
+
+  </body>
+</html>

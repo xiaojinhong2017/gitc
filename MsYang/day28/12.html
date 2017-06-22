@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>贝塞尔曲线</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="601"></canvas>
+
+    <script type="text/javascript">
+
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+    ctx.moveTo(100,100);
+    //提供了一个控制点
+    ctx.quadraticCurveTo(200,250, 100,300);
+    ctx.stroke();
+
+    ctx.fillStyle = "green";
+    ctx.fillRect(100,100,20,20);
+    ctx.fillRect(100,300,20,20);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(200,250,20,20);
+
+
+    //提供两个控制点的方法
+    ctx.moveTo(100,400);
+    //提供了2个控制点
+    ctx.bezierCurveTo(350,200, 400,380,100,500);
+    ctx.stroke();
+
+    ctx.fillStyle = "green";
+    ctx.fillRect(100,400,20,20);
+    ctx.fillRect(100,500,20,20);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(350,200,20,20);
+    ctx.fillRect(400,380,20,20);
+
+    </script>
+  </body>
+</html>

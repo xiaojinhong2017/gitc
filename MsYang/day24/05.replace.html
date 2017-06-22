@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>replace替换</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    var str = "helloworldhelloworld";
+    var newStr = str.replace("hello", "HELLO");
+    newStr = str.replace(/hello/g, "HELLO");
+    console.log(newStr);
+
+    console.log("--------------------------");
+
+
+
+    /*
+    如何将 background-color  ==> backgroundColor
+    */
+    function covert(attrName){
+      var newStr;
+      newStr = attrName.replace(/-([a-z])/g, function(m,p1){
+          return p1.toUpperCase() ;
+      });
+      console.log(newStr);
+    }
+
+    covert("background-color");
+    covert("border-left-width");
+
+
+    /*
+    如何将 backgroundColor  ==> background-color
+    */
+
+    function covert2(attrName){
+      var newStr;
+      newStr = attrName.replace(/([A-Z])/g, function(m,p1){
+        return "-" + p1.toLowerCase();
+      });
+      console.log(newStr);
+    }
+    covert2("backgroundColor");
+    covert2("borderLeftWidth");
+
+
+
+    </script>
+
+  </body>
+</html>

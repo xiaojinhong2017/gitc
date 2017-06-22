@@ -1,0 +1,10 @@
+{
+  "name": "lisi",
+  "age": 10,
+  "hobby": ["learn", "sleep"],
+  "contact": {
+    "f": "28828",
+    "m": "27587386"
+  },
+  "human": true
+}

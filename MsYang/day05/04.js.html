@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+
+	   var a = 10;//全局变量
+		
+
+		 /* 
+		 定义一个函数，函数名称fun
+		 在js中是以函数区分作用域
+		 */
+		function fun(){
+			var a = 100;//局部变量
+			var b = "hello";
+
+			//此处局部变量覆盖了全局变量
+			console.log(a);
+		}
+
+		fun();
+
+       
+		/*
+		无法访问到局部变量
+		 console.log(b);
+		 */
+
+
+
+	</script>
+</body>
+</html>

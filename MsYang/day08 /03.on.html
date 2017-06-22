@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加多个处理函数</title>
+	<style type="text/css">
+		.f  {
+			width: 500px;
+			height: 200px;
+			border: 1px solid red;
+		}
+
+		.s {
+
+			width: 50px;
+			height: 50px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	
+	 <div class="f">
+	 	<div class="s"></div>
+	 	<p>就感觉额计划科看见好客</p>
+	 	<p>就感觉额计划科看见好客</p>
+	 </div>
+
+    <div class="s">
+    	ksjgkdjhdjhkdjhkjhkj
+    	ksjgkdjhdjhkdjhkjhkj
+    	ksjgkdjhdjhkdjhkjhkj
+    	ksjgkdjhdjhkdjhkjhkj
+    </div>
+
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+
+	    $(".f").on("click", ".s" , function(){
+
+            /*
+             当触发该事件时，指定了参数selector(是后代)时，那么
+             $(this)就变成了选择器指定的元素，就不再是注册事件的元素了！！！！！
+
+            */
+	    	console.log($(this));
+	    	$(this).css("background", "yellow");
+	    });
+
+	
+	</script>
+</body>
+</html>

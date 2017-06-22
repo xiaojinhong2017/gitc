@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+	<style type="text/css">
+
+	.one p:nth-child(2){
+		color: red;
+	}
+
+	.one p:nth-child(2n+1){
+		color: yellow;
+	}
+
+	.con::first-letter {
+		font-size: 40px;
+		color: red;
+	}
+
+	.line::first-line {
+		color: pink;
+	}
+
+	</style>
+</head>
+<body>
+
+
+<div class="one">
+    <h1>sjgkjkjkj</h1>
+	<p>1111</p>
+	<p>2222</p>
+	<p>3333</p>
+	<p>4444</p>
+</div>
+
+<p class="con">考试结果金卡黛珊看大家看好耳机和看打假日</p>
+<p class="line">
+考试结果金卡黛珊看大家看好耳机和看打假日<br>
+考试结果金卡黛珊看大家看好耳机和看打假日<br>
+考试结果金卡黛珊看大家看好耳机和看打假日<br>
+考试结果金卡黛珊看大家看好耳机和看打假日
+</p>
+
+
+</body>
+</html>

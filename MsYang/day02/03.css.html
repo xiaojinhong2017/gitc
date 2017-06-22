@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css的继承</title>
+	<style type="text/css">
+		div {
+			color:red;
+			font-size: 50px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+
+
+<h1>看上缴国库的汇款金额和</h1>
+
+<div>
+    div元素
+
+    <!-- h 标签的字体大小不是直接继承，size = 当前字体大小 * 对应的比例  -->
+    <!-- 1em = 当前字体的px值 -->
+
+    <h1>div中的h1</h1>
+
+    <!-- 块级元素的的高度，不能被继承 -->
+	<p>div中的p元素 <span>p中的span</span></p>
+
+	<!-- a的颜色不可以继承的 -->
+	<a href="#">div中的a</a>
+</div>
+
+
+
+
+</body>
+</html>

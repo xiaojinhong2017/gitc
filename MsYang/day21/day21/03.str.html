@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串</title>
+</head>
+<body>
+
+<button id="btn">按钮</button>
+
+<script type="text/javascript">
+	var str = "helloworld";
+	console.log(str.length);
+	console.log(str.charAt(3));
+	console.log(str[3]);
+
+	str[5] = 'W';//字符串本身是不可变的，不能修改
+	console.log(str);
+
+	str ="helloWorld";
+
+
+	//charCodeAt
+	str = '中国人';
+	console.log(str.charCodeAt(1));
+
+
+	//indexOf
+	str = "helloworldskjgkdjhdjhjdhkj";
+	console.log(str.indexOf("world",15));//字串查询
+
+
+	//slice
+	var newstr = str.slice(3,10);//slice(5,-5)没有深浅复制，字符串本身就不能被改变;
+	console.log(newstr);
+
+    //substr
+	newstr = str.substr(5,5);
+	console.log(newstr);
+
+
+	//substring
+	newstr = str.substring(5,-5);//str.substring(0,5);
+	console.log(newstr);//hello
+
+
+    var btn = document.getElementById("btn");
+    console.log(btn.nodeType);
+    console.log(btn.nodeName);//BUTTON,节点名称(大写)
+
+     //toLowerCase()
+    if (btn.nodeName.toLowerCase() === "button"){
+        alert("button ...");
+    }
+
+
+    //split
+		console.log("-------------splite----------");
+    str = "hello world google";
+    console.log(str.split(" ", 2));//空格要求一致
+
+
+
+
+     var s = new String("hello world");//另一种定义字符串的方法
+     console.log(s);
+     console.log(typeof s);//object
+     console.log(s.valueOf());//hello world
+     console.log(s.split(" "));//s也可以使用字符串的方法
+
+
+      var t = "hdjskfhdsjakhiuah";
+			console.log(t);
+			console.log(t.valueOf());
+
+    //1. 封装成函数： "HELLO  WORLD  GOOGLE"  ====>  "GOOGLE WORLD HELLO" ????
+    //2. 封装成函数： 取消字符串首尾的空格?
+
+
+
+</script>
+
+</body>
+</html>

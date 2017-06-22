@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clone </title>
+</head>
+<body>
+
+<div class="list">
+   	<p>1111</p>
+   	<p>2222</p>
+   	<p>3333</p>
+</div>
+
+
+
+<div class="f">
+    f元素
+	<div class="s">s元素</div>
+</div>
+
+<div>
+    f元素
+	<div class="s">s元素</div>
+</div>
+
+
+
+<script  src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+ var newList = $(".list").clone();
+
+ //修改clone的元素
+ newList.find("p:eq(0)").text("000");
+
+ $(".list").after(newList);
+
+ $(".list p").eq(0).css("color", "red");
+
+
+ $(".s").parent(".f").css("border", "1px solid red");
+
+ 
+
+</script>
+	
+</body>
+</html>

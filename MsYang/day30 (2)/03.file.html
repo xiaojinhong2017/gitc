@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>文件选择</title>
+  </head>
+  <body>
+
+    <input multiple  type="file" name="file" id="file"> <br><br>
+    <button id="btn">查看选择的文件信息</button>
+
+
+    <script type="text/javascript">
+    var input = document.querySelector('#file');
+    var btn = document.querySelector('#btn');
+
+    btn.onclick = function () {
+
+      //input.files 得到所有选中的文件
+      //重点搞清楚，文件对象 File类型
+      for (var i = 0; i < input.files.length; i++) {
+        console.log("文件名 :" + input.files[i].name + "  文件大小： " + input.files[i].size);
+      }
+      var file = input.files[0];
+      console.log(file);
+
+      //创建一个reader对象
+      var reader = new FileReader();
+
+      //注册一个读取完毕的事件
+      reader.onload = function () {
+        //reader.result 就是读取的结果
+        console.log(reader.result);
+      };
+
+      //以文本方式读取
+      // reader.readAsText(file);
+
+      //读取图片
+      // reader.readAsDataURL(file);
+
+      //按照二进制去读取
+      reader.readAsBinaryString(file);
+
+    };
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

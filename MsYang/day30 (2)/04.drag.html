@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>拖拽</title>
+    <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+
+     .f {
+       width: 100px;
+       height: 100px;
+       background: yellow;
+       margin-bottom: 20px;
+     }
+
+     .box {
+       height: 500px;
+       border: 1px solid red;
+     }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- draggable 准备拖动  -->
+    <div draggable="true" class="f" id="f"></div>
+    <div class="box" id="box"></div>
+
+    <script type="text/javascript">
+      var f = document.querySelector('#f');
+      var box = document.querySelector('#box');
+
+      /*
+      f.addEventListener('dragstart', function(e) {
+        console.log("f start drag ...");
+      });
+
+      f.addEventListener('drag', function(e) {
+        console.log("f drag ...");
+      });
+
+      f.addEventListener('dragend', function(e) {
+        console.log("f drag end ...");
+      });
+
+      f.addEventListener('dragexit', function(e) {
+        console.log("f drag exit...");
+      });
+
+
+      box.addEventListener('dragenter', function(e) {
+        console.log("box  drag enter ...");
+        this.style.borderColor = "blue";
+      });
+
+      box.addEventListener('dragleave', function(e) {
+        console.log("box  drag leave...");
+        this.style.borderColor = "red";
+      });
+      */
+
+
+      box.addEventListener('dragover', function(e) {
+        console.log("box dragover ...");
+
+        //必须在dragover事件中取消要拖拽的目标的默认行为
+        e.preventDefault();
+      });
+
+      box.addEventListener('drop', function(e) {
+        console.log("box drop ...");
+        //节点之所以被拖动到一个指定位置，是因为要使用节点操作
+        this.appendChild(f);
+      });
+
+      /*
+      实现f在box中任意拖动 ???? drag,dragover, drop
+      */
+
+    </script>
+
+  </body>
+</html>

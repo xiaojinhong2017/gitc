@@ -1,0 +1,17 @@
+
+
+// % !!!
+%test {
+	color: transparent;
+	font-size: 30px;
+	text-align: center;
+}
+
+%test-1 {
+	height: 100px;
+}
+
+.a {
+	@extend %test;
+	@extend %test-1;
+}

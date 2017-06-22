@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加多个处理函数</title>
+	<style type="text/css">
+		.f  {
+			width: 500px;
+			height: 200px;
+			background: yellow;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="f">ffff</div>
+	<button id="btn">点击取消f的点击事件</button>
+
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+
+	    $(".f").on("click", function(){
+	    	$(this).css("background", "red");
+	    });
+
+
+	    function handlerTwo(){
+	    	$(this).css("border", "10px dotted green");
+	    }
+
+         /* 事件处理函数是on的参数，直接定义时，函数属于局部函数，在全局是访问不到的
+         所有会导致无法使用该函数名进行取消，因此，尽量把函数定义到外部
+         */
+	    $(".f").on("click", handlerTwo );
+
+
+	    $(".f").on("mouseover", function(){
+	    	$(this).css("font-size", "40px");
+	    });
+
+
+
+		$("#btn").click(function(event) {
+			//将该元素上所有的事件都取消了
+			// $(".f").off();
+
+            //去掉指定的事件
+			// $(".f").off("mouseover");
+
+            //去掉指定的事件的指定处理函数
+			$(".f").off("click", handlerTwo);
+		});
+
+		
+	</script>
+</body>
+</html>

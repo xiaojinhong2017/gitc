@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scroll滚动 </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        width: 400px;
+        height: 200px;
+        margin: auto;
+        border: 1px solid red;
+
+        overflow: auto;
+      }
+
+      .s {
+        width: 500px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <button id="btn">点击获得scroll数据</button>
+    <button id="btn2">点击回到0，0</button>
+
+    <div class="f">
+      <div class="s">
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+        极速快感课件劳动纪律大家好刘嘉玲看好就来得及回来看就好了就如何加入了还加入了看好家人离开
+      </div>
+    </div>
+
+    <script>
+    var f = document.getElementsByClassName("f")[0];
+    var s = f.children[0];
+    var btn = document.getElementById("btn");
+    var btn2 = document.getElementById("btn2");
+
+    btn.onclick = function(){
+
+      /*
+      想要得到子元素的偏移量，需要访问父元素的scrollLeft, scrollTop
+      */
+      console.log("f.scrollLeft = ", f.scrollLeft);
+      console.log("f.scrollTop = ", f.scrollTop);
+    };
+
+
+    //可以修改的属性
+    btn2.onclick = function(){
+      f.scrollLeft = 0;
+      f.scrollTop = 0;
+    };
+
+    console.log("s.scrollWidth = ", s.scrollWidth);
+    console.log("s.scrollHeight = ", s.scrollHeight);
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <!--  此处的 "/" 不是你操作系统根目录，是你的服务器的根目录  -->
+    <script src="/jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $.ajax({
+      url: "http://127.0.0.1:8000/test",
+      method: "get"
+    }).done(function(data){
+      console.log(data);
+    });
+
+    </script>
+
+  </body>
+</html>

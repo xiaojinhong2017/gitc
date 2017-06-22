@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>径向渐变</title>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+    //渐变坐标必须和绘制的图形在同一个区域内，否则就不是渐变了
+    var grd = ctx.createRadialGradient(300,300,0,300,300,100);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(0.5, "pink");
+    grd.addColorStop(0.7, "green");
+    grd.addColorStop(1, "yellow");
+    ctx.fillStyle = grd;
+    ctx.arc(300,300,100, 0, 2 * Math.PI,false);
+    ctx.arc(100,100,100, 0, 2 * Math.PI,false);
+    ctx.fill();
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

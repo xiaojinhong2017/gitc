@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex-shrink</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+			
+	        padding: 50px;		
+			border: 1px dotted gray;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+		}
+
+		.f li {
+			width: 300px;
+			height: 100px;
+			border: 1px solid red;			
+			flex-grow: 1;
+		}
+
+		.f li:nth-child(1){
+
+			/*用于设置收缩比例*/
+			flex-shrink: 1;
+		}
+
+		.f li:nth-child(2){
+			flex-shrink: 2;
+		}
+
+		.f li:nth-child(3){
+			flex-shrink: 3;
+		}
+
+		</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>其他</title>
+  <style type="text/css">
+    #pic {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<button id="op">显示/隐藏图片</button>
+<img id="pic" src="./image/3.jpg">
+
+
+ <script src="./js/jquery-3.0.0.min.js"></script>
+ <script type="text/javascript">
+
+  $(function(){
+
+    $("#op").click(function(){
+       $("#pic").slideToggle(400);
+    });
+
+    $("#op").hover(function(){
+       $("#pic").fadeIn(500);
+    }, function(){
+       $("#pic").fadeOut(500);
+    });
+
+  });
+ 	
+ </script>
+	
+</body>
+</html>

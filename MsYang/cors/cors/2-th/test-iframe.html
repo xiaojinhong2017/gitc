@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="h">我是 iframe ...</h1>
+
+<script>
+    var h = document.querySelector("#h");
+
+    //window.parent 是打开当前页面的父窗口
+    var originUrl = window.parent.location.href;
+
+    var num = 0;
+
+    //监听自己的hash变化
+    window.onhashchange = function () {
+        h.innerHTML = window.location.hash;
+        window.parent.location.href = originUrl + '#' + num++;
+    };
+
+</script>
+
+</body>
+</html>

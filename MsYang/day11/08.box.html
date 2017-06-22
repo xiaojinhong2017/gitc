@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子</title>
+	<style type="text/css">
+		.f {
+			width: 200px;
+			height: 100px;
+			background: red;
+			padding: 20px;
+
+			box-sizing: content-box;/*普通盒子*/
+
+			margin-bottom: 50px;
+		}
+
+		.f1 {
+
+			/* 此时的宽高就是整个盒子的宽高,包含了padding border content*/
+			width: 200px;
+			height: 100px;
+			background: red;
+			border: 1px solid blue;
+
+			padding: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="f">空间商客户肯定会</div>
+	<div class="f1">空间商客户肯定会</div>
+</body>
+</html>

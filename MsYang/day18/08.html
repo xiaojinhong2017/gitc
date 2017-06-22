@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>关系运算符</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    console.log(NaN >= 10);//false
+    console.log(NaN <= 10);//false
+
+
+    console.log("10" == 10);//true
+    console.log("10" != 10);//false
+    console.log("10" === 10);//false
+    console.log("10" !== 10);//true
+
+
+
+    var a = 18;
+    /*
+    不支持该用法
+    if (10 < a < 30){
+      console.log("10 < a < 30");
+    }
+    */
+
+    if ((10 < a) && (a < 30)){
+      console.log("10 < a < 30");
+    }
+
+
+    var m = 10, n = 20;
+    m += n; // m = m + n;
+
+    console.log(10/3);//3.3333...,得到的实际整除的结果
+    console.log(parseInt(10/3));//3
+    console.log(10/2);//5
+
+
+    //逗号表达式,所有的表达式都会进行运算，并且最后一个表达式的结果为最终的结果
+    var o = 0;
+    var ret = (o++,o++,++o);
+    console.log(ret);
+
+
+    </script>
+
+  </body>
+</html>

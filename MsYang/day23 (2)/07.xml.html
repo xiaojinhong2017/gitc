@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xml的解析</title>
+  </head>
+  <body>
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    var xmlStr = "<rss version='2.0'>" +
+    "<student><name>lisi</name><age>10</age><hobby><one>learn</one><one>sleep</one></hobby><contact>" +
+    "<f>3878376873</f><m>98948798479</m></contact><human>true</human></student></rss>";
+
+    //使用 jQuery.parseXML进行解析
+    var doc = $.parseXML(xmlStr);
+    console.log(doc);//DOM对象
+    console.log($(doc).find("name").eq(0).html());
+    console.log($(doc).find("age").eq(0).html());
+    console.log($(doc).find("human").eq(0).html());
+    console.log($(doc).find("hobby one").eq(0).html());
+    console.log($(doc).find("hobby one").eq(1).html());
+    console.log($(doc).find("contact f").eq(0).html());
+    console.log($(doc).find("contact m").eq(0).html());
+
+
+    //使用DOMParser解析
+    var xmlStr2 = "<student><name>lisi</name><age>10</age><hobby><one>learn</one><one>sleep</one></hobby><contact>" +
+    "<f>3878376873</f><m>98948798479</m></contact><human>true</human></student>";
+
+    var parser = new DOMParser();
+    doc = parser.parseFromString(xmlStr2, "application/xml");
+    console.log(doc);
+
+
+    /*
+    1. xml的解析方式？？？
+    2. xml VS json ？？？
+    */
+    </script>
+
+  </body>
+</html>

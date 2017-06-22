@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>镜子</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        background: url('./image/musict.jpg');
+        position: relative;
+        border-radius: 50%;
+    }
+    
+    .box::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("./image/musicb.jpg");
+        border-radius: 50%;
+
+        -webkit-transition: all 1s linear;
+        -webkit-transform-origin: center bottom;
+    }
+
+    .box:hover::before {
+      -webkit-transform: rotateX(-180deg);
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>行高的设置</title>
+	<style type="text/css">
+		.one {
+			font-size: 20px;
+			/*line-height: 30px;*/
+			/*line-height: 120%;*/ /*子元素继承了24px的行高*/
+
+			/*line-height: 1.2em; *//*行高24px*/
+			line-height: 1.2;/*子元素只会继承该因子，不会继承实际的行高*/
+
+		}
+
+		.one p {
+			font-size: 40px;
+		}
+		
+
+
+		.two {
+			width: 600px;
+			height: 100px ;
+			background: yellow;
+
+			text-align: center;
+
+			/*文本的垂直居中，和height值一样*/
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div class="one">
+		<p>
+			看说结构空间感慨afskgjkjkhg <br>
+			看说结构空间感慨afskgjkjkhg
+		</p>
+	</div>
+
+	<div class="two">
+		开始开个价看到建行卡看到建行卡就多看黄嘉开带回家
+	</div>
+	
+</body>
+</html>

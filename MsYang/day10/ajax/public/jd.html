@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="but1">点击触发get提交请求</button>
+  <script src ="js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    $("#but1").click(function(){
+      // $.ajax({
+      //   url:"http://127.0.0.1:8000/index",
+      //   method:"get",
+      //   data:{
+      //     name:'zhaosi',
+      //     age:'25'
+      //   },
+      //   error:function(jqXHR, textStatus, errorThrown){
+      //     console.log(jquery);
+      //     console.log(textstatus);
+      //     console.log(errorThrown);
+      //   },
+      //   success:function(data, textStatus, jqXHR){
+      //     console.log(data);
+      //     console.log(textStatus);
+      //   },
+      //   complete:function(jqXHR, textStatus){
+      //     console.log("complete"+textStatus);
+      //   }
+      //
+      // }) ;
+      $.ajax({
+              url: "http://127.0.0.1:8000/index",
+              method: "get",
+              data: {
+                name: '赵四',
+                age: 22
+              },
+              error: function( jqXHR, textStatus, errorThrown ){
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+              },
+              complete: function(jqXHR, textStatus){
+                console.log("complete: " + textStatus);
+              },
+              success: function(data, textStatus, jqXHR){
+                console.log("success: " + textStatus);
+                console.log(data);
+              }
+            });
+    });
+  </script>
+</body>
+</html>

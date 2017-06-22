@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>文件拖拽</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        height: 300px;
+        border: 1px dotted #000;
+        font-size: 50px;
+
+        line-height: 300px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box" class="box">拖拽文件到此处</div>
+
+    <script type="text/javascript">
+    var box = document.querySelector('#box');
+
+
+    box.addEventListener('dragover', function(e) {
+      //取消默认行为，停止冒泡，都是防止浏览将文件打开
+      e.stopPropagation();
+      e.preventDefault();
+    },false);
+
+    box.addEventListener('drop', function(e) {
+      console.log(e.dataTransfer);
+
+      //直接访问 e.dataTransfer.files 可以得到文件列表
+      console.log(e.dataTransfer.files);
+
+      e.stopPropagation();
+      e.preventDefault();
+
+    },false);
+
+    </script>
+
+  </body>
+</html>

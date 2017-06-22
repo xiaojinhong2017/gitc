@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>我是 iframe ...</h1>
+
+<script>
+  //  console.log("----", window.name);
+  //  console.log("---", window.opener);//输出该页面的打开者
+
+    window.onmessage = function (e) {
+        console.log(e.source);// 发送方的window, 源
+        console.log(e.origin);// 发送方的http://xxxx.xxx.com:8080
+        console.log(e.data);//接收到的数据
+
+        //给发送发发送数据
+        e.source.postMessage("I am son", e.origin);
+    };
+</script>
+
+</body>
+</html>

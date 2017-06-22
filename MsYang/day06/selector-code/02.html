@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+</head>
+<body>
+
+<div class="f" id="fid">
+    <p>p-00000</p>
+	<div class="s">
+		<div>xxxxxxx</div>
+	</div>
+	<p>p-111</p>
+	<p>p-222</p>
+	<h1>h1h1</h1>
+</div>
+
+
+<ul class="list">
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+</ul>
+
+
+<a href="xxxx">xxxx</a>
+<a href="yyyy">yyyy</a>
+
+
+<div name="hello">xxxxxxx</div>
+<div name="helloworld">xxxxxxx</div>
+
+
+<div class="list-2">
+    <p>00000000000</p>
+	<span>1111</span>
+	<span>2222</span>
+	<span>3333</span>
+	<span>4444</span>
+</div>
+
+
+<input type="password" name="passwd">
+<input type="password" name="passwd">
+<input type="text" name="username">
+
+
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+     // 子类选择器，只能是子类
+     console.log($("#fid > div"));
+     //后代选择器
+     console.log($("#fid div"));
+
+     console.log($(".s + p"));//相邻兄弟选择器
+     console.log($(".s + h1"));//找不到
+
+
+
+     /*********  位置选择  **************/
+     console.log($(".list li"));
+     console.log($(".list li:eq(0)")); // :eq(index)
+     $(".list li:odd").css("color", "red"); 
+     $(".list li:even").css("color", "blue"); 
+
+
+
+     /************* 属性选择     *********************/
+     $("a[href=xxxx]").css("color", "red");
+     $("[href=yyyy]").css("color", "purple");
+
+     $("div[name^=hello]").css("color", "red");
+
+
+     /************* 子元素选择器    *********************/
+     $(".list-2  span:first-child").css("color", "red");
+     $(".list-2  span:nth-child(2)").css("color", "blue"); //排序从1开始的
+   
+
+     /************* 表单选择器    *********************/
+     $(":password").val("123");
+
+</script>
+	
+</body>
+</html>

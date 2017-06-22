@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			width: 300px;
+			height: 100px;
+			background: yellow;
+		}
+
+
+		.f1 {
+			width: 600px;
+			height: 100px;
+			background: blue;
+
+            /*绝对定位*/
+            /*该元素脱离了标准流*/
+            /*
+             f1的父元素是body， 那么它的绝对定位都是相对于body的。
+            */
+			position: absolute;
+
+			top: 50px;
+			left: 100px;
+		}
+
+
+         .f2 {
+         	width: 600px;
+         	height: 300px;
+         	border: 1px solid red;
+
+
+         }
+
+
+         .f3 {
+         	width: 600px;
+         	height: 200px;
+         	margin-top: 100px;
+         	background: green;
+
+         	position: relative;
+         }
+
+
+         .f3 .s {
+         	width: 100px;
+         	height: 100px;
+         	background: black;
+
+            /*
+            
+            1. 对s设置了absolute, 但是s 的祖先元素都没有设置过position，　
+            那么， s绝对定位都是相对于body的
+
+            2. 对s设置了absolute, 同时s 的某一个祖先元素设置过position，　
+            那么， s绝对定位都是相对于最近的设置过定位的祖先.比如，f2,f3都设置了定位，那么是相对于f3的。
+            */
+
+         	position: absolute;
+         	top: 0px;
+         	left: 0px;
+         }
+
+
+	</style>
+</head>
+<body>
+
+<div class="f"></div>
+
+<div class="f1"></div>
+
+<p>看帅哥看见过看到机会到看好极度恐慌将来肯定回家了防空火箭铝及铝合金</p>
+
+
+
+<div class="f2">
+	<div class="f3">
+		<div class="s"></div>
+	</div>
+</div>
+
+</body>
+</html>

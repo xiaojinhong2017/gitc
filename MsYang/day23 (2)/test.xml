@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student>
+  <name>lisi</name>
+  <age>10</age>
+  <hobby>
+    <one>learn</one>
+    <one>sleep</one>
+  </hobby>
+  <contact>
+    <f>3878376873</f>
+    <m>98948798479</m>
+  </contact>
+  <human>true</human>
+</student>

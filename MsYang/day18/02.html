@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>控制语句</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    all: for (var i = 0; i < 10; i++){
+        console.log("i = ", i);
+        for (var j = 0; j < 5; j++){
+          console.log("j = ", j);
+          if (j == 3){
+            break all; //指定跳出的循环层级
+          }
+        }
+      }
+
+      console.log("after all...");
+
+
+      console.log("------switch-------");
+      var a = "abc";
+
+      for (var i = 0; i < 10; i++){
+        console.log("i = ", i);
+        switch (a){
+          case 8:
+          console.log("8");
+          break;
+          case "abc" :
+          console.log("abc");
+          break;
+          case 10:
+          console.log("10");
+          break;
+          default:
+          console.log("default...");
+        }
+      }
+      console.log("after switch ...");
+    </script>
+
+  </body>
+</html>

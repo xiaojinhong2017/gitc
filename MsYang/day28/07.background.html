@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>绘制背景</title>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+    var img = new Image();
+    img.src = "./images/zhaosi.jpg";
+
+    img.onload = function(){
+      var pat = ctx.createPattern(img,"repeat");
+      ctx.fillStyle = pat;
+      ctx.fillRect(0,0,600,600);
+
+      //toDataURL()只能在服务端应用，否则会因为引用了外部图片而失败
+      // console.log(can.toDataURL());
+    }
+   </script>
+
+  </body>
+</html>

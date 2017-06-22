@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    try {
+      var a = 100, b = 0;
+      var c = a / b;
+
+      if (c === Infinity){
+        //手动抛出一个自定义的错误
+        // throw "result is Infinity";
+        throw new Error("result is Infinity", "07.error.html", 18);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      //finally 都执行
+      console.log("finaly ......");
+    }
+
+    console.log("after try catch....");
+
+    /*
+    嵌套错误处理：
+    如果内层没有编写catch语句块，那么错误触发时会向外传递，交给最近一个catch处理。
+    如果内层编写catch语句块，内层自己处理错误
+    */
+
+
+    </script>
+
+  </body>
+</html>

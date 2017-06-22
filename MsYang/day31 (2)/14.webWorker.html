@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>web worker</title>
+  </head>
+  <body>
+
+    <button id="start">start worker</button>
+    <button id="end">terminate worker</button>
+
+    <script type="text/javascript">
+
+    var start = document.querySelector('#start');
+    var end = document.querySelector('#end');
+    var worker, worker1 ;
+
+    start.onclick = function () {
+      //创建一个后台线程
+       worker = new Worker("./worker.js");
+       worker1 = new Worker("./worker.js");
+
+      //接收worker发来的数据
+      worker.onmessage = function (event) {
+        console.log("从worker 接收到的数据： ", event.data);
+      }
+
+      worker1.onmessage = function (event) {
+        console.log("从worker1 接收到的数据： ", event.data);
+      }
+
+      //主线程给worker发送数据
+      worker.postMessage(0);
+      worker1.postMessage(0);
+    };
+
+    end.onclick = function () {
+      worker.terminate();
+      worker1.terminate();
+    };
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas 文本</title>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+
+    var canvas = document.querySelector("#canvas");
+    canvas.style.border = "1px solid red";
+
+    var ctx = canvas.getContext("2d");
+    ctx.moveTo(100,0);
+    ctx.lineTo(100,500);
+
+    ctx.moveTo(0,100);
+    ctx.lineTo(500,100);
+    ctx.stroke();
+
+
+    ctx.font = "40px '微软雅黑'";
+    //水平对齐
+    ctx.textAlign = "start";
+    // ctx.textAlign = "center";
+
+    //垂直对齐
+    ctx.textBaseline = "middle";
+    ctx.fillText("like moneyafk中国人", 100,100);
+    ctx.strokeText("like money", 100,300
+  );
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

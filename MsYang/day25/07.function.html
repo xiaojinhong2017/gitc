@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数的计算结果缓存</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+
+    /*
+    判断是否是偶数,true,false
+    */
+    function isEven(num){
+      if (isEven.result === undefined){
+        isEven.result = {};
+      }
+      for (var key in isEven.result) {
+        if (key == num){
+          return isEven.result[key];
+        }
+      }
+      console.log("----------------");
+      var ret = true;
+      ret = (num % 2 === 0 ? true :false);
+
+      return isEven.result[num] = ret;
+    }
+
+    /*
+    var start = Date.now();
+    for (var i = 0; i < 10000 ; i++) {
+      console.log(isEven(i));
+    }
+    var end = Date.now();
+    console.log(end - start);
+
+    console.log("two--------------------------");
+    start = Date.now();
+    for (var i = 0; i < 10000 ; i++) {
+      console.log(isEven(i));
+    }
+     end = Date.now();
+    console.log(end - start);
+    */
+    </script>
+
+  </body>
+</html>

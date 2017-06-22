@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>变量声明提升</title>
+  </head>
+  <body>
+
+    <script>
+
+    var a = 10;
+
+    /*
+     为了防止变量声明提升导致的副作用：需要先赋值，再访问
+    */
+    function test(){
+      console.log(a);//undefined
+      var a = 20; //变量a的声明被提升到了test函数作用域内的最顶部，但是赋值操作并没有改变
+      return;
+
+      /*
+      //以上三行代码的等价代码
+      var a;
+      console.log(a);//undefined
+      a = 20;
+      return;
+      */
+    }
+
+    test();
+    </script>
+
+  </body>
+</html>

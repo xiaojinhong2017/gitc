@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <!-- 引入阿里巴巴字体图标的样式文件(你下载的)  -->
+    <link rel="stylesheet" type="text/css" href="./icon/iconfont.css">
+    <title>字体图标</title>
+    <!--  针对ie浏览器设置的,html5shiv, respond 用于让第版本的ie浏览器支持html5的新元素和媒体查询-->
+    <!--[if lt IE 9]>
+	<script src="./js/html5shiv.min.js"></script>
+    <script src="./js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    
+    body {
+        height: 2000px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 彩色图标 -->
+    <i style="font-size: 40px;color:green;" class="iconfont icon-QQ"></i>
+    <i style="font-size: 40px;color:green;" class="iconfont icon-phone"></i>
+
+     <!--  多色图标 -->
+     <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-crossfit"></use>
+     </svg>
+
+    <!--  按照顺序进行引用，必须先引用jquery -->
+    <script src="./js/jquery-3.0.0.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./icon/iconfont.js"></script>
+</body>
+
+</html>

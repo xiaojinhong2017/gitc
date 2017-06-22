@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f1,.f2 {
+			width: 500px;
+			height: 100px;
+			border: 5px solid red;
+		}
+
+
+		/*上下外边距合并，取其中最大的值，作为上下间距*/
+
+		.f1 {
+			margin-bottom: 10px;
+		}
+
+		.f2 {
+			margin-top: 50px;
+		}
+
+
+	</style>
+</head>
+<body>
+
+<div class="f1"></div>
+<div class="f2"></div>
+	
+</body>
+</html>

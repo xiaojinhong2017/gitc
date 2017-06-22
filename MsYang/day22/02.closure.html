@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包!!!!</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    /*
+    1. 闭包？？？
+    2. 闭包的创建？？？？
+    3. 闭包应用==》优点？缺点？
+    */
+
+    /*
+    //闭包的创建
+    function fun(){
+      var a = 10;
+      //闭包的创建，必须返回一个函数
+      return function(){
+        console.log(a);
+      };
+    }
+
+    //ret 闭包
+    var ret = fun();
+    console.log(typeof ret);
+    ret();
+    */
+
+
+    /*
+    //优点：1. 减少全局变量定义，实现私有化(有助于保护变量不被其他操作修改)
+    function fun1 (){
+      var count = 0;
+      function fun2(){
+        console.log("fun2被调用了 ", ++count);
+      }
+      return fun2;
+    }
+    var ret = fun1();
+    ret();
+    ret();
+    ret();
+    */
+
+
+    /*
+    //优点 2: 可以根据参数，动态生成一些东西!!!
+    */
+    //@str, 字符串
+    function fun2 (str){
+      return function(arg){
+        return "<h1>" + str +":" + arg + "</h1>";
+      };
+    }
+    var one = fun2("hello");
+    console.log(one("world"));
+
+    var two = fun2("say");
+    console.log(two("world"));
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

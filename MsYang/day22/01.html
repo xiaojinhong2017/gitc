@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery <==> DOM</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+     var btn = document.getElementById("btn");
+     var $btn = $("#btn");
+     console.log(btn,$btn);
+
+     //jqury--> dom
+     console.log($btn[0]);
+
+     //dom-->jquery
+     console.log($(btn));
+
+    </script>
+
+
+
+
+  </body>
+</html>

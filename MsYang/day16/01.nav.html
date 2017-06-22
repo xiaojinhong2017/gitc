@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+	<title>Bootstrap 导航组件</title>
+
+   
+   <!--  针对ie浏览器设置的,html5shiv, respond 用于让第版本的ie浏览器支持html5的新元素和媒体查询-->
+    <!--[if lt IE 9]>
+	<script src="./js/html5shiv.min.js"></script>
+    <script src="./js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+
+        body {
+        	height: 2000px;
+        }
+
+        .nav-border-color {
+          border-color: transparent;
+          background-color: #cf4646;
+          color: #efefef;
+          border-radius: 0px;
+        }
+
+        .nav-border-color .container  a,
+        .nav-border-color .container  li > a {
+          color: #efefef;
+        }
+
+        .nav-border-color  .navbar-collapse {
+          border-color: #CA3131;
+        }
+
+
+        .nav-border-color .navbar-toggle .icon-bar {
+          background-color: #fff;
+        }
+
+
+        .mybrand {
+          background-color: #cf4646;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default  nav-border-color  navbar-fixed-top ">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Gulp中文网</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">中文文档</a></li>
+        <li><a href="#">入门指南</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">插件开发</a></li>
+        <li><a href="#">常见问题</a></li>
+        <li><a href="#">使用技巧</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div class="mybrand jumbotron text-center">
+  <h1>Hello, world!</h1>
+  <p>用自动化构建工具增强你的工作流程！</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">开始使用</a></p>
+</div>
+
+
+
+
+
+<button class="btn " type="button">
+  Messages <span class="badge">4</span>
+</button>
+
+
+
+<!--  按照顺序进行引用，必须先引用jquery -->
+<script src="./js/jquery-3.0.0.js" ></script>
+<script src="./bootstrap/js/bootstrap.min.js" ></script>
+
+</body>
+</html>

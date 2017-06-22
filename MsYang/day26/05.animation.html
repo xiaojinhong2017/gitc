@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>实现动画</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #f {
+        width: 50px;
+        height: 50px;
+        background: blue;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">出发</button>
+    <button id="btn2">返回</button>
+    <div id="f"></div>
+
+    <script src="./moveLeft.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var go = document.getElementById("btn1");
+    var back = document.getElementById("btn2");
+    var f = document.getElementById("f");
+
+    go.onclick = function(){
+      moveLeft(f,1000,10,30);
+    }
+
+
+    back.onclick = function(){
+      console.log(f.offsetLeft);
+      moveLeft(f,0,10,30);
+    }
+
+    /*
+    实现moveTop.js
+    */
+
+
+    </script>
+
+  </body>
+</html>

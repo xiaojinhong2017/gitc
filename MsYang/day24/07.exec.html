@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reg.exec()</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    var regex = /quick\s(brown).+?(jumps)/ig;
+    var str = "The Quick Brown Fox Jumps Over The Lazy Dog" +
+      "The Quick Brown Fox Jumps Over The Lazy Dog" +
+      " The Quick Brown Fox Jumps Over The Lazy Dog";
+
+    var result;
+    /*
+    exec方法添加全局'g'的时候，需要循环exec
+    */
+    while ((result = regex.exec(str)) != null){
+      console.log(result);
+      console.log(regex.lastIndex);
+    }
+
+    console.log("------多行标志 m -----");
+    str = "The Quick Brown Fox Jumps Over The Lazy Dog\n" +
+          "The Quick Brown Fox Jumps Over The Lazy Dog\n" +
+          "The Quick Brown Fox Jumps Over The Lazy Dog\n";
+    regex = /^The Quick Brown Fox Jumps Over The Lazy Dog$/mg;
+    result = str.match(regex);
+    console.log(result);
+
+    </script>
+
+  </body>
+</html>

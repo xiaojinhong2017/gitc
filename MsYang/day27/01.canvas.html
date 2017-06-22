@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas" class="f" width="500" height="500">不好意思的你的浏览器不支持canvas新标签</canvas>
+
+    <script type="text/javascript">
+    //1. 获得canvas元素
+    var canvas = document.getElementById("canvas");
+
+    //2. 获得画布上下文
+    var context = canvas.getContext("2d");
+    console.log(context);
+
+    //3. 开始绘制
+    context.beginPath();
+    context.strokeStyle = "red";
+    context.lineWidth = 3;
+
+    //4.挪动位置
+    context.moveTo(100,100);
+    //5. 直线
+    context.lineTo(100,200);
+    context.lineTo(200,300);
+    context.lineTo(100,100);
+
+    //6. 描边(否则没有颜色)
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.fillStyle = "blue";
+    context.moveTo(200,0);
+    context.lineTo(300,0);
+    context.lineTo(300,100);
+    context.lineTo(200,100);
+    context.lineTo(200,0);
+    //填充为实心
+    context.fill();
+
+
+    context.beginPath();
+    //绘制矩形
+    context.rect(400,400,50,50);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillRect(0,400,50,50);
+
+
+   // 擦除画布某个区域
+   context.clearRect(0,0,300,300);
+
+
+   // 擦除整个画布,重新设置宽高
+   canvas.width = 500;
+
+    context.beginPath();
+    context.arc(300,300,100, 0, 360 * Math.PI/180,true);
+    context.fillStyle="yellow";
+    context.fill();
+
+
+
+    context.beginPath();
+    //扇形
+    context.moveTo(100,100);
+    context.arc(100,100,100, 0, 60 * Math.PI/180,false);
+    context.fillStyle="blue";
+    context.fill();
+
+
+    /*
+    1. 鼠标跟踪放大？？？
+    2. 绘制走势图
+    3. 绘制圆饼图
+    */
+
+    </script>
+
+  </body>
+</html>

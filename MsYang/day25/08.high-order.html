@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>高阶函数:将传递的函数进行改造，返回一个新函数</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    //求和
+    function sum(arg1, arg2){
+      return arg1 + arg2;
+    }
+
+    //求x的2次方
+    function power(x){
+      return Math.pow(x,2);
+    }
+
+    /*
+    @fn1,函数
+    @fn2,函数
+    */
+    function highOrder(fn1,fn2){
+      return function(arg1,arg2){
+        return fn2(fn1(arg1,arg2));
+      }
+    }
+
+    /*
+    封装函数：实现求两个数和的平方
+    */
+    var fun = highOrder(sum,power);
+    console.log(fun(10,37));
+
+    /*
+    平方和(任意长度的参数)？？？？？？
+    */
+    </script>
+
+  </body>
+</html>

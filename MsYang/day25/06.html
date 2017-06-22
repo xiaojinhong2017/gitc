@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数柯里化(给函数传递一个固定的参数)</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function price(rate,cost){
+      return rate * cost;
+    }
+
+    /*
+    @fn,要进行改造的函数
+    @rate,要传递个fn的参数
+    */
+    function curry(fn, rate){
+         //为了让fn带上固定的参数，使用了bind
+         return  fn.bind(null,rate);
+    }
+
+    var food = curry(price,0.99);
+    console.log(food(1000));
+    console.log(food(1111));
+
+    var drink = curry(price,0.85);
+    console.log(drink(2000));
+
+
+
+
+    </script>
+
+  </body>
+</html>

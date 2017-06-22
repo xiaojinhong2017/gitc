@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子绝父相</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			width: 200px;
+			height: 40px;
+			color: #f10214;
+			font: 12px "微软雅黑";
+
+			line-height: 40px;
+			border: 1px solid gray;
+
+			margin: 20px auto;
+			text-align: center;
+
+
+            /*保证子元素跟着自己走*/
+			position: relative;
+		}
+
+		.s {
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			background: #f10214;
+
+             /*相对于f进行定位*/
+			position: absolute;
+			top: 5px;
+			right: 55px;
+
+			border-radius: 8px;
+
+			color: black;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="f">
+	    我的购物车
+		<div class="s"><span>10</span></div>
+	</div>
+
+</body>
+</html>

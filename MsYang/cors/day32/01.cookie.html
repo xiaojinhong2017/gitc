@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>cookie的读写</title>
+  </head>
+  <body>
+
+    username: <input type="text" placeholder="用户名"> <br><br>
+    passwd : <input type="password" placeholder="密码"> <br><br>
+    <button id="btn">登录</button>
+
+    <script type="text/javascript">
+
+    var user = document.querySelectorAll('input')[0];
+    var passwd = document.querySelectorAll('input')[1];
+    var btn = document.querySelector('#btn');
+
+    var cookieName, cookiePasswd;
+
+     //cookie的读
+    if ((/name/.test(document.cookie)) && (/passwd/.test(document.cookie)))
+    {
+      var result = document.cookie.match(/name=([^=]+);[\s\S]*passwd=([^=]+);?/);
+      user.value = result[1];
+      passwd.value = result[2];
+    }
+
+
+    btn.onclick = function () {
+
+      var userValue = user.value;
+      var passwdValue = passwd.value;
+
+      if ((!userValue) || (!passwdValue)){
+        alert("用户名和密码不能为空");
+        return;
+      }
+
+      //必须在服务端在运行
+      //cookie的写
+      document.cookie = "name=" + userValue;
+      document.cookie = "passwd=" + passwdValue;
+
+    };
+    </script>
+
+  </body>
+</html>

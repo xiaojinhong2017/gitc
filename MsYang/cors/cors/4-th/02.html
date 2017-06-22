@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cors</title>
+</head>
+<body>
+
+<!-- 该代码运行于 http://127.0.0.1:80 端口 -->
+
+<script type="text/javascript">
+
+/*
+实现ajax跨域：只需要访问的后端允许即可，允许需要后端设置 http头部 Access-Control-Allow-Origin
+*/
+
+var request = new XMLHttpRequest();
+request.open("get", "http://127.0.0.1:8000/test");
+
+request.onload = function(){
+  console.log(request.responseText);
+};
+
+request.send();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询</title>
+
+	<!-- 设置meta,用于媒体查询在移动端上显示效果 -->
+	<meta  name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body,html {
+			height: 100%;
+			background: lightblue;
+		}
+
+		.f::before {
+			content: "默认是横屏。。";
+			font-size: 40px;
+		}
+
+		@media screen and (orientation:portrait) {
+			.f::before {
+				content: "竖屏。。";
+			}
+			
+		}
+
+		@media screen and (orientation:landscape) {
+			.f::before {
+				content: "横屏。。";
+			}
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="f"></div>
+
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+@mixin test($res){
+    @media screen and (max-width:$res){
+
+    	// media query!!!!
+    	@content;
+    }
+}
+
+
+@include test(500px){
+	h1 {
+		color: blue;
+	}
+
+	.class-one {
+		color: green;
+	}
+}
+
+
+
+@include test(1000px) {
+	ul li a {
+		color: blue;
+		text-align: center;
+	}
+
+	div > p {
+		background: yellow;
+	}
+}
