@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            canvas{background: #b8edc9;}
+        </style>
+    </head>
+    <body>
+        <h5>Canvas</h5>
+        <canvas id="mycanvas" width="1000" height="1000">
+            您的浏览器不支持html5dcanvas元素
+        </canvas>
+    <script type="text/javascript">
+        var canvas=document.getElementById('mycanvas');//定义变量获取画布dom
+        var c=mycanvas.getContext('2d');//设置绘图环境2d
+        c.lineWidth=4;//设置线宽
+        c.strokeStyle="#A52A2A";//设置边颜色
+        c.fillStyle="green";
+         //扇形
+        c.moveTo(360,450);
+        c.arc(360,450,100,Math.PI*7/6,Math.PI*1.5,false);
+        c.moveTo(360,450);
+        c.arc(360,450,100,Math.PI*11/6,Math.PI*1.5,true);
+        c.fill()
+        c.beginPath();
+        c.lineWidth=3;
+        c.strokeStyle="#b8edc9";
+        c.fillStyle="#b8edc9";
+        c.moveTo(360,450);
+        c.arc(360,450,50,Math.PI*7/6,Math.PI*1.5,false);
+        c.moveTo(360,450);
+        c.arc(360,450,50,Math.PI*11/6,Math.PI*1.5,true);
+        c.fill()
+
+        </script>
+
+    </body>
+
+</html>

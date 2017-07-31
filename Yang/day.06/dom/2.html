@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  ul{
+    list-style: none;
+    text-align: center;
+  }
+  .stu{
+    width: 300px;
+    height: 300px;
+    margin: 0px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  .stu th ,
+  .stu td{
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <ul class="list">
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  </ul>
+  <table class="stu">
+    <caption><h1>学生信息</h1></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+
+  <tr>
+    <td>李四</td>
+    <td>20</td>
+    <td>女</td>
+  </tr>
+
+  <script src="../js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+  $(".list").append("<li>444</li>");
+  $(".list li").eq(1).append("<li>222-333<li>");
+  $("<li>555</li>").appendTo($(".list"));
+  $(".list").prepend("<li>000</li>");
+  // $("<li>000</li>").prependTo($(".list li"));
+  var a=[["zhang",24,"nan"], ["002",23,"nv"],["003", 24, "nv"]];
+  for( var i=0;i < a.length; i++)
+  {
+    $(".stu").append("<tr><td>"+a[i][0]+"</td><td>"+a[i][1]+"</td><td>"+a[i][2]+"</td></tr>");
+  }
+  </script>
+  </table>
+</body>
+</html>

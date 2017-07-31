@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding:0;
+  }
+  #f{
+    width: 500px;
+    height: 300px;
+    background: yellow;
+  }
+  #s{
+    width: 300px;
+    height: 200px;
+    background: blue;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+    <div id = "s"></div>
+  </div>
+  <a id="a" href="https://www.baidu.com">百度</a>
+  <script type="text/javascript">
+
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+    var a = document.getElementById("a");
+    // f.onclick = function(event){
+    //   console.log(event);
+    //   console.log(this);
+    //   console.log(event.currentTarget);
+    //   console.log(event.target);
+    // }
+    //
+    // s.onclick = function(event){
+    //   console.log(event);
+    //   console.log(this);
+    //   console.log(event.currentTarget);
+    //   console.log(event.target);
+    // }
+    // document.onclick = function(event){
+    //   console.log(event.pageY);
+    // }
+    // document.onkeydown = function(event){
+    //   console.log(event.key);
+    // }
+    // document.onmousedown = function(event){
+    //   console.log(event.button);
+    // }
+    document.addEventListener("touchend",function(event){
+      console.log(event.changedTouches[0].clientX);
+    },false);
+    a.onclick = function(event){
+    //  console.log("-------a-------");
+      //console.log(alert(a));
+      event.preventDefault();
+    }
+    f.onclick = function(event){
+      console.log("----f----");
+    }
+    s.onclick = function(event){
+      console.log("-----s-----");
+      event.stopPropagation();
+    }
+  </script>
+</body>
+</html>

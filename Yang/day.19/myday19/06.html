@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点操作</title>
+</head>
+<body>
+  <button id = "btn">按钮</button>
+  <div class="f"></div>
+  <div class="f"></div>
+  <div id = "box">
+    <div class="f"></div>
+    <div class="f"></div>
+  </div>
+  <div id="f" class="f">
+    <div id="s">s元素</div>
+    <div id="s1">s1元素</div>
+  </div>
+  <button id="btn1" myattr = "hello">点击</button>
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    console.log(btn.nodeType);//1 nodeType属性判断节点类型
+    console.log(document.nodeType);//9
+    console.log(document.getElementsByTagName("div"));
+    console.log(document.getElementsByClassName("f"));
+    var box = document.getElementById("box");
+    console.log(box.getElementsByTagName("div"));
+    console.log(box.getElementsByClassName("f"));
+    var s = document.getElementById("s");
+    console.log(s.parentNode);
+ //兄弟元素，区分文本和元素
+    console.log(s.nextSibling);
+    console.log(s.nextElementSibling);
+    //子元素
+    var f = document.getElementById("f");
+    console.log(f.firstChild);
+    console.log(f.lastChild);
+    console.log(f.firstElementChild);
+    console.log(f.childNodes);
+    console.log(f.children);
+
+    //创建元素节点
+  var span = document.createElement("span")  ;
+  console.log(span);
+
+  //追加一个节点
+  f.appendChild(span);//添加到f的最后，参数必须是DOM对象，不可一世其他。
+
+  //在指定的位置添加节点
+  var h1 = document.createElement("h1");
+  var s1 = document.getElementById("s1");
+  f.insertBefore(h1,s1);
+
+  //删除节点
+  //f.removeChild(s);
+  s.parentNode.removeChild(s);
+
+  //特性操作
+  var btn1 = document.getElementById("btn1");
+  console.log(btn1.getAttribute("id"));
+  console.log(btn1.getAttribute("myattr"));
+
+  btn.setAttribute("myattr", "world");
+ btn.removeAttribute("myattr");
+
+ //操作css
+ f.style.background = "yellow";
+ f.style.border = "1px solid red";
+ f.style.cssText = "background:yellow; color:blue;border：1px solid red;width:500px;height:300px;text-align:center;";
+ //f.style.float  = "left" ;
+ f.style.color = "blue";
+ f.style.cssFloat = "left";
+
+ console.log(f.style);
+ console.log(f.id);
+ console.log(f.class);
+ console.log(f.className);
+
+  </script>
+</body>
+</html>

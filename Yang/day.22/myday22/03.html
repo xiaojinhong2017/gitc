@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闭包</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function fun(){
+      var count = 0;
+      return function(){
+        console.log(++count);
+      }
+    }
+    var one = fun();
+    var two = fun();
+    one();
+    one();
+    one();
+    two();
+//两个函数的变量互不影响
+  </script>
+</body>
+</html>

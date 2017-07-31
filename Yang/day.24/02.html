@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>正则表达式</title>
+</head>
+<body>
+  <script type="text/javascript">
+  console.log(/^hello$/.test("hello"));
+  console.log((/^hello$/.test("helloworld")));
+  console.log(/hello$/i.test("jgfjgljsdjhello"));
+  console.log((/a*bcd/.test("abcd")));
+  console.log(/a*bcd/.test("bcd"));
+  console.log(/(hello)*abcdef/.test("helloworldhelloabcdef"));
+  console.log(/hello|world/.test("hellonihao"));
+  console.log(/hello|world/.test("world"));
+  </script>
+</body>
+</html>

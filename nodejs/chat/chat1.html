@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font: 13px Helvetica, Arial; }
+       form { background: #000; padding: 3px; position:absolute; bottom:0; width: 100%; }
+       form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; height: 5%;}
+       form button { width: 9%; color: rgb(130, 224, 255);background: black;border: none; padding: 10px;height: 5%;position: absolute;right: 9px;bottom: 40px;font-size: 20px;text-align: center;}
+       #messages { list-style-type: none; margin: 0; padding: 0;overflow: auto;height:90%; }
+       #messages li { padding: 5px 10px; }
+       #messages li:nth-child(odd) { background: #eee; }
+       #join{color: red;height: 8%;width: 100%;border: 1px solid gray;background-color: gray;overflow: auto;}
+       /*span{height: 15px; width: 20px;}*/
+       #contain{height: 800px;width: 600px;border: 1px solid gray;margin: 100px auto; position: relative;background: lightblue;}
+       .form{position: absolute;bottom: 0;}
+  </style>
+</head>
+<body>
+  <div id="contain">
+  <div id="join"></div>
+  <ul id = "messages"></ul>
+  <form action="">
+    <input id="m" autocomplete="off" >
+    <input id="n" type="text">
+    <button>Send</button>
+  </form>
+  </div>
+  <script src="http://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+  <script src= "http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+  var socket = io();
+  console.log(socket);
+
+  $('form').submit(function(){
+    socket.emit('chat message',$("#m").val(),$("#n").val());
+    var name = &("#n").val();
+    $("#m").val('');
+    return false;
+  });
+  // socket.on('chat message',function(msg){
+  //   $("#messages").append($("<li>").text(msg));
+  // })
+  socket.on('chat message',function(msg1,msg2){
+    console.log(msg1,msg2);
+    $("#messages").prepend($("<li>").text(msg2+':'+msg1));
+    // $("li:first").append('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>');
+  })
+  socket.on('broadcast',function(msg){
+    console.log("broadcast");
+    $("#join").append('<p><strong>Welcome to new friend.</strong></p>');
+  })
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      margin:0;
+      padding: 0;
+    }
+    body,html{
+      height: 100%;
+      background: lightblue;
+    }
+    .f::before{
+      content: "默认是横屏";
+      font-size: 40px;
+    }
+    @media screen and (orientation:portrait) {
+      .f::before{
+        content: "竖屏";
+      }
+    }
+    @media screen and (orientation:landscape) {
+      .f::before{
+        content: "横屏";
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

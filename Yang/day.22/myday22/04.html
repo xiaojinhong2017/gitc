@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闭包-三种for注册事件</title>
+  <style>
+  *{
+    margin: 0;
+    padding:0;
+  }
+  ul{
+    list-style: none;
+  }
+  .list{
+    margin:100px auto;
+  }
+  .list li{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background: gray;
+    line-height: 50px;
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <div>请点击：<span id="con">?</span></div>
+  <script src= "./jquery-3.0.0.js"></script>
+  <script type="text/javascript">
+    var list= document.getElementsByClassName("list")[0];
+    var lis = list.children;
+    var con = document.getElementById("con");
+    //闭包使得点击哪一个i都等于3
+    // for(var i = 0 ;i < lis.length; i ++){
+    //   lis[i].onclick = function(){
+    //     console.log("i = ",i);
+    //     con.innerHTML = i;
+    //   }
+    // }
+
+    //方法一：立即函数
+    // for( var i = 0; i < lis.length; i ++){
+    //   //立即函数：立即被调用，而且只被调用了一次
+    //   (function(args){
+    //     lis[args].onclick = function(){
+    //       console.log("i = " , args);
+    //       //解决了由于闭包导致的事件处理函数中使用同一个变量的问题
+    //       con.innerHTML = args;
+    //     }
+    //   })(i);
+    // }
+    //方法二：添加自定义属性
+    // for(var i = 0; i < lis.length; i ++){
+    //   lis[i].index = i;//每一个li都添加了一个index属性，属性值是自己的i;
+    //   //只要是对象，就可以添加自定义的属性和方法
+    //    lis[i].onclick = function(){
+    //      console.log("i = ",this.index);
+    //      con.innerHTML = this.index;
+    //    }
+    // }
+    //方法三：使用jquery中的event.data
+    for(var i = 0; i < lis.length; i ++){
+      //使用了jquery中的event.data
+      $(lis).eq(i).click(i,function(event){
+        console.log("i = ", event.data );
+        con.innerHTML = event.data ;
+      })
+    }
+
+  </script>
+</body>
+</html>

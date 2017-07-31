@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>惰性单例对象</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    var singleton = (function(){
+
+      //为了保证对象的唯一性而定义的变量
+      var exist = null;
+
+      //Single是产生一个对象
+      function Singleton(){
+        //私有成员
+        var _privateA = 10;
+        //私有方法
+        function _getPrivateA(){
+          return _privateA;
+        }
+        //私有方法
+        function _addPrivateA(){
+          _privateA  += 1 ;
+        }
+
+        function _minPrivateA(){
+          _privateA  -= 1 ;
+        }
+
+        return {
+          getA: function(){
+            return _getPrivateA();
+          },
+          addA: function(){
+            _addPrivateA();
+          },
+          minA: function(){
+            _minPrivateA();
+          }
+        };
+      }
+
+      //为了保证使用时产生单例，而封装的方法
+      return {
+        getInstance: function(){
+          if (!exist){
+            exist = Singleton();
+          }
+          return exist;
+        }
+      }
+    })();
+
+
+    /*
+     var one = singleton.getInstance();
+     var two = singleton.getInstance();
+     console.log(one === two);
+     one.addA();
+     one.addA();
+     one.addA();
+     console.log(two.getA());
+     */
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

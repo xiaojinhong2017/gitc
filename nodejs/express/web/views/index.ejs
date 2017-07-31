@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EJS Demo</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <% include ./head %>
+  <hr>
+  <h1>wecome to <%= name %></h1>
+  <% info.forEach(function(info){ %>
+    <div>
+      <li><b>name:</b><%= info.name %></li>
+      <li><b>age:</b><%= info.age %></li>
+      <li><b>sex:</b><%= info.sex %></li>
+    </div>
+    <% }); %>
+<form class="navbar-form navbar-left" role="search" method="Post" action="/submit">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search" name="name">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>

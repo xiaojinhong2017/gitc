@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        // test(); //变量声明提升，导致无法在赋值之前使用
+        var test = function() {
+            console.log("test ...");
+        };
+        test();
+
+        fun(1, 2, 3, 4, 5);
+
+        function fun() {
+            console.log(arguments); //arguments只能在函数中使用,和传入的实际的参数个数有关系
+            console.log("fun ...");
+        }
+
+        // console.log(arguments); //arguments只能在函数中使用
+    </script>
+</body>
+
+</html>

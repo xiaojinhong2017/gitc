@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style media="screen">
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  .f{
+    width: 100%;
+    position: relative;
+  }
+  img{
+  transition: all 1s ;
+  transform: rotate(0deg);
+  transform-origin: left top;
+  position: absolute;
+  left: 600px;
+  top: 450px;
+  }
+
+  .f:hover img:nth-child(1){
+    transform: rotate(60deg);
+  }
+  .f:hover img:nth-child(2){
+    transform: rotate(120deg);
+  }
+  .f:hover img:nth-child(3){
+    transform: rotate(180deg);
+  }
+  .f:hover img:nth-child(4){
+    transform: rotate(240deg);
+  }
+  .f:hover img:nth-child(5){
+    transform: rotate(300deg);
+  }
+  .f:hover img:nth-child(6){
+    transform: rotate(360deg);
+  }
+</style>
+<body>
+  <div class="f">
+    <img src="./image/pk1.png" alt="">
+    <img src="./image/pk1.png" alt="">
+    <img src="./image/pk1.png" alt="">
+    <img src="./image/pk1.png" alt="">
+    <img src="./image/pk1.png" alt="">
+    <img src="./image/pk1.png" alt="">
+
+  </div>
+
+</body>
+</html>

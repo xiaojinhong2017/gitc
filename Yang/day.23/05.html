@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>json的操作</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var obj = {
+    "name":"lisi",
+    "age" :10
+  };
+  //json序列化
+  var str = JSON.stringify(obj);
+  console.log(str);
+  //json反序列化:json解析
+  var ret = JSON.parse(str);
+  console.log(ret);
+  </script>
+</body>
+</html>

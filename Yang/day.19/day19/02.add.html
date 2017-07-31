@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组添加</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var a = [];
+	var ret = a.push(1,2,3);//push()方法可向数组的末尾添加一个或多个元素，并返回新的长度
+	console.log(ret);
+	console.log(a);
+
+
+	a.push("helloworld");
+	console.log(a);
+
+    console.log("------------");
+	ret = a.pop();//pop方法用于删除并返回数组的最后一个元素。
+	console.log(ret);
+	console.log(a);
+
+    console.log("------------");
+
+    // 提前保存数组长度，不要临时访问length
+	for(var i = 0, len = a.length; i < len ; i++){
+		console.log(a.pop());
+	}
+	console.log(a);
+
+
+    console.log("----b-----");
+	var b = [1,2,3,4];
+	console.log(b.shift());//shift()方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
+	console.log(b);
+    console.log("---------");
+    b.unshift(5,6,7);//unshift()方法可向数组头部添加若干长度并返回数组的新长度。
+	console.log(b);
+
+
+
+
+
+</script>
+
+</body>
+</html>

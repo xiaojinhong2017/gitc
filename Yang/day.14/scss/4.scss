@@ -1,0 +1,28 @@
+@for $i from 1 to 3{
+  .class-#{$i}{
+    font-size: 10px * $i;
+  }
+}
+@for $i from 5 to 8{
+  .class-#{$i}{
+    font-size: 5px * $i;
+  }
+}
+$img:1 2 3;
+@each $i in $img{
+  .class-#{$i}{
+    background-img:url("./image/#{$i}.jpg") no repeat;
+  }
+}
+$headings:(h1:2em, h2:1.5em,h3:1.2em);
+@each $key, $value in $headings{
+  #{$key}{
+    font-size: $value;
+  }
+}
+$back:(1, no-repeat, 0px 0px),(2, repeat-x , 0px 0px ),(3,repeat-y,0px 0px);
+@each $img,$repeat, $pos in $back{
+  .box-#{$img}{
+    background: url("./image/#{$img}.jpg/") $repeat $pos;
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ajax使用步骤</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .cmd {
+        text-align: center;
+    }
+   
+   
+    </style>
+</head>
+
+<body>
+    <div class="cmd">
+        <button id="btn2">点击发送ajax post请求</button>
+    </div>
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    // 兼容低版本ie浏览器的代码,对于现代浏览器可以省略部分代码
+    function createXHR() {
+        if (typeof XMLHttpRequest != "undefined") {
+            return new XMLHttpRequest();
+        } else if (typeof ActiveXObject != "undefined") {
+            if (typeof arguments.callee.activeXString != "string") {
+                var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                        "MSXML2.XMLHttp"
+                    ],
+                    i, len;
+                for (i = 0, len = versions.length; i < len; i++) {
+                    try {
+                        new ActiveXObject(versions[i]);
+                        arguments.callee.activeXString = versions[i];
+                        break;
+                    } catch (ex) {
+                        //跳过
+                    }
+                }
+            }
+            return new ActiveXObject(arguments.callee.activeXString);
+        } else {
+            throw new Error("No XHR object available.");
+        }
+    }
+
+    var btn2 = document.querySelector("#btn2");
+
+      //发送post
+    btn2.onclick = function() {
+        var xhr = createXHR();
+
+
+        //创建post请求
+        xhr.open("post", "http://127.0.0.1:8000/index", true);
+
+        //设置传输的数据格式
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        //send方法发送请求
+        xhr.send("name=zhangsan&age=66");
+    };
+    </script>
+</body>
+
+</html>

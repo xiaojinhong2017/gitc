@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Match方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var ret;
+    //match返回值是重点
+    ret = "123helloworldhelloworld".match(/hello/);
+    console.log(ret);
+    ret = "123helloworldhelloworld".match(/hello/g);
+    console.log(ret);
+
+    //()叫做捕获，捕获的作用可以直接提取符合条件的某一部分
+    ret = "helloworld123worldhello".match(/(hello)(world)(123)/);
+    console.log(ret);
+
+    //* + ?组合使用：进行最短匹配
+    ret = "hellohellohelloworld".match(/(hello)+?/);
+    console.log(ret);
+
+
+  </script>
+</body>
+</html>

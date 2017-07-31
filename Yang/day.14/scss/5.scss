@@ -1,0 +1,22 @@
+$value:10;
+.class-one{
+  @if $value == 10 {
+    font-size: 10px;
+  }
+   @else if $value==20 {
+    font-size: 20px;
+  }
+  @else{
+    font-size: 30px;
+  }
+}
+@function fontSize($size){
+  @return $size*1.5;
+}
+.class-two{
+  font-size:fontSize(20px) ;
+  color: darken(#123, 50%);
+}
+.class-three{
+  color: lighten(blue , 50%);
+}

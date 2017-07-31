@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>call</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 1、call，apply都属于Function.prototype的一个方法，它是JavaScript引擎内在实现的，因为属于Function.prototype，所以每个Function对象实例(就是每个方法)都有call，apply属性。既然作为方法的属性，那它们的使用就当然是针对方法的了，这两个方法是容易混淆的，因为它们的作用一样，只是使用方式不同。
+  // 2、语法：foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments) == this.foo(arg1, arg2, arg3);
+  // 3、相同点：两个方法产生的作用是完全一样的。
+  // 4、不同点：方法传递的参数不同。
+  //   5.从结果中可以看出call和apply都可以让B对象调用A对象的tip方法，并且修改了this的当前作用对象。
+  //ECMAScript规范给所有函数都定义了Call()与apply()两个方法，call与apply的第一个参数都是需要调用的函数对象，
+  //在函数体内这个参数就是this的值， 剩余的参数是需要传递给函数的值，call与apply的不同就是call传的值可以是任意的，而apply传的剩余值必须为数组。
+    function A(){
+        this.flag = 'A';
+        this.tip = function(){
+            alert(this.flag);
+        };
+    }
+    function B(){
+        this.flag = 'B';
+    }
+    var a = new A();
+    var b = new B();
+    //a.tip.call(b);
+    a.tip.apply(b);
+</script>
+</body>
+</html>

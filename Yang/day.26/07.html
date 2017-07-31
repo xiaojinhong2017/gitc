@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实现动画</title>
+  <style media="screen">
+    *{
+      margin:0;
+      padding : 0;
+    }
+    #f{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 100px;
+      background: blue;
+      left: 0px;
+      }
+  </style>
+</head>
+<body>
+  <button id="btn1">go</button>
+  <button id="btn2">back</button>
+  <div id="f"></div>
+  <script type="text/javascript">
+   var f = document.getElementById("f");
+   var btn1 = document.getElementById("btn1");
+   var btn2 = document.getElementById("btn2");
+  //    var id;
+  //  btn1.onclick = function(){
+  //    clearInterval(id);
+  //    id = setInterval(function(){
+  //     if(f.offsetLeft >= 1000)
+  //     {
+  //       clearInterval(id);
+  //       return;
+  //     }
+  //     f.style.left = f.offsetLeft + 10 +'px' ;
+  //    },30)
+  //  }
+  //  btn2.onclick = function(){
+  //    clearInterval(id);
+  //    id = setInterval(function(){
+  //      if(f.offsetLeft <= 0){
+  //        clearInterval(id);
+  //        return;
+  //      }
+  //      f.style.left = f.offsetLeft - 10 + 'px';
+  //    },30);
+  //  }
+
+   //封装
+   function moveLeft(elem,target,speed,time){
+     clearInterval(elem.timer);
+     speed = (target - elem.offsetLeft) > 0 ? speed : -speed;
+     elem.timer = setInterval(function(){
+       elem.style.left = elem.offsetLeft + speed + "px";
+       if(Math.abs(target - elem.offsetLeft) <=  Math.abs(speed)){
+         elem.style.left = target + 'px';
+         clearInterval(elem.timer);
+       }
+     },time);
+   }
+   btn1.onclick = function(){
+     moveLeft(f,1000,10,30);
+   }
+   btn2.onclick = function(){
+     moveLeft(f,0,10,30);
+   }
+  </script>
+</body>
+</html>

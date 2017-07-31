@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数节流</title>
+  <style>
+  *{
+    padding:0px;
+    margin :0px;
+  }
+  #stus{
+    width: 500px;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  tr td{
+    border: 1px solid gray;
+  }
+  </style>
+</head>
+<body>
+  <button id="btn">点击弹出提示框</button>
+  <table id="stus">
+    <tbody></tbody>
+  </table>
+  <script src = "./jquery-3.0.0.js"></script>
+  <script type="text/javascript">
+  $("#btn").click(function(){
+    alert("已点击");
+  });
+  var stu = ['zhangsan',20,30];
+  // for(var i = 0; i < 10000; i ++){
+  //   $("#stus tbody").append("<tr><td>"+stu[0]+"</td><td>"+stu[1]+"</td><td>"+stu[2]+"</td></tr>");
+  // }
+  var num = 0;
+  function stus(){
+  for(var i = 0; i < 100; i ++){
+    $("#stus tbody").append("<tr><td>"+stu[0]+"</td><td>"+stu[1]+"</td><td>"+stu[2]+"</td></tr>");
+  }
+    num++;
+    if(num === 10000){
+      clearTimeout(ret);
+    }
+    var ret = setTimeout(stus,100);
+  }
+  stus();
+  </script>
+</body>
+</html>

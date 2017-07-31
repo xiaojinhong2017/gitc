@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>过渡</title>
+    <style type="text/css">
+    .f {
+        width: 100px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 50px;
+
+
+          /* 参数意义*/
+        transition: left 2s ease-in-out 0s;
+        -webkit-transition: left 2s ease-in-out 0s;
+        -moz-transition: left 2s ease-in-out 0s;
+        -ms-transition: left 2s ease-in-out 0s;
+    }
+
+    .f:hover {
+        left: 1000px;
+        background: blue;
+    }
+
+
+    .con {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    .con span {
+        margin-right: 100px;
+        opacity: 0.5;
+
+        transition: all 2s linear ;
+        -webkit-transition: all 2s linear ;
+        -moz-transition: all 2s linear ;
+    }
+
+    .con:hover span {
+        margin-right: 10px;
+        opacity: 1;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="f"></div>
+
+
+    <div class="con">
+        <span>五</span>
+        <span>一</span>
+        <span>放</span>
+        <span>假</span>
+    </div>
+</body>
+
+</html>

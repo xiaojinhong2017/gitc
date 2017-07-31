@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>prototype</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    console.log(Person.prototype);//每个函数都有prototype属性，且是个对象
+    //将对象共有的属性、方法都添加到prototype上
+    Person.prototype.getName = function(){
+      return this.name;
+    };
+    Person.prototype.setName = function(newName){
+      this.name = newName;
+    };
+    Person.prototype.type = 'human';
+    var one = new Person('lisi',22);
+    console.log(one.getName());
+    //闭包？闭包的优点和缺点？
+    //面向对象？
+    //apply，call方法的作用和区别？？
+  </script>
+</body>
+</html>

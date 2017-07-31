@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  try{
+    var a = 100,b = 0;
+    var c = a / b;
+    if(c === Infinity){
+      // throw "result is Infinity";
+      throw new Error("result is Infinity","07.error.html",16);
+    }
+  }
+    catch(err){
+      console.log(err);
+    }
+    finally{
+      console.log("finally ....");
+    }
+</script>
+</body>
+</html>

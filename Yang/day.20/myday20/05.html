@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通过dom对象 设置样式</title>
+  <style>
+  .list-1 li {
+    float:left;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+    f元素
+    <div id="s">s元素</div>
+  </div>
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <script type="text/javascript">
+    var f = document.getElementById("f");
+    f.setAttribute("style","color:red");
+    f.setAttribute("style","background:yellow");//会覆盖原来的样式
+
+    //所有的css名称都为驼峰法命名
+    //cssText,是style属性的总体设置，后续所有针对cssText的设置都会覆盖之前的设置
+    f.style.cssText = "border:1px solid green;";
+    f.style.color = "red";
+    f.style.backgroundColor = "yellow";
+    var list = document.getElementById("list");
+    // list.setAttribute("class","list-1");
+  var lis = list.children;
+  lis[0].style.cssFloat = "left";
+  lis[1].style.cssFloat = "left";
+  lis[2].style.cssFloat = "left";
+  lis[3].style.cssFloat = "left";
+  //删除节点
+  var s = document.getElementById("s");
+//  f.removeChild(s);
+var dels  = s.parentNode.removeChild(s);
+console.log(dels);
+document.body.appendChild(dels);
+
+//克隆节点
+var newNode = list.cloneNode(true);
+console.log(newNode);
+document.body.appendChild(newNode);
+var newNode1 = list.cloneNode(false);
+console.log(newNode1);
+document.body.appendChild(newNode1);
+  </script>
+</body>
+</html>

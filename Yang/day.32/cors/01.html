@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cors</title>
+</head>
+<body>
+<script type="text/javascript">
+  function createCORSRequest(method, url) {
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+      console.log("XMLHttpRequest...");
+      xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined") {
+      console.log("XDomainRequest...");
+      vxhr = new XDomainRequest();
+      xhr.open(method, url);
+    } else {
+      xhr = null;
+    }
+return xhr;
+  }
+  var request = createCORSRequest("get", "http://127.0.0.1:8000/test");
+  if (request) {
+    request.onload = function() {
+      console.log((request.responseText));
+    }
+    request.onerror = function(){
+      console.log("request error ....");
+    }
+    request.send();
+  }
+  </script>
+</body>
+</html>

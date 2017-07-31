@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+
+<input id="other" type="text" value="">
+<input id="msg" type="text" value="">
+<button id="btn">点击检测</button>
+
+<body>
+    <script type="text/javascript">
+        var a;
+        if (!a) {
+            console.log(a);
+        }
+
+        // var str = "" + 123 + 1;
+        var str = 123 + 1 + "" + 23 + 2;
+        console.log(str);
+
+
+        //逻辑与 &&, 和其他编程语言比如C语言是不太一样的, 得到的是一个计算的结果。
+        console.log("a && b = ", 10 && 0); //0
+        console.log("a && b = ", 0 && 10); //0
+        console.log("a && b = ", 10 && 20); //20
+        console.log("a && b = ", 20 && 10); //10
+
+        //逻辑与的短路特性:只要有一个表达式的值为假，那么后续的操作都不在执行
+        var a = 0;
+        console.log("10 && (a = a + 1) ", 10 && (a = a + 1)); //1
+        console.log("a = ", a); //1
+
+
+        console.log("false &&(a = a + 1) ", false && (a = a + 1)); //false
+        console.log("a = ", a); //1
+
+        var b = 0;
+        console.log("10 && (a = a + 1) && 0 && (b = b + 1) ", 10 && (a = a + 1) && 0 && (b = b + 1)); // 0
+        console.log("a = ", a); //2
+        console.log("b = ", b); //0
+
+
+        //获得DOM节点
+        var other = document.querySelector("#other");
+        var msg = document.querySelector("#msg");
+        var btn = document.querySelector("#btn");
+
+        //添加单击事件
+        btn.onclick = function() {
+
+            //input DOM节点的.value属性就是输入框的内容
+            var inputOne = other.value;
+            var inputTwo = msg.value;
+
+            //如果输入框都有内容，那么继续执行
+            if (inputOne && inputTwo) {
+              console.log("hello");
+              console.log(inputOne);
+              console.log(inputTwo);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

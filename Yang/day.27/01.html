@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas</title>
+  <style media="screen">
+    .pic{
+      border: 1px solid red ;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" class="pic" height="500px" width="500px"></canvas>
+  <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    for(var i = 0; i < 25; i ++){
+    context.beginPath();
+    context.stroke.style = "gray";
+     context.moveTo(i * 20,0);
+     context.lineTo(i * 20,500);
+     context.stroke();
+    }
+    for(var i = 0; i < 25; i ++){
+    context.beginPath();
+    context.strokeStyle = "black";
+     context.moveTo(0,i * 20);
+     context.lineTo(500,i * 20);
+     context.stroke();
+   }
+    context.beginPath();
+    context.strokeStyle = "red";
+    context.lineWidth = 5;
+     context.moveTo(40, 60);
+     context.lineTo(40, 480);
+     context.moveTo(40, 60);
+     context.lineTo(30, 70);
+     context.moveTo(40, 60);
+     context.lineTo(50, 70);
+     context.stroke();
+    context.beginPath();
+    context.strokeStyle = "blue";
+    context.lineWidth = 5;
+     context.moveTo(40, 480);
+     context.lineTo(460, 480);
+     context.moveTo(460, 480);
+     context.lineTo(450, 470);
+     context.moveTo(460, 480);
+     context.lineTo(450, 490);
+
+     context.moveTo(40, 480);
+     context.lineTo(80, 360);
+     context.lineTo(160, 280);
+     context.lineTo(200, 60);
+     context.lineTo(240, 240);
+     context.lineTo(360, 120);
+     context.lineTo(400, 100);
+     context.lineTo(440, 260);
+
+     context.stroke();
+  </script>
+</body>
+</html>

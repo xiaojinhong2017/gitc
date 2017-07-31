@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>传递参数</title>
+</head>
+<body>
+  <h1>点击触发了按钮</h1>
+  <button>点击按钮0</button>
+  <button>点击按钮1</button>
+  <button>点击按钮2</button>
+  <button>点击按钮3</button>
+  <script src = "../ajax/public/js/jquery-3.0.0.min.js"></script>
+  <script>
+  // for(var i = 0; i < 4; i++)
+  // {
+  //   // $("button").eq(i).click(function(){
+  //   //   $("h1").html($(this).text());
+  //   //     })
+  //   $("button").eq(i).click(i,function(event){
+  //     $("h1").html("点击了"+event.data+ "按钮");
+  //   })
+  // }
+  $("button").click(function(){
+    $("h1").html($(this).text());
+  })
+  </script>
+</body>
+</html>

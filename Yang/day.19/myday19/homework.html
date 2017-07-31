@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+  //实现一个函数：将数组转换成字符串后，判断该字符串是否是回文
+  var arr = [1,2,3,'a','b','c','c','b','a',3,2,1];
+  var ret = arr.reverse();
+ //  var sarr = '';
+ //  var sret = '';
+ // for(var i = 0 ; i < arr.length; i++){
+ //   sarr = sarr + arr[i];
+ //   sret = sret + ret[i];
+ // }
+ var sarr = arr.join("");
+ var sret = ret.join("");
+ var retu = (sarr === sret)? true:false;
+ console.log(retu);
+ //实现函数：将十进制转换为二进制，并输出转换结果
+ var a = 15;
+ var sec = '';
+ while(parseInt(a) !== 0 ){
+   if( a % 2 === 1){
+     sec = '1' + sec;
+   }
+   else if (a % 2 === 0){
+     sec = '0' + sec;
+   }
+   a = parseInt(a / 2);
+ }
+ console.log(sec);
+ //实现函数： 判断一个字符串中的括号是否匹配
+ var lef = 0 ;
+ var rig = 0;
+ //var d = 0;
+ var str = "(((hello))hehe"
+ for(var i = 0 ; i < str.length ; i++){
+   if(str[i] === '('){
+     lef ++;
+   }
+   else if (str[i] === ')'){
+     rig ++;
+   }
+ }
+ var retu1 = (lef === rig)? true : false;
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型链继承</title>
+</head>
+<body>
+  <script type="text/javascript">
+     function Person(name){
+       this.name = name ;
+     }
+     Person.prototype.getName = function(){
+       return this.name;
+     }
+     function Student(name ,score){
+       this.name = name ;
+       this.score = score;
+     }
+     //如果把扩展的方法写在这里，会被下面Student.prototype = new Person('human')覆盖
+    //  Student.prototype.getScore = function(){
+    //    return this.score;
+    //  }
+     Student.prototype = new Person("human");//继承了Person的属性和方法，并把之前prototype里的东西覆盖了
+     console.log(Student.prototype);
+
+    //指定Student的构造器，因为之前的被继承给覆盖掉了
+    Student.prototype.constructor = Student;
+
+
+    //在继承的基础上，又扩展了自身的方法
+      Student.prototype.getScore = function(){
+       return this.score;
+    }
+     //自己原型上的方法，也就是扩展的自身的方法若与继承过来的方法同名，则会覆盖继承过来的方法
+      Student.prototype.getName = function(){
+       return this.name + 'mine';
+    }
+     var one = new Student('zhangsan','60');
+     console.log(one);
+     console.log(one.getName());
+     console.log(one.getScore());
+     console.log(one.constructor);//输出该对象的构造函数 Student
+  </script>
+
+</body>
+</html>
+     var one = new Student('zhangsan','60');
+     console.log(one);
+     console.log(one.getName());
+     console.log(one.getScore());
+  </script>
+
+</body>
+</html>

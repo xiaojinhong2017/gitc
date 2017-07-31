@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>渐变</title>
+</head>
+<body>
+  <canvas id="canvas" width="600" height="600"></canvas>
+  <script type="text/javascript">
+    var canvas = document.querySelector("#canvas");
+    canvas.style.border = "1px solid red";
+    var ctx = canvas.getContext("2d");
+    var grd = ctx.createLinearGradient(0,100,200,100);
+    grd.addColorStop(0,"yellow");
+    grd.addColorStop(0.5,"pink");
+    grd.addColorStop(1,"red");
+    ctx.fillStyle = grd;
+    ctx.fillRect(0,0,200,200);
+    ctx.fillRect(300,100,200,200);
+
+    var grd = ctx.createLinearGradient(100,0,100,200);
+    grd.addColorStop(0,"yellow");
+    grd.addColorStop(0.5,"pink");
+    grd.addColorStop(1,"red");
+    ctx.fillStyle = grd;
+    ctx.fillRect(300,0,200,200);
+    ctx.fillRect(100,400,200,200);
+
+  </script>
+</body>
+</html>

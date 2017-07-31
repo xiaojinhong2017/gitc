@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>获得日期</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    var d = new Date();
+    console.log(typeof d);
+    console.log(d.toString());
+
+    console.log(d.getFullYear());
+    console.log(d.getMonth() + 1);//0~11
+    console.log(d.getDate());
+    console.log(d.getDay());
+
+    setInterval(function() {
+      //获得最新的时间
+      d = new Date();
+      console.log(d.getHours() + ":" + d.getMinutes() +
+       ":"  + d.getSeconds() + ":" + d.getMilliseconds());
+    }, 1);
+
+    </script>
+
+  </body>
+</html>

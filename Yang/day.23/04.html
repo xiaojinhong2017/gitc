@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组合继承</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.getName = function(){
+      return this.name;
+    }
+    Person.prototype.getAge = function(){
+      return this.age;
+    }
+  function Student(name,age,score){
+    Person.call(this,name,age);
+    this.score = score;
+  }
+  Student.prototype = new Person("zhangsna","3");
+  Student.prototype.getScore = function(){
+    return this.score;
+  }
+  var one = new Student("lisi","5","90");
+  console.log(one);
+  console.log(one.getName());
+  console.log(one.getScore());
+
+  </script>
+</body>
+</html>

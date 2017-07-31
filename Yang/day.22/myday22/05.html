@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>面向对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 面向对象：所有的操作都是以对象为中心，对象拥有属性和方法。属性和方法都属于对象的附属。
+    // 特性：封装，继承，多态
+
+    //创建对象，使用已有的构造函数
+    var one = new Object();
+    console.log(one);
+    var two = {};//空对象
+    two.name = 'lisi';
+    two.age = '2';
+    two.score = 88;//属性
+    two.getName = function(){
+      console.log(this === two);
+      console.log(this.name);
+    };//方法
+    console.log(two.name);
+    console.log(two.age);
+    two.getName();
+    var three = {
+      "name":'zhangsan',
+      age:22,
+      score:59,
+      getName:function(){
+        console.log(this.name);
+      }
+    };
+    console.log(three.name);//使用‘.’方式访问属性，不能加“”
+    console.log(three["name"]);//使用[]访问属性时，加“”
+    //已有的构造函数
+    var num = new Number(10);
+    var str =new String("hello");
+    var b = new Boolean(true);
+    console.log(num,str,b);
+
+    //普通变量不可以添加属性方法
+    var a = 10;
+    a.index = 0;
+    console.log(a.index);//undefined
+
+
+  </script>
+</body>
+</html>

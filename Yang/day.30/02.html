@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>classList</title>
+</head>
+<body>
+  <div id="f" class="one two three"></div>
+  <script>
+  var f = document.querySelector("#f");
+  console.log(f.className);
+  // f.className = "one two three four";
+  // f.setAttribute = "one two three four";
+
+  //classList, add, remove,toggle
+  console.log(f.classList);
+  f.classList.add("four");
+  console.log(f.classList);
+  f.classList.remove("four");
+  console.log(f.classList);
+ f.classList.toggle("four");
+  console.log(f.classList);
+ f.classList.toggle("four");
+  console.log(f.classList);
+  console.log(f.classList.contains("four"));
+
+  </script>
+</body>
+</html>

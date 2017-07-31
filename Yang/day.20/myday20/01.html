@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ie中event对象</title>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  #f{
+    width: 500px;
+    height: 300px;
+    background: yellow;
+  }
+  #s{
+    width: 300px;
+    height: 200px;
+    background: blue;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+    <div id="s"></div>
+  </div>
+  <div id="f1">nihao </div>
+  <a id="link" href="https://www.baidu.com">百度</a>
+  <script type="text/javascript">
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+    var link = document.getElementById("link");
+    s.onclick = function(event){
+      console.log("---------s-------");
+      console.log(window.event);
+      console.log(this);
+      console.log(window.event.srcElement);//等价于target
+      console.log(window.event.currentTarget);
+      // console.log(window.event.cancelBubble = true);//等价于event.stopPropagation()阻止冒泡
+}
+ f.onclick = function(event){
+   console.log("-----------f-----------");
+   console.log(window.event);
+   console.log(window.event.currentTarget);
+   console.log(window.event.srcElement);
+ }
+ link.onclick = function(event){
+   console.log(window.event.returnValue = false);//等价于preventDefault();
+ }
+var f1 = document.getElementById("f1") ;
+f1.onclick = function(event){
+  event = event || window.event;
+  console.log(event);
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>设置日期</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      var start = new Date();
+      console.log(start);
+      console.log(start.getTime());
+
+      var end = new Date("2017-06-20 0:0:0:0");
+      console.log(end.getTime());
+
+
+      //setXXXX,设置时间
+      start.setFullYear(2016);
+      start.setMonth(5);//0~11
+      console.log(start);
+      console.log(start.toDateString());
+
+
+    </script>
+
+  </body>
+</html>

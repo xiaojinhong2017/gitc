@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+  <style>
+  .stu{
+    margin: 0px auto;
+    border-collapse: collapse;
+    border: 1px solid #d3d7d4;
+    text-align: center;
+  }
+  .stu th ,
+  .stu td{
+    border-right:  1px solid #d3d7d4;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <table class="table table-striped stu ">
+    <tr>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+    </tr>
+</table>
+</div>
+  <script src="./js/jquery-3.0.0.js"></script>
+  <script type="text/javascript">
+  var a=[["001","lisi","18"], ["002","zhangsan","20"],["003","wangwu", "22"],["004","zhaosi","24"]];
+  for( var i=0;i < a.length; i++)
+  {
+    $(".stu").append("<tr><td>"+a[i][0]+"</td><td>"+a[i][1]+"</td><td>"+a[i][2]+"</td></tr>");
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>画布旋转</title>
+</head>
+<body>
+  <canvas id="canvas" width="600" height="600"></canvas>
+  <script type="text/javascript">
+    var canvas = document.querySelector("#canvas");
+    canvas.style.border = "1px solid red";
+    var ctx = canvas.getContext("2d");
+    ctx.rotate(10*Math.PI/180);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(200,200,100,100);
+    ctx.rotate(-10*Math.PI/180);
+    ctx.strokeRect(300,300,100,100);
+    ctx.save();
+    ctx.rotate(10*Math.PI/180);
+    ctx.strokeRect(400,300,100,100);
+    ctx.restore();
+    ctx.strokeRect(400,300,100,100);
+    </script>
+</body>
+
+</html>

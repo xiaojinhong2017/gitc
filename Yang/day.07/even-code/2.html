@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+   .a{
+    display:block;
+  }
+  ul li div{
+    display: none;
+  }
+
+  </style>
+
+</head>
+<body>
+  <ul>
+    <li>
+      <h3>标题部分</h3>
+      <div >
+        内容部分;
+      </div>
+    </li>
+
+    <li>
+      <h3>标题部分</h3>
+      <div>
+        内容部分;
+      </div>
+    </li>
+
+    <li>
+      <h3>标题部分</h3>
+      <div>
+        内容部分;
+      </div>
+    </li>
+
+    <li>
+      <h3>标题部分</h3>
+      <div>
+        内容部分;
+      </div>
+    </li>
+  </ul>
+  <script src="../../day.06/js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+  $("ul li").mouseover(function(){
+   $(this).find("div").addClass("a");
+ }).mouseout(function(){
+  $(this).find("div").removeClass("a");
+});
+
+  </script>
+</body>
+</html>

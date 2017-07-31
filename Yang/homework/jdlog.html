@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .head{
+    height:110px;
+    width:100%;
+    background:url(./images/jdbg.jpg) repeat-x left bottom;
+
+  }
+  .head-center{
+    width: 1210px;
+    margin:0 auto;
+  }
+  .jingling{
+    background: url(./images/jdlogo.png);
+    height: 50px;
+    width: 160px;
+    margin-top: 24px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: left;
+  }
+  .huanying{
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    font-size: 24px;
+    color: #333;
+     padding-left: 30px;
+     margin-top: 34px;
+    }
+    .center{
+    height: 623px;
+    width: 1210px;
+    margin: 50px auto;
+    }
+    .zhuce{
+      height: 623px;
+      width: 400px;
+      float: left;
+      font-size: 14px;
+    }
+    form .shuru{
+      height: 54px;
+      width: 400px;
+      border: 1px solid #ddd;
+    }
+    .tishi{
+      float: left;
+        width: 90px;
+         height: 52px;
+         line-height: 52px;
+         padding-left: 20px;
+    }
+    .wenben{
+      border: none;
+      margin-top:  16px;
+      outline-style: none;
+    }
+    div p{
+      display: inline-block;
+      color: #c5c5c5;
+height: 27px;
+font-size: 12px;
+padding-top: 5px;
+visibility:  hidden;
+}
+    }
+    .show{
+      visibility: visible;
+    }
+    .form-agreen{
+      color: #333;
+font-size: 12px;
+word-wrap: break-word;
+white-space: nowrap;
+    }
+    .input-tip{
+      color: #c5c5c5;
+  height: 27px;
+  font-size: 12px;
+    }
+    .btn-register{
+      width: 100%;
+height: 54px;
+color: #fff;
+background: #e22;
+border: 0;
+font-size: 16px;
+font-family: "Microsoft YaHei","Hiragino Sans GB";
+margin-top: 275px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .yanzhengma{
+      position: relative;
+      left: 138px;
+      top: -22px;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="head">
+  <div class="head-center">
+    <div class="jingling"></div>
+    <div class="huanying">欢迎注册</div>
+  </div>
+  </div>
+  <div class="center">
+    <div class="zhuce">
+      <form action="#">
+        <div class="kuang">
+          <div class="shuru">
+            <div class="tishi">用 &nbsp;户 &nbsp;名</div>
+            <input class="wenben" type="text" name="usrname" placeholder="您的账户名和登陆名">
+          </div>
+          <div >
+            <p>支持中文、字母、数字组合</p></div>
+        </div>
+
+         <div class="shuru">
+          <div class="tishi"> 设置密码</div>
+          <input class="wenben" type="text" name="usrname" placeholder="建议至少使用两种字母组合">
+        </div>
+        <div >
+          <p>建议使用字母数字两种以上的字母组合</p></div>
+         <div class="shuru">
+          <div class="tishi">确认密码</div>
+          <input class="wenben" type="text" name="usrname" placeholder="请再次输入密码"
+        </div>
+        <div >
+          <p>请再次输入密码</p></div>
+          <div class="shuru">
+          <div class="tishi">用 &nbsp;户 &nbsp;名</div>
+          <input class="wenben" type="text" name="usrname" placeholder="您的账户名和登陆名">
+        </div>
+        <div >
+          <p>完成验证后你可以使用该手机找回密码</p></div>
+            <div class="shuru">
+          <div class="tishi">验 &nbsp;证 &nbsp;码</div>
+          <input class="wenben" type="text" name="usrname" placeholder="请输入验证码">
+          <div class="yanzhengma">
+
+          <img src="./images/jdyzm.jpeg" alt="">
+          </div>
+        </div>
+        <div >
+          <p>看不清？换一张</p></div>
+          <div class="shuru">
+          <div class="tishi">手机验证码</div>
+          <input class="wenben" type="text" name="usrname" placeholder="请输入手机验证码">
+        </div>
+
+      </form>
+      <div><input name="agreen" checked="" type="checkbox">阅读并同意<a href="#" id="protocol">《京东用户注册协议》</a>
+                            <a href="javascript:;" class="blue" id="privacyProtocolTrigger">《隐私政策》</a>
+
+
+                        </div>
+      <div class="input-tip">
+        <span></span>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn-register">立即注册</button>
+                </div>
+
+    </div>
+
+  </div>
+</div>
+<script src="../day.08/js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+$(" .kuang").click(function(){
+  $(this).find("p").css("visibility","visible");
+})
+
+</script>
+</body>
+</html>

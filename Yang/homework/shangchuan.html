@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  input{
+    /*visibility: hidden;*/
+    z-index: -1;
+  }
+.a{
+  height: 30px;
+  width: 200px;
+  position: relative;
+  top: -25px;
+  left:0px;
+  background: black;
+  padding:0px,80px;
+}
+img{
+}
+
+  </style>
+</head>
+<body>
+    <div class="sc">
+    <input type="file" name="" value="">
+    <div class="a">
+
+    <img src="./images/shanghe/canvas_r4_c3.png" alt="">
+    </div>
+    </div>
+    <script src="../day.08/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    $(".a").click(function(){
+      $("input").click();
+    })
+
+    </script>
+</body>
+</html>

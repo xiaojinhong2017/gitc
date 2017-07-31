@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  #f{
+    height: 100px;
+    width: 800px;
+    background: gray;
+    margin: 100px auto;
+    color: green;
+    font-size: 40px;
+    text-align: center;
+    line-height: 100px;
+
+  }
+  </style>
+</head>
+<body>
+  <div id="f"></div>
+  <script type="text/javascript">
+    //倒计时
+    var f = document.getElementById("f");
+    id = setInterval(function(){
+      var start = new Date();
+      var stop = new Date("2017-6-20 0:0:0");
+      ret1 = start.getTime();
+      ret2 = stop.getTime();
+      ret = ret2 - ret1;
+      if(ret == 0)
+      {
+        clearInterval(id);
+        return;
+      }
+      day = parseInt(ret/86400000);
+      hour = parseInt((ret%86400000)/3600000);
+      minute = parseInt(((ret%86400000)%3600000)/60000);
+      second = parseInt(((ret%86400000)%3600000)%60000/1000);
+      f.innerHTML = "距离618倒计时"+day+"天"+hour+"小时"+minute+"分钟"+second+"秒";
+
+    },1000);
+
+  </script>
+</body>
+</html>

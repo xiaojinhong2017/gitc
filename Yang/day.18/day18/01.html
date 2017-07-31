@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>常见的兼容性问题</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        /*font-size: 0px;*/
+    }
+
+    .f {
+        background: yellow;
+        line-height: 5px;
+        height: 8px;
+        /*overflow: hidden;*/
+    }
+
+    img {
+        float: left;
+    }
+
+    .f1,
+    .f2 {
+        width: 100px;
+        height: 100px;
+        /*display: inline-block;*/
+        float: left;
+    }
+
+    .f1 {
+        background-color: yellow;
+    }
+
+    .f2 {
+        filter: alpha(opacity=100);
+        background-color: blue;
+    }
+
+    .f3 {
+        /* For IE8+ */
+        color: #090\9;
+
+        /* For IE7 and earlier */
+        *color: #f00;
+
+        /* For IE6 and earlier */
+        _color: #ff0;
+
+    }
+
+    </style>
+
+     <!--[if IE]>
+      <style>
+        p {
+	       color: red;
+        }
+      </style>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="f"></div>
+    <img src="images/3.jpg">
+    <img src="images/zhaosi.jpg">
+    <div class="f1"></div>
+    <div class="f2"></div>
+    <div class="f3">sjgkdjkdjkhjdhkjk</div>
+
+
+    <!--[if IE]>
+    <p>HELLO I am ie</p>
+    <![endif]-->
+
+
+    <!-- 第一种方法: -->
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript">
+
+    	console.log(jQuery.fn.jquery); //jQuery == $
+    	console.log($);
+
+
+    	var $$ = jQuery.noConflict(); //此版本的jquery不在使用$，转换为$$
+    	console.log($.fn.jquery);
+    	console.log($$.fn.jquery);
+      console.log($$);
+    </script>
+
+
+
+     <!-- <script src="./js/jquery-3.0.0.min.js"></script>
+     <script type="text/javascript">
+     	console.log($.fn.jquery);
+     </script>
+
+     <script src="./js/jquery-1.11.2.min.js"></script>
+     <script type="text/javascript">
+     	console.log($.fn.jquery);
+     </script> -->
+</body>
+
+</html>

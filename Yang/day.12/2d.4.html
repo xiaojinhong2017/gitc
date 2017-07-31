@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  body{
+    background: #45b97c;
+  }
+    .f{
+      height: 700px;
+      width: 500px;
+      margin: 200px auto;
+    }
+    .s1{
+      height: 150px;
+      width: 113px;
+      background-image: url(./image/shield_1_01.png);
+      transform: translate(0px, 0px) rotate(90deg);
+      transition: all 1s linear;
+      float: left;
+    }
+
+    .s2{
+      height: 150px;
+      width: 178px;
+      background-image: url(./image/shield_1_02.png);
+      transform: translate(0px, 0px),rotate(20deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s3{
+      height: 150px;
+      width: 113px;
+      background-image: url(./image/shield_1_03.png);
+      transform: translate(0px, 0px),rotate(50deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s4{
+      height: 178px;
+      width: 113px;
+      background-image: url(./image/shield_1_04.png);
+      transform: translate(0px, 0px),rotate(120deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s5{
+      height: 178px;
+      width: 178px;
+      background-image: url(./image/shield_1_05.png);
+      transform: translate(0px, 0px),rotate(59deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s6{
+      height: 178px;
+      width: 117px;
+      background-image: url(./image/shield_1_06.png);
+      transform: translate(0px, 0px),rotate(100deg);
+      float: left;
+      transition: all 1s linear;
+    }
+    .s7{
+      height: 154px;
+      width: 113px;
+      background-image: url(./image/shield_1_07.png);
+      transform: translate(0px, 0px),rotate(10deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s8{
+      height: 154px;
+      width: 178px;
+      background-image: url(./image/shield_1_08.png);
+      transform: translate(0px, 0px) rotate(170deg);
+      transition: all 1s linear;
+      float: left;
+    }
+    .s9{
+      height: 154px;
+      width: 117px;
+      background-image: url(./image/shield_1_09.png);
+      transform: translate(0px, 0px) rotate(100deg);
+      transition: all 1s linear;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div class="s1"></div>
+    <div class="s2"></div>
+    <div class="s3"></div>
+    <div class="s4"></div>
+    <div class="s5"></div>
+    <div class="s6"></div>
+    <div class="s7"></div>
+    <div class="s8"></div>
+    <div class="s9"></div>
+  </div>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    $(".f").hover(function(){
+      $(".s1").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s2").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s3").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s4").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s5").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s6").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s7").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s8").css("transform","translate(0px,0px) rotate(0deg)");
+      $(".s9").css("transform","translate(0px,0px) rotate(0deg)");
+    },function(){
+
+      $(".s1").css("transform","translate(0px,0px) rotate(90deg)");
+      $(".s2").css("transform","translate(0px,0px) rotate(20deg)");
+      $(".s3").css("transform","translate(0px,0px) rotate(50deg)");
+      $(".s4").css("transform","translate(0px,0px) rotate(120deg)");
+      $(".s5").css("transform","translate(0px,0px) rotate(59deg)");
+      $(".s6").css("transform","translate(0px,0px) rotate(100deg)");
+      $(".s7").css("transform","translate(0px,0px) rotate(10deg)");
+      $(".s8").css("transform","translate(0px,0px) rotate(170deg)");
+      $(".s9").css("transform","translate(0px,0px) rotate(100deg)");
+    })
+  </script>
+</body>
+</html>

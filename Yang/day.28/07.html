@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>设置背景</title>
+</head>
+<body>
+  <canvas id="canvas" width="600" height="600"></canvas>
+  <script type="text/javascript">
+    var canvas = document.querySelector("#canvas");
+    canvas.style.border = "1px solid red";
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    img.src = "./images/timg2.jpeg";
+    img.onload = function(){
+      var pat = ctx.createPattern(img,"repeat");
+      ctx.fillStyle = pat;
+      ctx.fillRect(0,0,600,600);
+    }
+  </script>
+</body>
+</html>

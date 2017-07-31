@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定时器setTimeOut</title>
+</head>
+<body>
+  <div id="f">计数开始</div>
+  <button id="start">start</button>
+  <button id="stop">stop</button>
+  <script type="text/javascript">
+  //  "use strict";//严格模式不能使用callee,argument,caller;
+    var f = document.getElementById("f");
+    var num  = 0;
+    var id;
+    function outPut(){
+      num++;
+    var f = document.getElementById("f");
+      f.innerHTML = num;
+      //setTimeout(outPut,1000);
+    id =  setTimeout(arguments.callee,1000);//arguments只能在函数内部使用 id是定是标志
+    }
+    outPut();
+    var si;
+    document.getElementById("start").onclick = function(){
+      si = setTimeout(function(){
+        for(var i = 0;;i++){
+          console.log(i);
+        }
+      },1000);
+    }
+  document.getElementById("stop").onclick = function(){
+    clearTimeout(si);
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bind</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function handler(arg1,arg2){
+      console.log(this);
+      console.log(arg1,arg2);
+      console.log(arguments);
+    }
+
+    var obj = {
+      name: 'lisi',
+      age: 10
+    };
+
+
+    var obj2 = {
+      name: 'zhangsan',
+      age: 10
+    };
+
+    /*
+    将指定的参数直接传递给newHandler,以后可以省略参数的传递
+    */
+    var newHandler = handler.bind(obj,10,20);
+    newHandler();
+    newHandler(30,40);//继续传递参数时，会在bind参数的基础上进行追加
+
+
+    var newHandler2 = handler.bind(obj2,10,20);
+
+
+
+    </script>
+
+  </body>
+</html>

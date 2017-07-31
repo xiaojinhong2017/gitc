@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  .a{
+    list-style: none;
+    /*overflow: hidden;*/
+    /*height:50px;*/
+  }
+ .a li{
+    float:left;
+    background: red;
+    margin-right: 20px;
+    height:50px;
+    line-height: 50px;
+  }
+  .clearfix::after,
+  .clearfix::before{
+    content:"";
+    height: 0;
+    display:block;
+    vidibility:hidden;
+    line-height: 0;
+    clear: both;
+  }
+  .clearfix{
+    zoom:1;
+  }
+  /*p{
+    clear: both;
+  }*/
+  </style>
+</head>
+<body>
+  <ul class="a clearfix">
+    <li>小米商城</li>
+    <li>MIUI</li>
+    <li>迷了</li>
+    <li>游戏</li>
+    <p></p>
+  </ul>
+  <p>女孩就客户弄丢后痕迹客户u好地方iu不仅好看i拒绝离开</p>
+
+</body>
+</html>

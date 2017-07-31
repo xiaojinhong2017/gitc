@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    form{
+      height: 500px;
+      width: 300px;
+      margin:0 auto;
+    }
+    button{
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-left:50px;
+
+    }
+  </style>
+</head>
+<body>
+
+<form action="/success" method="POST"  autocomplete="on">
+  <h1>请注册</h1><br>
+
+      <!-- pattern 直接写正则，不用添加 "/"  -->
+      用户名:&nbsp;&nbsp;&nbsp; <input require list="datalist-1" pattern="[\s\S]+@\d+.com" type="email" name="username" value="" placeholder="请输入邮箱格式用户名"> <br><br>
+      <datalist id="datalist-1">
+        <option>xxxx@126.com</option>
+        <option>xxxx@163.com</option>
+        <option>xxxx@qq.com</option>
+      </datalist>
+
+      密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" name="passwd" placeholder="请输入不超过八位数字"><br><br>
+      确认密码: <input type="password" name="passwd" placeholder="两次输入的密码格式必须一样"><br><br>
+    <button type="submit">提交</button>
+    </form>
+   <!-- <form action="/" method="post"> -->
+    <!-- <button type="submit">返回登录</button> -->
+   <!-- </form> -->
+</body>
+</html>

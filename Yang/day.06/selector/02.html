@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+</head>
+<body>
+
+<div class="f">
+	<p>jkhkidfhiklsh</p>
+	<div class="a">
+		<div>我是div</div>
+		<p>我是div中的div中的p</p>
+	</div>
+	<p>kjdfkljasiofj</p>
+	<span>nuiioi</span>
+	<p>难看哦及哦及近</p>
+</div>
+<ul>
+	<li>1111</li>
+	<li>2222</li>
+	<li>3333</li>
+	<li>4444</li>
+</ul>
+<a href="xxxx">xxxxxxx</a>
+<a href="yyyy">yyyyyyy</a>
+<div name="hello">nihao</div>
+<div name="helloworld">nihaonihao</div>
+<div name="nkjkfhelloworld">nihaonihao</div>
+<input type="text" name="name">
+<input type="password" name="passwd">
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+// $("div > p").css("color","red");
+// $(".f > .a > p").css("color","blue");
+// $("div div p").css("color","red");
+  // console.log($(".a ~ p"));
+	// console.log($(".a + p"));;
+	// $("ul li").eq(0).css("color","red");
+	// $("ul li:even()").css("color" , "red");
+	// $("ul li:odd()").css("color", "blue");
+	$("ul li:nth-child(1)").css("color","red");
+	$("a[href=xxxx]").css("color","red");
+	$("div[name^=hello]").css("color","red");
+	$("div[name*=hello]").css("color","red");
+  $("[type=password]").val("123");
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    "use strict";//使用严格模式
+
+    //只执行一次，执行是在指定的时间间隔之后。
+    setTimeout(function() {
+        console.log("callback ...");
+    }, 0); //写成0ms，也不会立刻执行，只是添加的队列而已
+
+    console.log("after setTimeout ...");
+
+
+    var num = 0,
+        id;
+
+    function handler() {
+        num++;
+        console.log("num = ", num);
+        if (num == 10) {
+            clearTimeout(id);
+            return;
+        }
+
+        //可以保证在设置定时器时，以上所有的代码都已经执行完毕
+        //这就是setTimeout和setInterval的区别
+        id = setTimeout(handler, 1000);
+        // id = setTimeout(arguments.callee, 1000);
+    }
+
+    handler();
+    </script>
+</body>
+
+</html>

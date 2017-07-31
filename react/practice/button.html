@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>document</title>
+  <script src="https://cdn.bootcss.com/react/15.6.0/react.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
+  <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  </style>
+</head>
+<body>
+  <!-- 可用随机数实现 Math.floor(Math.random()*可能值总数+第一个可能的值)-->
+  <div id="example">
+        <script type="text/babel">
+        class Button extends React.Component{
+          constructor(props){
+            super(props);
+
+          }
+          render(){
+            if(this.props.bsStyle === 'primary')
+            var setstyle = {backgroundColor:'blue',color:'white'};
+            return(
+              <button style = {setstyle}>{React.Children.map(this.props.children,(c) =>(c))}</button>
+            )
+          }
+        }
+        ReactDOM.render(<Button bsStyle = 'primary'>sure</Button>,document.getElementById('root'))
+  </script>
+<!-- </div> -->
+</body>
+</html>

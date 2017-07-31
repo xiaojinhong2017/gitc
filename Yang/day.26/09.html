@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document的滚动事件</title>
+  <style>
+  body{
+    height: 2000px;
+    width: 2000px;
+  }
+
+  </style>
+</head>
+<body>
+    <script type="text/javascript">
+      // document.onscroll = function(){
+      //   console.log(window.offsetPageY||document.body.scrollTop||document.documentElement.scrollTop);
+      // }
+      function scroll(){
+        if(window.offsetPageY){
+          return {
+            left : window.offsetPageX,
+            top:window.offsetPageY,
+          }
+        }else if(document.body.scrollTop){
+          return {
+            left:document.body.scrollLeft,
+            top:document.body.scrollTop
+          }
+        }else if(document.documentElement.scrollTop){
+          return {
+            left: document.documentElement.scrollLeft,
+              top : document.documentElement.scrollTop
+          }
+        }
+      }
+      document.onscroll = function(){
+        console.log("scroll.left", scroll().left);
+        console.log("scroll.top",scroll().top);
+      }
+    </script>
+</body>
+</html>

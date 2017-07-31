@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>window.postMessage</title>
+  <style>
+   h1{
+     height: 50px;
+     width: 200px;
+     margin:100px auto;
+   }
+   #btn{
+
+   }
+  </style>
+</head>
+<body>
+<h1>window.open 打开新页面</h1>
+<button id="btn">点击打开</button>
+<script type="text/javascript">
+  window.name = "father";
+  var btn = document.querySelector("#btn");
+  var timer = null;
+  window.onmessage = function(e){
+    console.log(e.data);
+  }
+  btn.onclick = function(e){
+    clearInterval(timer);
+    var newWindow = window.open("./test-iframe.html","son");
+    newWindow.onload = function(){
+      newWindow.document.querySelector("h1").style.color = "red";
+    }
+    var num = 0 ;
+    setInterval(function(){
+      newWindow.postMessage(num++,"*");
+    },1000);
+  }
+</script>
+</body>
+</html>

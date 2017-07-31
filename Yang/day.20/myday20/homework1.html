@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  #f{
+    height: 400px;
+    width: 800px;
+    margin: 200px auto;
+    padding-top: 1px;
+  }
+  .title{
+    float: left;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .table{
+    float: right;
+    line-height: 36px;
+    border-top:  2px solid gray;
+    border-left: 2px solid gray;
+    border-right:2px solid gray;
+  }
+  td span{
+    padding: 0px 7px;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+  <div class="title">服装鞋帽</div>
+  <div class="table">
+    <table>
+      <tr>
+        <td id="0"><span>服装</span></td>
+        <td id="1"><span>服装</span></td>
+        <td id="2"><span>服装</span></td>
+        <td id="3"><span>服装</span></td>
+        <td id="4"><span>服装</span></td>
+        <td id="5"><span>服装</span></td>
+        <td id="6"><span>服装</span></td>
+        <td id="7"><span>服装</span></td>
+        <td id="8"><span>服装</span></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <script type="text/javascript">
+var f = document.getElementById("f");
+var tds = document.getElementsByTagName("td");
+console.log(tds);
+var bor  = document.createElement("div");
+f.appendChild(bor);
+var a = [1,2,3,4,5,6,7,8,9];
+ for( var i = 0; i < tds.length;  i++)
+ {
+   (function(i){
+
+   tds[i].onmouseenter = function(){
+     this.style.cssText = "border-top: 2px solid red;border-left:2px solid red; border-right:2px solid red;";
+     bor.style.cssText = " width:800px; height:300px;margin-top:44px;border:2px solid red;";
+     bor.innerHTML = a[i];
+   }
+     tds[i].onmouseleave = function(){
+       this.style.borderTop = "none";
+       this.style.borderLeft = "none";
+       this.style.borderRight = "none";
+       bor.style.border = "none";
+       bor.innerHTML = "";
+     };
+   })(i);
+ }
+  </script>
+</body>
+</html>

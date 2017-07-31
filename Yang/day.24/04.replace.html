@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>replace替换</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var str = "helloworldhelloworld";
+    var newStr = str.replace("hello","HELLO");
+    console.log(newStr);
+    var newStr = str.replace(/hello/g,"HELLO");
+    console.log((newStr));
+    console.log('---------------------------');
+
+    //如何将background-color===>backgroundColor
+    function covert(attrName){
+      var newStr = attrName.replace(/-([a-z])/g,function(m,p){
+        return p.toUpperCase();
+      })
+      console.log(newStr);
+    }
+
+     covert('background-color');
+     //将backgroundColor====>background-color
+     function covert1(attrName){
+       var newStr1 = attrName.replace(/([A-Z])/g,function(m,p){
+         return '-'+  p.toLowerCase();
+       });
+         console.log(newStr1);
+     }
+
+       covert1('backgroundColor');
+
+  </script>
+</body>
+</html>

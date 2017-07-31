@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document滚动</title>
+  <style>
+  body{
+    width: 2000px;
+    height: 2000px;
+  }
+  .top{
+    width: 50px;
+    height: 50px;
+    background: black;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <div class="top">Top</div>
+  <script src = "./scroll.js"></script>
+  <script type="text/javascript">
+    var top = document.getElementsByClassName("top")[0];
+    top.onclick = function(){
+      window.scrollTo(0,0);
+    }
+    document.onscroll = function(event){
+      if(scroll().top > 200){
+        top.style.display = "block";
+      }else{
+        top.style.display = "none";
+      }
+    }
+
+
+  </script>
+</body>
+</html>

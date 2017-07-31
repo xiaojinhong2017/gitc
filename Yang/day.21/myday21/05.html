@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>设置日期</title>
+</head>
+<body>
+  <script type="text/javascript">
+   var start = new Date();
+   var stop = new Date("2017.06.20 0:0:0");
+   console.log(start);
+   console.log(stop);
+   console.log(start.getTime());
+   console.log(stop.getTime());
+
+   //set***,设置时间
+   start.setFullYear(2016);
+   start.setMonth(5);
+   console.log(start);
+   console.log(start.toDateString());
+  </script>
+</body>
+</html>

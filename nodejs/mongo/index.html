@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"> -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+  .f{
+    margin: auto;
+    height:300px;
+    width: 500px;
+  }
+  .form{
+    position: relative;
+    top: -145px;
+    left: 187px;
+  }
+  .form1{
+    position:relative;
+    top: -50px;
+    left: 129px;
+  }
+  </style>
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="f">
+  <form method="POST" action="/url">
+  <fieldset>
+    <h3>用户登陆</h1>
+  用户名: &nbsp; &nbsp;<input required type="emil" name="username" pattern="[\s\S]+@\d+.com" placeholder="请输入用户名"><br><br>
+  密码:  &nbsp; &nbsp;&nbsp;&nbsp; <input required type="password" pattern="[a-zA-Z_0-9]{8}" name="passwd" placeholder="请输入密码"><br><br>
+  <div class="s">
+     &nbsp; &nbsp;&nbsp;&nbsp;
+  <!-- <input type="submit" name="button1" value="登陆"> -->
+  <button>登陆</button>
+   &nbsp; &nbsp;&nbsp;&nbsp;
+  <!-- <input type="submit" name="button2" value="注册"> -->
+   <!-- &nbsp; &nbsp;&nbsp;&nbsp; -->
+  <!-- <a href="./forget.html">忘记密码</a> -->
+  </div>
+</form>
+<form action="./zhuce.html" method = "post" class="form1">
+  <input type="submit" name="button2" value="注册">
+</form>
+<br>
+  <form class = "form" action="./forget.html" method="post">
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<button>忘记密码</button>
+  </form>
+</div>
+</div>
+</body>
+</html>

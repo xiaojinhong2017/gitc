@@ -1,0 +1,17 @@
+@import url(./css/2.css);
+.s {
+  background: green; }
+
+.a {
+  color: red;
+  font-size: 40px; }
+
+.f {
+  border-top: 1px solid red;
+  height: 100px;
+  width: 200px; }
+
+.class-one {
+  font-size: 2em; }
+
+/*# sourceMappingURL=1.css.map */

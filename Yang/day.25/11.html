@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>高阶函数</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //和平方
+    function sum(arg1,arg2){
+      return arg1 + arg2;
+    }
+    function power(arg){
+      return Math.pow(arg,2);
+    }
+    function sumpow(fn1,fn2){
+    return function(arg1,arg2){
+      return fn2(fn1(arg1,arg2));
+    }
+    }
+    var ret = sumpow(sum,power);
+    console.log(ret(1,2));
+    //平方和
+
+    function Sum(args){
+      var sum = 0;
+    for(var j = 0; j < args.length; j ++){
+      sum = sum + args[j];
+    }
+    // console.log(sum);
+    return sum;
+    }
+    function power(arg){
+      return Math.pow(arg,2);
+    }
+  function powsum(fn1,fn2){
+    return function(args){
+    var a = [];
+    for(var i = 0; i < arguments.length; i ++){
+       a[i] = fn1(arguments[i]);
+    }
+    // Sum(a);
+    return fn2(a);
+    }
+  }
+  var ret1 = powsum(power,Sum);
+  // ret1(1,2,3);
+  console.log(ret1(1,2,3));
+  </script>
+</body>
+</html>

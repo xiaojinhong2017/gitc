@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>逻辑操作符与或非</title>
+</head>
+<body>
+  <script type="text/javascript">
+    console.log(10 && 20);
+  console.log(10 && (10 + 20));
+  console.log(true && false);
+  var m = 0;
+  var ret = 10 && m++
+  console.log("ret = " , ret );//0
+  console.log("m = " , m);//1
+  m = 0 ;
+  var ret = ++m &&0;
+  console.log("ret =" , ret);//0
+  console.log("m =" , m);//1
+  console.log("------------或----------------");
+  console.log(10 || 0 );//10
+  console.log(0 || 10 );//10
+  console.log(0 || 10 || 20);//10
+  console.log(0 || "hello" || 20);//hello
+
+   var ret , m  = 0;
+   ret  = 0 || ++ m || m++;
+   console.log("ret = " , ret);//1
+   console.log(" m = ", m);//1
+  </script>
+</body>
+</html>

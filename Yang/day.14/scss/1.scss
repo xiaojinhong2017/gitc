@@ -1,0 +1,20 @@
+@import "./css/2.css";
+@import "./2.scss";
+$color:red;
+$font:40px;
+.a{
+  color: $color;
+  font-size: $font;
+}
+$bd:top;
+$height: 10px 100px 1000px 10000px;
+$px:100px 50px,2000px 200px;
+.f{
+  border-#{$bd}:1px solid red;
+  height: nth($height, 2);
+  width:nth(nth($px, 2),2);
+}
+$headings:(h4:2em, h5 :2em , h6:2em);
+.class-one{
+  font-size: map-get($headings, h4);
+}

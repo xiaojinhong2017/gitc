@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>借用构造函数继承</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+       this.color = ["red","green","blue"];
+       this.getName = function (){
+        return this.name;
+       }
+    }
+    Person.prototype.getAge = function(){
+      return this.age;
+    }
+    function Student(name,age,score){
+      //直接调用了构造函数
+      Person.call(this,name,age)//直接使用已有构造函数
+      this.score = score;//添加新的属性
+    }
+// 借用构造函数，让每个对象都拥有自己的属性，但原型上的属性是没有办法拥有的
+    var one = new Student('lisi',20,80);
+    console.log(one);
+   one.color.push("black");
+   var two = new Student("zhangsan",30,409);
+   console.log(two);
+
+  </script>
+</body>
+</html>

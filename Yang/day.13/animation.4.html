@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  .s{
+    height: 50px;
+    width:50px;
+    border-radius: 25px;
+    background: yellow;
+    transform: translate(100px,100px);
+    animation-name: mon;
+    /*animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;*/
+    /*animation: mon 2s linear 0.5s infinite ;
+    animation: mon 2s linear 1s infinite ;*/
+
+  }
+  .s::before{
+
+    animation: mon 2s linear 0.5s infinite ;
+  }
+  .s::after{
+    animation: mon 2s linear 1s infinite;
+  }
+   .f{
+     height: 211px;
+     width: 4000px;
+    position: relative;
+    top: 686px;
+    left: 0px;
+    /*animation-name: run;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;*/
+  }
+  .f1{
+    height: 211px;
+    width: 2000px;
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: url("./image/1.png");
+    animation: run2 2s linear infinite;
+  }
+  .f2{
+    height: 211px;
+    width: 2000px;
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: url("./image/2.png");
+    animation: run1 2s linear infinite;
+  }
+  @keyframes run1 {
+    0%{
+      bottom: 0px;
+    }
+    100%{
+      bottom: -50%;
+    }
+  }
+  @keyframes run2 {
+  0%{
+      bottom: -50%;
+    }
+  }
+  100%{
+      bottom:0px;
+  }
+  @keyframes mon{
+    0%{
+      transform: scale(0.5);
+    }
+    50%{
+      transform: scale(1.2);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="s"></div>
+<div class="f">
+  <div class="f1"></div>
+  <div class="f2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>裁剪</title>
+</head>
+<body>
+  <canvas id="canvas" height="600" width = "600px"></canvas>
+  <script type="text/javascript">
+    var canvas = document.querySelector("#canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.style.border = "1px solid red";
+    ctx.arc(100,100,75,0,Math.PI*2,false);
+    ctx.stroke();
+    ctx.clip();
+    ctx.fillRect(0,0,100,100);
+    ctx.fillRect(100,100,100,100);
+
+  </script>
+</body>
+</html>

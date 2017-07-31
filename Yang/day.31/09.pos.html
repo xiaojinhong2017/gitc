@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    if(navigator.geolocation){
+      alert("浏览器支持");
+    }
+    else{
+      alert("浏览器不支持");
+    }
+
+ var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+      console.log('Your current position is:');
+      console.log('纬度: ' + crd.latitude);
+      console.log('经度: ' + crd.longitude);
+      console.log('精度' + crd.accuracy + ' meters.');
+    };
+
+    function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  </script>
+</body>
+</html>
+<!-- 在服务器上运行 -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>包含私有成员的单例对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var singleton = (function(){
+      //私有成员
+      var _privateA = 10;
+      function _getprivateA(){
+        return _privateA;
+      }
+      function _addPrivateA(){
+        _privateA ++;
+      }
+      function _minPrivateA(){
+        _privateA --;
+      }
+      return {
+        getA : function(){
+          return _getprivateA();
+        },
+        addA : function(){
+          return _addPrivateA();
+        },
+        minA:function(){
+          return _minPrivateA();
+        }
+      }
+    })();
+    console.log(singleton.getA());
+    singleton.addA();
+    console.log(singleton.getA());
+    singleton.minA();
+    console.log(singleton.getA());
+  </script>
+</body>
+</html>

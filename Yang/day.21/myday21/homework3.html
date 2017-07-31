@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    #clock{
+      height: 600px;
+      width: 600px;
+      background: url("../day21/day21/clock/clock.jpg");
+      margin: 100px auto;
+      position: relative;
+    }
+    #miao img{
+      height: 600px;
+      width: 30px;
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+    #shi img{
+      height: 600px;
+      width: 30px;
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+      #shi img{
+      height: 600px;
+      width: 30px;
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+  </style>
+</head>
+<body>
+<div id="clock">
+<div id="shi"><img src="../day21/day21/clock/hour.png" alt=""</div>
+<div id="fen"><img src="../day21/day21/clock/minute.png" alt=""</div>
+<div id="miao"><img src="../day21/day21/clock/second.png" alt=""></div>
+<script type="text/javascript">
+  setInterval(function(){
+  var d = new Date();
+  hour = d.getHours();
+  minute = d.getMinutes();
+  second = d.getSeconds();
+  hours = hour / 0.2 * 6;
+  },1000);
+</script>
+</div>
+</body>
+</html>

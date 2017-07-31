@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+  <style>
+  .f{
+    height: 20px;
+    width: 500px;
+    border: 1px solid black;
+  }
+  #progress{
+    height: 16px;
+    width: 0px;
+    background: gray;
+    margin: 2px 0;
+  }
+  </style>
+</head>
+<body>
+  <video id="video" controls loop  src="./video/fun.mp4"></video>
+  <br><br>
+  <div class="f">
+  <div id="progress"></div>
+  </div>
+  <br><br>
+  <button id="start">播放</button>
+  <button id="end"> 暂停</button>
+  <button id="muted">静音</button>
+  <button id="speed">快进</button>
+  <button id="retreat">后退</button>
+  <button id="com">全屏</button>
+  <button id="fast">加速</button>
+  <button id="slow">减速</button>
+  <script type="text/javascript">
+    var video = document.querySelector("#video");
+    var start = document.querySelector("#start");
+    var end = document.querySelector("#end");
+    var muted = document.querySelector("#muted");
+    var fast = document.querySelector("#fast");
+    var slow = document.querySelector("#slow");
+    var speed = document.querySelector("#speed");
+    var retreat = document.querySelector("#retreat");
+    var com = document.querySelector("#com");
+    var progress = document.querySelector("#progress");
+    var duration;
+    var  fs = 1;
+    video.addEventListener("timeupdate",function(){
+    speed.onclick = function(){
+      video.currentTime +=5;
+    }
+  },false);
+    video.addEventListener("timeupdate",function(){
+    retreat.onclick = function(){
+      video.currentTime -=5;
+    }
+  },false);
+
+    start.onclick  = function(){
+      video.play();
+      video.disabled = false;
+    }
+    end.onclick = function(){
+      video.pause();
+    }
+    muted.onclick = function(){
+      // if(video.muted === false){
+      //   video.muted = true;
+      //   this.innerHTML = "取消静音";
+      // }
+      // else if (video.muted === true){
+      //   video.muted = false;
+      //   this.innerHTML = "静音";
+      // }
+      video.muted = !video.muted;
+      this.innerHTML = video.muted === true? "取消静音" : "静音";
+    }
+
+    function fullScreen(elem){
+     if (elem.requestFullscreen) {
+       elem.requestFullscreen();
+     } else if (elem.mozRequestFullScreen) {
+       elem.mozRequestFullScreen();
+     } else if (elem.webkitRequestFullscreen) {
+       elem.webkitRequestFullscreen();
+     }
+    }
+    function cancelFullScreen(){
+      if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+      } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+    document.webkitCancelFullScreen();
+      }
+    }
+ com.onclick = function(){
+   fullScreen(video);
+   fs = 0;
+ }
+  document.onkeydown = function(event){
+    if(event.which === 13 )
+    {
+      if(fs === 0){
+       cancelFullScreen();
+       fs = 1;
+      }
+      else if(fs === 1){
+        fullScreen(video);
+        fs = 0;
+      }
+    }
+  }
+
+    video.addEventListener("progress",function(){
+      duration = this.duration;
+    video.addEventListener("timeupdate",function(){
+     var   percent = video.currentTime / duration;
+     progress.style.width = percent * 500 + 'px';
+   },false)
+ },false);
+
+    fast.onclick = function(){
+      video.playbackRate += 0.1;
+    }
+    slow.onclick = function(){
+      video.playbackRate -= 0.1;
+    }
+  </script>
+
+</body>
+</html>

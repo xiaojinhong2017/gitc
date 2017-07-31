@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>document</title>
+  <script src="https://cdn.bootcss.com/react/15.6.0/react.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
+  <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  </style>
+</head>
+<body>
+  <!-- 可用随机数实现 Math.floor(Math.random()*可能值总数+第一个可能的值)-->
+  <div id="example">
+        <script type="text/babel">
+        var Color = React.createClass({
+          getInitialState:function(){
+            return{flag:0};
+          },
+          handlerdbclick:function(){
+            if(0 <= this.state.flag && this.state.flag <= 2){
+              console.log(this.state.flag);
+              this.state.flag++;
+            }else {
+              this.state.flag = 0;
+
+            }
+            this.setState({flag:this.state.flag});
+          },
+
+          render:function(){
+            var color;
+            if(this.state.flag == 0){
+              color ={color:'black'} ;
+            }else if(this.state.flag == 1){
+              color ={color:'yellow'} ;
+            }else if(this.state.flag == 2){
+              color ={color:'red'} ;
+            }else if(this.state.flag == 3){
+              color ={color:'blue'} ;
+            }
+            return (<div>
+          <h1 onDoubleClick = {this.handlerdbclick} style = {color}>点击</h1>
+              </div>)
+          }
+        })
+        ReactDOM.render(
+          <Color />,
+          document.getElementById("example")
+        )
+  </script>
+<!-- </div> -->
+</body>
+</html>

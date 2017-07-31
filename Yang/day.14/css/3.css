@@ -1,0 +1,27 @@
+.class-one {
+  color: red;
+  font-size: 40px; }
+  .class-one .class-one-one {
+    text-align: center;
+    line-height: 100px; }
+  .class-one li {
+    float: left; }
+    .class-one li::before {
+      content: "helloworld"; }
+  .class-one a {
+    padding: 20px; }
+    .class-one a:hover {
+      background: yellow; }
+
+.class-two {
+  border-style: solid;
+  border-left-width: 10px;
+  border-left-color: red;
+  border-right-width: 10px;
+  border-right-color: red;
+  border-top-width: 10px;
+  border-top-color: red;
+  background-color: red;
+  background-image: url(); }
+
+/*# sourceMappingURL=3.css.map */

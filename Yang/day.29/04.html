@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>新增input类型</title>
+  </head>
+  <body>
+
+
+    <!-- novalidate 是布尔属性，写名字即可
+     autofocus: 自动获得焦点
+     datalist, 提供选项
+     min,max,step 数字
+     required 必填
+     pattern ,正则
+     multiple, 文件多选
+  -->
+
+    <form action="#" method="get"  autocomplete="on">
+      text: <input required type="text" name="text" value="" placeholder="请输入姓名"> <br><br>
+
+      <!-- pattern 直接写正则，不用添加 "/"  -->
+      pattern: <input pattern="[a-z]*"  type="text" name="pat" value=""> <br><br>
+
+      email: <input list="datalist-1" pattern="[\s\S]+@\d+.com" type="email" name="text" value=""> <br><br>
+      <datalist id="datalist-1">
+        <option>xxxx@126.com</option>
+        <option>xxxx@163.com</option>
+        <option>xxxx@qq.com</option>
+      </datalist>
+
+      number: <input min="10" max="20" step="2" type="number" name="number"><br><br>
+      range: <input min="10" max="20" step="2" type="range" name="range"><br><br>
+
+
+      file: <input multiple type="file" name="files"> <br><br>
+
+      <!-- 浏览器支持力度不好 -->
+      date: <input type="date" name="date"><br><br>
+
+      search: <input type="search" name="search">
+
+      <button type="submit">提交</button>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var a = [1, 2, 3, , 4, 5];
+
+        var i = 0;
+        while (i < a.length) {
+            console.log(a[i]);
+            i++;
+        }
+
+
+        //join方法
+        console.log(a.join()); //"1,2,3,,4,5"
+        console.log(a.join('')); //"12345"
+        var ret = a.join("+"); //"1+2+3++4+5";
+        console.log(ret); //eval()进行运算时，字符串必须符合运算规则
+
+
+
+        //reverse,影响数组本身
+        var b = [1, 2, 3, 4, 5, 6];
+        b.reverse();//reverse()方法用于颠倒数组中元素的顺序
+        console.log(b);
+
+        //sort
+        var c = ["hello", "world", "china"];
+        c.sort();//sort()用于对数组的元素进行排序，无参数时按编码顺序排序
+        console.log(c);
+
+        c = [4, 3, 10, 20];
+        c.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(c);
+
+
+        console.log(a.concat(b, c, "end")); //数组拼接
+
+
+        //slice浅复制
+        var d = [1, 2, 3, 4, 5, 6, 7, [8, 9, 10]];
+        var e = d.slice(3, 5); //[4,5] slice()方法可从数组中返回选定的元素slice(start,end),
+        //返回一个新的数组。包含start到end（不包括该元素）的数组中的元素
+        e[0] = 40; //[40,5]
+        console.log(e);
+        console.log(d); //修改e,但是d没有受影响
+
+        var f = d.slice(-2); //切最后2个元素
+        console.log(f); //[7, [8,9,10]]
+        f[1][0] = 88;
+        console.log(f); //[7, [88,9,10]]
+        console.log(d); //[1,2,3,4,5,6,7,[88,9,10]], d受到f的影响,属于浅复制
+
+
+
+        var g = h = [];
+        g[0] = 88;
+        h[1] = 99; //g,h是数组的引用，都是完全一样的
+        console.log(g);
+        console.log(h);
+
+        //splice修改数组本身splice(index,howmany,item1,...,itemX)
+        //index 必需。整数，规定添加/删除项目的位置，使用负数可从结尾处规定位置。
+        //howmany 必需。要删除的项目数量。如果设置为0,则不会删除项目。
+        //item1，...，itemX可选。向数组添加的新项目。
+        var fish = ["angel", "clown", "mandarin", "surgeon", [1, 2, 3]];
+        ret = fish.splice(2); //删除
+        console.log(ret);
+        console.log(fish); //["angel", "clown"]
+
+        fish.splice(0, 0, "hello", "world"); //add 添加
+        console.log(fish); //["hello", "world", "angel", "clown"]
+        //
+        fish.splice(2, 1, "devil", "hehe", [1, 2, 3]); //修改
+        console.log(fish); //["hello", "world", "devil", "hehe", [1,2,3], "clown"]
+
+
+        var j = [1, 2, 3, 4, 5, [1, 2, 3]];
+        console.log(j.toString()); //“1,2,3,4,5,1,2,3” toString()方法可把一个逻辑值转换为字符串，并返回结果
+
+
+
+
+        /*
+        作业：
+        1. 实现函数：取消一个数组中的重复元素
+        2. 计算 1!+2!+3!+4!+5! = ?
+				3. 实现一个函数：将数组转换成字符串之后，判断该字符串是否是回文？
+				   回文："123abccba321"就是回文
+				4. 实现函数：将10进制转换为二进制，并输出转换的结果
+				5. 实现函数：判断一个字符串中的括号是否匹配？
+				   比如： var str = "(((hello)) hehe";
+					        str = "{{{heheh}} hehe";
+					        str = "[[[heheh]] hehe";
+
+        */
+    </script>
+
+</body>
+
+</html>

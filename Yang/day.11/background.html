@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin :0px;
+    padding : 0px;
+  }
+  .f{
+    width:400px;
+    height: 200px;
+    padding:20px;
+    border: 10px dotted green;
+    background: url("./image/1.jpg") no-repeat;
+    background-size: cover;
+    /*background-size: contain;*/
+    background-origin:border-box;
+    /*background-origin: content-box;*/
+    /*background-clip: content-box;*/
+    margin-bottom: 50px;
+  }
+  .f1{
+    width:400px;
+    height: 200px;
+    padding:20px;
+    border: 10px dotted green;
+    background: url("./image/1.jpg") no-repeat;
+    background-size: cover;
+    background-origin:border-box;
+    background-clip:content-box;
+  }
+  .f2{
+  width: 681px;
+  height: 439px;
+  background: url("./image/background1_01.jpg") no-repeat left top,
+              url("./image/background1_02.jpg") no-repeat right,
+              url("./image/background1_03.jpg") no-repeat left bottom;
+  }
+  </style>
+</head>
+<body>
+   <div class="f"></div>
+   <div class="f1"></div>
+   <div class="f2"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>拖拽</title>
+  <style>
+  *{
+    margin: 0;
+    padding:0;
+  }
+  .f{
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    margin-bottom: 20px;
+  }
+  .box{
+    height: 500px;
+    border: 1px solid red;
+  }
+  </style>
+</head>
+<body>
+  <div draggable="true" class="f" id="f"></div>
+  <div class="box" id="box"></div>
+  <script type="text/javascript">
+    var f = document.querySelector("#f");
+     var box =  document.querySelector("#box");
+     f.addEventListener('dragstart',function(e){
+       console.log("f start drag ...");
+     });
+     f.addEventListener('drag',function(e){
+       console.log("drag ...");
+     })
+     f.addEventListener("dragend",function(e){
+       console.log("f drag end");
+     })
+     f.addEventListener("dragexit",function(e){
+       console.log("f drag exit ..");
+     })
+     box.addEventListener("dragenter",function(e){
+
+     })
+  </script>
+</body>
+</html>

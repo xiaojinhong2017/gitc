@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var ret  = Number("helloworld");
+    console.log(ret);
+    console.log(typeof(ret));
+    console.log(Number(""));//0
+    console.log(Number("1234"));//1234
+    console.log(Number("0x12"));//18
+    console.log(Number("0101"));//101
+    console.log(Number("abc"));//NaN
+    console.log(Number("12.12.12"));//NaN
+    console.log(Number("123abc"));//NaN
+    console.log("------------------");
+    console.log(parseInt(""));//0
+    console.log(parseInt("1223"));//1223
+    console.log(parseInt("129.02"));//129
+    console.log(parseInt("129.abc"));//129
+    console.log(parseInt("abc.212"));//NaN
+    console.log(parseInt("0123"));//123
+    console.log(parseInt("12",2));//NaN
+    console.log(parseInt("123.1234",10));//123
+    console.log(parseInt("12",8));//10
+    console.log(parseInt("012",16));//18
+    console.log("-----------------");
+    console.log(parseFloat(""));//0
+    console.log(parseFloat("0x11"));//0
+    console.log(parseFloat("0x12.12"));//0
+    console.log(parseFloat("123abc"));//123
+    console.log(parseFloat("123.123"));//123.123
+    console.log(parseFloat("123.13.1"));//123.13
+    console.log(parseFloat("abc"));//NaN
+
+  </script>
+</body>
+</html>

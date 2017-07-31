@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-3.0.0.min.js" ></script>
+</head>
+<body>
+
+ <input id="text" type="text" name="">
+ <button id="btn">点击使用Number进行转换</button>
+ <button id="btn1">点击使用parseInt进行转换</button>
+ <button id="btn2">点击使用parseFloat转换</button>
+ <h1 id="show">等待转换</h1>
+
+<script type="text/javascript">
+	$("#btn").click(function(){
+       var str = $("#text").val();
+       $("#show").text(Number(str));
+	});
+
+	$("#btn1").click(function(){
+       var str = $("#text").val();
+       $("#show").text(parseInt(str));
+	});
+
+	$("#btn2").click(function(){
+       var str = $("#text").val();
+       $("#show").text(parseFloat(str));
+	});
+
+</script>
+
+	
+</body>
+</html>

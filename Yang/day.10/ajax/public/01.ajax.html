@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery.ajax()</title>
+</head>
+
+<body>
+    <button id="btn-1">点击发送get</button>
+    <button id="btn-2">点击发送post</button>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        $("#btn-1").click(function() {
+            /*    	$.ajax({
+                		url: "http://127.0.0.1:8000/index",
+                		method: "get",
+                		data: {
+                			name: '赵四',
+                			age: 22
+                		},
+                		error: function( jqXHR, textStatus, errorThrown ){
+                			console.log(jqXHR);
+                			console.log(textStatus);
+                			console.log(errorThrown);
+                		},
+                		complete: function(jqXHR, textStatus){
+                			console.log("complete: " + textStatus);
+                		},
+                		success: function(data, textStatus, jqXHR){
+                			console.log("success: " + textStatus);
+                			console.log(data);
+                		}
+                	});*/
+
+
+
+            $.ajax({
+                url: "http://127.0.0.1:8000/index",
+                method: "get",
+                data: {
+                    name: '赵四',
+                    age: 22
+                }
+            }).done(function(data, textStatus, jqXHR) {
+                console.log(data);
+
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+            });
+
+        });
+
+
+
+        $("#btn-2").click(function() {
+            /* $.ajax({
+                 url: "http://127.0.0.1:8000/index",
+                 method: "post",
+                 data: {
+                     name: '赵四',
+                     age: 22
+                 },
+                 error: function(jqXHR, textStatus, errorThrown) {
+                     console.log(jqXHR);
+                     console.log(textStatus);
+                     console.log(errorThrown);
+                 },
+                 complete: function(jqXHR, textStatus) {
+                     console.log("complete: " + textStatus);
+                 },
+                 success: function(data, textStatus, jqXHR) {
+                     console.log("success: " + textStatus);
+                     console.log(data);
+                 }
+             });*/
+
+            $.ajax({
+                url: "http://127.0.0.1:8000/index",
+                method: "post",
+                data: {
+                    name: '赵四',
+                    age: 22
+                }
+            }).then(function(data, textStatus, jqXHR) {
+                console.log(data);
+
+            }, function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+            });
+        });
+
+    });
+    </script>
+</body>
+
+</html>

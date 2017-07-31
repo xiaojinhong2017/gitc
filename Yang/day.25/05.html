@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bind进行函数绑定</title>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <script type="text/javascript">
+    var value = 0;
+    var obj = {
+      value:10,
+      handler:function(){
+        console.log(this.value);
+      }
+    }
+    var btn = document.getElementById("btn");
+    btn.value = 100;
+    var ret = obj.handler.bind(obj);
+    btn.addEventListener("click",obj.handler,false);//100
+    btn.addEventListener("click",ret,false);
+    ret();
+
+  </script>
+</body>
+</html>

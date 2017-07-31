@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="f">nidfjiojdfoi</div>
+  <div id="f1" class="test">f1元素</div>
+  <script type="text/javascript">
+    var f = document.getElementById("f");
+    var f1 = document.getElementById("f1");
+    //设置属性
+    f.setAttribute("class","f");
+    f.setAttribute("style","color:red;background-color:yellow");
+    //获得属性
+    console.log(f.getAttribute("id"));//特性
+    console.log(f.getAttribute("class"));
+    console.log(f.getAttribute("style"));
+    console.log(f.id);//属性
+    console.log(f.class);//undefined
+    console.log(f.className);
+    //删除属性
+    f.removeAttribute("class");
+    f.removeAttribute("style");
+    //通过属性操作，操作自定义的属性
+    f.setAttribute("empty","true");
+
+ 
+  </script>
+</body>
+</html>

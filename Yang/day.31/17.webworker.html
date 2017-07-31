@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>web worker</title>
+</head>
+<body>
+  <button id="start">start worker</button>
+  <button id="end">terminate worker</button>
+  <script type="text/javascript">
+    var start = document.querySelector("#start");
+    var end = document.querySelector("#end");
+    var worker;
+    start.onclick = function(){
+  //通过 worker = new Worker( url ) 加载一个JS文件来创建一个worker，同时返回一个worker实例。
+      worker = new Worker("./worker.js");
+//绑定worker.onmessage方法来接收worker发送过来的数据。
+    worker.onmessage = function(event){
+      console.log("从worker接收到的数据:",event.data);
+    }
+  //通过worker.postMessage( data ) 方法来向worker发送数据。
+      worker.postMessage(0);
+    }
+    end.onclick = function(){
+      //可以使用 worker.terminate() 来终止一个worker的执行。
+      worker.terminate();
+    }
+
+
+  </script>
+</body>
+</html>

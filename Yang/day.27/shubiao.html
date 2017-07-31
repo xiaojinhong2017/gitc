@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shubiao</title>
+  <style>
+  .small{
+    height: 450px;
+    width: 450px;
+    margin: 100px 100px;
+    border: 1px solid black;
+    cursor: move;
+    position: relative;
+    float: left;
+
+  }
+  .box{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: yellow;
+    /*opacity: 0.5;*/
+  }
+  .big{
+    height: 600px;
+    width:  600px;
+    margin: 100px 50px;
+    border:1px solid black;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    visibility:hidden;
+  }
+  .big img{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+  }
+  </style>
+</head>
+<body>
+  <div class="small" id="small-id">
+    <img src="./shubiao1.jpg" alt="">
+    <div class="box"></div>
+  </div>
+  <div class="big" id = "big-id">
+    <img src="./shubiao2.jpg" alt="">
+  </div>
+  <script src = "./lunbo/jquery-3.0.0.min.js"></script>
+  <script>
+  var small = document.getElementById("small-id");
+  $(".small").mousemove(function(event){
+  $(".box").css("opacity","0.5");
+  $(".big").css("visibility","visible");
+  var   y = event.pageY - 227 ;
+  var   x = event.pageX - 227;
+  if( y <= 0 ){
+    $(".box").css("top","0px");
+  }
+  if( y > 200 ){
+    $(".box").css("top","200px");
+  }
+  if( x <= 0 ){
+    $(".box").css("left","0px");
+  }
+  if( x > 200 ){
+    $(".box").css("left","200px");
+  }
+
+  if( y > 0&& y <= 200  && x > 0 && x < 200){
+    $(".box").css("top",y + 'px');
+    $(".box").css("left",x + 'px');
+  }
+  $(".big img").css("top",-y*1.5 + 'px');
+  $(".big img").css("left",-x*1.5 + 'px');
+})
+
+  $(".small").mouseout(function(event){
+   $(".box").css("opacity","0");
+  $(".big").css("visibility","hidde8n");
+ })
+  </script>
+</body>
+</html>

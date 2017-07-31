@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .f{
+      height: 300px;
+      width: 400px;
+      background: yellow;
+    }
+    .a{
+      height: 50px;
+      width: 50px;
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="f"> ffff</div>
+  <div class= "f">
+    <p>nihao</p>
+    <p>hello</p>
+    <div class="a"></div>
+  </div>
+  <button type="button" name="button">点击提交</button>
+</body>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+// $(".f").click(function(){
+//   $(this).css("background","red");
+// });
+// $(".f").click(function(){
+//   $(this).css("border","10px solid green");
+// });
+// $(".f").on("click",function(){
+//   $(this).css("background", "red");
+// });
+$(".f").on("click",".a",function(){
+  $(this).css("background","red");
+});
+var ziti = function() {
+
+  $(this).css("border", "10px solid black");
+};
+$(".f").on("click",ziti);
+
+// $(".f").mouseover(function(){
+//   $(this).css("font-size","40px");
+// });
+$(".f").on("mouseover",function(){
+  $(this).css("font-size","40px");
+});
+$(".f").on("hello",function(){
+  alert("I am hello!!");
+});
+$("button").click(function(){
+  // $(".f").click();
+  // $(".f").trigger("click");
+  $(".f").off("click",ziti);
+  $(".f").trigger("hello");
+});
+
+// $(".f").off("mouseover");
+// $(".f").off("click");
+// $(".f").click(function(){
+//   $(this).off("click");
+// });
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>点击获取敏感词汇</title>
+  <style>
+  .content{
+    height: 200px;
+    max-width: 600px;
+    margin: 200px auto;
+    border: 1px solid black;
+  }
+  #content span{
+    color: red;
+  }
+  </style>
+</head>
+<body>
+  <button id="btn">点击获取敏感词汇</button>
+  <div id="content" class="content" contenteditable="true"></div>
+  <script src = './jquery-3.0.0.js'></script>
+  <script type="text/javascript">
+    var btn = document. getElementById("btn")
+    var keywords = ['nihao','hello','hi'];
+    function covert(attrName,key){
+    var patton = new RegExp("(" + key.join("|") + ")","g");
+    console.log(patton);
+    var str = attrName.replace(patton,function(m,p){
+        return "<mark>"+ p + "</mark>"
+      });
+      return str;
+    };
+
+    $("#btn").click(function (){
+    var str = $("#content").html();
+    var newStr = covert(str,keywords);
+    console.log(newStr);
+    $("#content").html(newStr);
+  });
+
+  </script>
+</body>
+</html>

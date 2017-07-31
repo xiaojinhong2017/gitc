@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .f{
+    width: 150px;
+    height: 100px;
+    background: url("./image/car.jpg");
+    background-size: 150px 100px;
+    animation-name: run;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes run{
+    0%{
+      transform: translate(0,400px) skew(10deg,0deg) scaleX(1.3);
+    }
+    10%{
+
+      transform: translate(100px,400px) skew(0deg,0deg) scale(1);
+    }
+    90%{
+      transform: translate(900px, 400px) skew(0deg,10deg) scaleX(0.9);
+    }
+    100%{
+      transform: translate(1000px, 400px) skew(0deg,0deg) scale(1);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

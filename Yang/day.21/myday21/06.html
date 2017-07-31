@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Math</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var nums = [10,2,3,3,4,50];
+    console.log(Math.max(1,2,3,4,5));
+    console.log(Math.min(1,2,3,4,5));
+    console.log(Math.min(...nums));  //新特性
+    console.log(Math.max.apply(null,nums));//老办法
+
+    console.log("---------取整--------");
+    console.log(Math.round(12.4));
+    console.log(Math.round(12.5));
+    console.log(Math.round(12.9));
+
+    console.log(Math.floor(12.9));
+    console.log(Math.floor(12.3));
+    console.log(Math.floor(-12.3));
+
+    console.log(Math.ceil(12.1));
+    console.log(Math.ceil(-12.1));
+
+    for ( var i = 0; i < 100; i ++){
+      console.log(Math.random());//真随机
+    }
+    //[65,96]范围
+    for(var i = 0; i < 100; i ++){
+      var ret = Math.floor(Math.random()*(96 - 65 + 1) + 65);
+      console.log(ret);
+    }
+
+  </script>
+</body>
+</html>

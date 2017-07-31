@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>正则表达式</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //flag:m i g
+    var pat = /hello/gim;
+    console.log(typeof pat);
+ //使用RegExp
+ pat = new RegExp("hello","gim");
+ pat1 = new RegExp(/hello/,"gim");
+ console.log(pat);
+ console.log(pat1);
+
+ // 常用匹配模式
+ console.log(/hello/.test("helloworld"));//true
+ console.log(/hello/.test("world"));//false
+ console.log(/./.test("\n\r"));//true
+ console.log(/\d/.test("djfsfhdj"));//false
+ console.log(/\D/.test("adfhsdf"));//true
+
+ console.log(/[abckf]/.test("whfhhu"));//true
+console.log(/[^123]/.test("123424"));//false
+console.log(/[^123]/.test("13254"));//true
+console.log(/[a-z]/.test("fjfjid"));//true
+  </script>
+</body>
+</html>

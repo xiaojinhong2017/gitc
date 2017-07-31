@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <button id="btn">发送post请求</button>
+
+    <script src="/js/jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $("#btn").click(function(){
+      $.ajax({
+        url: "/data",
+        method: "post",
+        data: {"fetch": true}
+      }).done(function(data, textStatus, jqXHR) {
+        console.log("receive from server: ", data);
+      });
+    });
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新增input类型</title>
+</head>
+<body>
+
+  <form action="#" method = "get" >
+    text: <input type="text" name="text" value="" placeholder="请输入姓名"> <br><br>
+    pattern: <input pattern="[a-z]*" type="text" name="pat" value=""><br><br>
+    email: <input list="datalist-1" type="email" name="email" value=""  ><br><br>
+    <datalist id="datalist-1">
+      <option>xxxx@126.com</option>
+      <option>xxxx@qq.com</option>
+      <option>xxxx@163.com</option>
+    </datalist>
+    number: <input type="number" name="number" value="" min="10" max="20" step="2"><br><br>
+    range: <input type="range" min="0" max="30" step="3"><br><br>
+    data: <input type="data" name="data" value="">
+  <button type="submit">提交</button>
+  </form>
+</body>
+</html>

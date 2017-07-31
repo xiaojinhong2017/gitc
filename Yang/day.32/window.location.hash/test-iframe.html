@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id = "h1">我是iframe</h1>
+  <script type="text/javascript">
+    var h = document.querySelector("#h1");
+    var originUrl = window.parent.location.href;
+    var num = 0;
+    window.onhashchange  = function(){
+      h.innerHTML = window.location.hash;
+      window.parent.location.href = originUrl + "#" + num++;
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型链继承的问题</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //通过原型链继承属性时，任何对象都可以修改继承过来的属性，导致其他对象都会受到影响
+    function Super(){
+      this.color = ["red", "green","blue"];
+    }
+    function Sub(){
+    }
+    Sub.prototype = new Super;
+    var one = new Sub;
+    console.log(one);
+    one.color.push("black");//修改了原型上的属性
+    var two = new Sub;
+    console.log(two);//two 也受到了修改的影响
+  </script>
+</body>
+</html>

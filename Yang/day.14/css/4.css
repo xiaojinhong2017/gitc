@@ -1,0 +1,43 @@
+.class-1 {
+  font-size: 10px; }
+
+.class-2 {
+  font-size: 20px; }
+
+.class-5 {
+  font-size: 25px; }
+
+.class-6 {
+  font-size: 30px; }
+
+.class-7 {
+  font-size: 35px; }
+
+.class-1 {
+  background-img: url("./image/1.jpg") no repeat; }
+
+.class-2 {
+  background-img: url("./image/2.jpg") no repeat; }
+
+.class-3 {
+  background-img: url("./image/3.jpg") no repeat; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.2em; }
+
+.box-1 {
+  background: url("./image/1.jpg/") no-repeat 0px 0px; }
+
+.box-2 {
+  background: url("./image/2.jpg/") repeat-x 0px 0px; }
+
+.box-3 {
+  background: url("./image/3.jpg/") repeat-y 0px 0px; }
+
+/*# sourceMappingURL=4.css.map */

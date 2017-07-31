@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义bind</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function bind(fn,context){
+      var preArg = Array.prototype.slice.call(arguments ,2);
+      return function(){
+      var newArg = Array.prototype.slice.call(arguments ,0);
+      var  newName = preArg.concat(newArg);
+      return  fn.apply(context,newName);
+      }
+    }
+    function fun (arg1,arg2){
+      console.log(this);
+      console.log(arguments);
+      console.log(arg1 + arg2);
+    }
+    var obj = {
+      name : 'zhangsan',
+      age : '4'
+    }
+    var ret = bind(fun,obj,1,2,3);
+    ret(10,20);
+  </script>
+</body>
+</html>

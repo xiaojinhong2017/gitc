@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>扇形</title>
+  <style>
+  #canvas{
+    border: 1px solid red;
+  }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" height="500px" width="500px"></canvas>
+  <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.moveTo(250,250);
+    context.arc(250,250,100,0,50 * Math.PI/180,false);
+    context.fillStyle = "yellow";
+    context.fill();
+    context.closePath();
+    context.beginPath();
+    context.moveTo(250,250);
+    context.arc(250,250,100, 50* Math.PI/180,130 * Math.PI/180,false);
+    context.fillStyle = "blue";
+    context.fill();
+    context.closePath();
+    context.beginPath();
+    context.moveTo(250,250);
+    context.arc(250,250,100, 130* Math.PI/180,270 * Math.PI/180,false);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+    context.beginPath();
+    context.moveTo(250,250);
+    context.arc(250,250,100, 270* Math.PI/180,360 * Math.PI/180,false);
+    context.fillStyle = "green";
+    context.fill();
+    context.closePath();
+  </script>
+</body>
+</html>

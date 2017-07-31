@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ajax使用步骤</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .cmd {
+        text-align: center;
+    }
+    
+     </style>
+</head>
+
+<body>
+    <div class="cmd">
+        <button id="btn1">点击发送ajax get请求</button>     
+    </div>
+
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    // 兼容低版本ie浏览器的代码,对于现代浏览器可以省略部分代码
+    function createXHR() {
+        if (typeof XMLHttpRequest != "undefined") {
+            return new XMLHttpRequest();
+        } else if (typeof ActiveXObject != "undefined") {
+            if (typeof arguments.callee.activeXString != "string") {
+                var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                        "MSXML2.XMLHttp"
+                    ],
+                    i, len;
+                for (i = 0, len = versions.length; i < len; i++) {
+                    try {
+                        new ActiveXObject(versions[i]);
+                        arguments.callee.activeXString = versions[i];
+                        break;
+                    } catch (ex) {
+                        //跳过
+                    }
+                }
+            }
+            return new ActiveXObject(arguments.callee.activeXString);
+        } else {
+            throw new Error("No XHR object available.");
+        }
+    }
+
+
+
+    //拼接get方法传递的数据
+    function addURLParam(url, name, value) {
+        url += url.indexOf('?') == -1 ? '?' : '&';
+
+        //encodeURIComponent编码
+        url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        return url;
+    }
+
+    var btn1 = document.querySelector("#btn1");
+
+    //发送get请求
+    btn1.onclick = function() {
+        var url = addURLParam("http://127.0.0.1:8000/index", "name", "lisi");
+        url = addURLParam(url, "age", 22);
+
+        //创建xhr对象
+        var xhr = createXHR();
+
+        //状态切换时，要执行的代码
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                console.log(xhr.response);// "{name:'lisi', age: 22}"
+            }
+        };
+
+        //使用open创建一个异步请求
+        xhr.open("get", url, true);
+
+
+        //使用send方法 发送一个http请求
+        //send方法不管有没有数据，都必须执行
+        xhr.send(null);
+
+    };
+
+
+    </script>
+</body>
+
+</html>

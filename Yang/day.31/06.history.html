@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>history</title>
+</head>
+<body>
+  <a href="./test.html">点击跳到test.html</a>
+  <button id="go">前进</button>
+  <button id="back" type="button" name="button">后退</button>
+  <script type="text/javascript">
+  var go =document.querySelector("#go");
+  var back = document.querySelector("#back");
+  go.onclick = function(){
+    history.go(1);
+  }
+  back.onclick = function(){
+    history.go(-1);
+  }
+
+  </script>
+</body>
+</html>

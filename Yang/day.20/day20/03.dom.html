@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dom操作</title>
+  </head>
+  <body>
+    <div id="f">div1</div>
+    <div>div2</div>
+
+    <div class="s">
+      <p>ksjgkjhdjhkj</p>
+    </div>
+
+    <p>快睡觉很感慨大家看好</p>
+
+
+    <script type="text/javascript">
+    var f = document.getElementById('f');
+    console.log(f.nodeType);//1,输出节点类型
+    console.log(document.nodeType);//9
+
+    var divs = document.getElementsByTagName('div');//返回数组
+    console.log(divs);
+    console.log(divs[0]);
+
+
+    divs = document.getElementsByClassName("s");//·返回数组
+    console.log(divs);
+
+
+    //节点访问，父节点，子节点，兄弟节点
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  body{
+    background: pink;
+  }
+  .heart{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    margin: 200px auto;
+    animation-name:bigger;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+  }
+  .y1{
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    /*border: 2px solid yellow;*/
+    position: absolute;
+    left: 0px;
+    top:0px;
+    float: left;
+    box-shadow: 0px 0px 10px yellow;
+  }
+  .y2{
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0px 0px 10px yellow;
+    left: 50%;
+    top:0px;
+  }
+  .f{
+    height: 50%;
+    width: 50%;
+    box-shadow: 0px 0px 10px yellow;
+    transform: translate(50%, 50%) rotateZ(45deg);
+  }
+  @keyframes bigger{
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  </style>
+  </style>
+</head>
+<body>
+  <div class="heart">
+    <div class="y1"></div>
+    <div class="y2"></div>
+    <div class="f"></div>
+
+  </div>
+</body>
+</html>

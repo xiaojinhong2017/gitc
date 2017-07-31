@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dom操作</title>
+</head>
+<body>
+  <div id="f">div1</div>
+  <div>div2</div>
+  <div id="l" class="s">
+    <p>dfkljhdfjkdlfh</p>
+    <div id="a"></div>
+    <span>niahoihdkl</span>
+  </div>
+  <p>客户v尽快回复开发的借口来减肥</p>
+  <div id="c"></div>
+  <script type="text/javascript">
+  //jquery获得对象$("<div>");
+    var f = document.getElementById("f");
+    var s = document.getElementsByClassName("s");//返回的是数组
+    var divs = document.getElementsByTagName("div");//返回的是数组
+    var l = document.getElementById("l");
+    console.log(f);
+    console.log(s);
+    console.log(divs);
+    console.log(divs[0]);
+
+    //节点访问，父节点，子节点，兄弟节点
+    var a = document.getElementById("a");
+    console.log(a.parentNode);//s元素
+    console.log(document.parentNode);//null
+
+    console.log("---------a的兄弟节点---------");
+    console.log(a.nextSibling);//换行符
+    console.log(a.nextElementSibling);
+    console.log(a.previousSibling);
+    console.log(a.previousElementSibling);
+
+    console.log("---------s的子节点-------");
+    console.log(l.children);
+    console.log(l.firstChild);
+    console.log(l.firstElementChild);
+    console.log(l.lastChild);
+    console.log(l.lastElementChild);
+    console.log(l.childNodes);
+
+    //节点操作
+    console.log("-------------节点操作----------------");
+    //创建节点
+    var c = document.getElementById("c");
+    var d = document.createElement("div");
+    console.log(d);
+    console.log(d.nodeType);
+    //添加内容
+    d.innerHTML = "hello div";
+    c.appendChild(d);
+    //使用insertbefore在任意位置添加节点
+    var e = document.createElement("p");
+    e.innerHTML = "nihao";
+    c.insertBefore(e,d);
+    //在body中追加一个table
+    //创建表格节点
+    var table = document.createElement("table");
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+
+    //添加内容
+    td1.innerHTML = "zhangsan";
+    td2.innerHTML = "21";
+    td3.innerHTML = "nan";
+
+    //将td添加到tr中
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+
+    //将tr添加到table中
+    table.appendChild(tr);
+    //将table添加到body中
+    document.body.appendChild(table);
+  //顺序可以调换
+  </script>
+</body>
+</html>

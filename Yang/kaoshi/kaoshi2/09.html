@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+  <style>
+    .mynav ul {
+      padding-left: 80px;
+    }
+
+    .mynav .navbar-nav>li>a {
+      color: black;
+      font-size: 17px;
+      padding-right: 60px;
+    }
+
+    .mynav .navbar-right>li>a {
+      color: black;
+      font-size: 17px;
+      padding-right: 20px;
+    }
+
+    .img1 {
+      position: relative;
+      top: 13px;
+    }
+
+    .mynavbar {
+      background: white;
+      border: none;
+    }
+
+    .img2 {
+      height: 600px;
+      width: 100%;
+    }
+
+    .bg {
+      background: #fafafa;
+      height: 304px;
+    }
+
+    .bg1 {
+      background: #ccd6e2;
+      height: 253px;
+      font-size: 14px;
+      color: #666666;
+    }
+
+    .jj {
+      padding-top: 20px;
+    }
+
+    .bg1>a>img {
+      height: 200px;
+      width: 100%;
+    }
+
+    .bg1>a {
+      padding: 0px;
+      border: none;
+    }
+
+    .section {
+      height: 665px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      line-height: 30px;
+      padding-bottom: 30px;
+      padding-top: 60px;
+      color: #969696;
+      letter-spacing: 0;
+      text-align: center;
+      border-bottom: 1px #E8E8E9 solid;
+    }
+
+    .section-content {
+      height: 495px;
+    }
+
+    .topic {
+      height: 62px;
+      color: rgb(80, 80, 80);
+      font-size: 20px;
+      line-height: 62px;
+      text-align: left;
+    }
+
+    .img-inner {
+      height: 208px;
+    }
+
+    .card {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 4rem;
+      background: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 4rem;
+      color: #666666;
+    }
+
+    .img3 {
+      height: 208px;
+      width: 100%;
+    }
+
+    .news-list {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      font-size: 1.2rem;
+      line-height: 3rem;
+    }
+
+    .news-item {
+      display: table-row;
+      width: 100%;
+    }
+
+    .decoration {
+      display: table-cell;
+      width: 10%;
+      position: relative;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .news-circle {
+      display: inline-block;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      vertical-align: middle;
+    }
+
+    .solid-circle {
+      background: #ccc;
+      border-radius: 50%;
+      width: 0.6rem;
+      height: 0.6rem;
+      overflow: hidden;
+      margin: 0.3rem;
+    }
+
+    .decoration::before,
+    .decoration::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 50%;
+      background: #ccc;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: -1;
+    }
+
+    .news-time {
+      color: #999999;
+      font-size: 1rem;
+      line-height: 2re
+    }
+
+    .news-box a {
+      display: table-cell;
+      line-height: 3rem;
+      width: 80%;
+      vertical-align: middle;
+      color: #000;
+      position: relative;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+
+    .more-news a {
+      font-size: 14px;
+      color: black;
+    }
+
+    .circle {
+      display: inline-block;
+
+      border-radius: 5px;
+      border: 1px solid #999999;
+    }
+
+    .bg2 {
+      background: url("./images/bd_work_bg01.jpg") no-repeat;
+      background-size: 100% 665px;
+      height: 500px;
+    }
+
+    .bg3 {
+      background: none;
+      border: none;
+    }
+
+    .section-foot {
+      display: block;
+      border: 1px solid #2472dc;
+      border-radius: 2rem;
+      width: 8rem;
+      font-size: 1.2rem;
+      color: #2472dc;
+      line-height: 2.5rem;
+      text-align: center;
+      margin: 2.5rem auto;
+      cursor: point;
+    }
+
+    .bg4 {
+      height: 510px;
+      background:#fafafa;
+    }
+
+    .card-cover {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      font-size: 1.6rem;
+      color: #505050;
+      text-align: center;
+      transform: translate(0%, -50%);
+      padding: 24px 0px;
+    }
+
+    .bg5 {
+      height: 273px;
+    }
+
+.section-t {
+      font-size: 16px;
+      line-height: 72px;
+      color: #666666;
+      letter-spacing: 0;
+      border-bottom: 1px #E8E8E9 solid;
+      text-align: left;
+    }
+    .jj1{
+      padding-top: 50px;
+    }
+    dl{
+      font-size: 20px;
+      color: #666666;
+      letter-spacing: 0;
+      line-height: 60px;
+      text-align: left;
+    }
+    dd{
+      padding: 20px 0px;
+    }
+    dt a{
+      font-size: 16px;
+      color: #999999;
+      line-height: 25px;
+      text-align: left;
+      font-weight: normal;
+    }
+    /*.core1{
+      background: url("./images/bd_desc_bg01.jpg");
+      height: 289px;
+      border-radius: 10px;
+    }*/
+    .core2{
+      background: url("./images/bd_desc_bg02.jpg");
+      height: 289px;
+      border-radius: 10px;
+    }
+    .core3{
+      background: url("./images/bd_desc_bg03.jpg");
+      height: 289px;
+      border-radius: 10px;
+    }
+    .core4{
+      background: url("./images/bd_desc_bg04.jpg");
+      height: 289px;
+      border-radius: 10px;
+    }
+    .core1:hover, .core2:hover , .core3:hover,  .core4:hover{
+    border: 1px solid #979797;
+    box-shadow: 0 0 16px 0 rgba(29,29 , 38, 0.5);
+    border-radius: 10px;
+   background: rgba(34, 152, 244, 0.65);
+    color: #ffffff;
+    z-index: 100;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default mynavbar">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <img class="navbar-brand" src="./images/logo.png" alt="">
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse mynav" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav nav-pills">
+          <li role="presentation" class="active"><a href="#">关于百度 <span class="sr-only">(current)</span></a></li>
+          <li role="presentation"><a href="#">关于产品</a></li>
+          <li role="presentation"><a href="#">加入我们</a></li>
+          <li role="presentation"><a href="#">联系我们</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">中文  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; EN</a></li>
+          <li> <img class="img1" src="./images/search.png" alt="">
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="container-fluid">
+    <img class="img2" src="./images/banner_home.jpg" class="img-responsive" alt="Responsive image">
+  </div>
+  <div class="container-fluid bg">
+    <div class="container jj">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 bg1 ">
+          <a href="#" class="thumbnail">
+        <img class="big" src="./images/bd_home_new01.jpg" alt="...">
+      </a>
+          <div class="caption text-center big1">
+            <h6>百度大脑</h6>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 bg1">
+          <a href="#" class="thumbnail">
+        <img class="big" src="./images/bd_home_new02.png" alt="...">
+      </a>
+          <div class="caption text-center">
+            <h6>李彦宏新书《智能革命》面市</h6>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 bg1">
+          <a href="#" class="thumbnail">
+        <img class="big" src="./images/bd_home_new03.png" alt="...">
+      </a>
+          <div class="caption text-center">
+            <h6>人脸识别助力寻人</h6>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="section-title">百度动态</div>
+      <div class="section-content">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="topic">
+              新闻动态
+            </div>
+            <div class="news-list">
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度2017年Q1营收恢复增长 引领AI产业增长与转型</a>
+                  <div class="news-time">
+                    2017-04-28 </div>
+                </div>
+              </div>
+
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度责任创新计划助力创想家</a>
+                  <div class="news-time">
+                    2017-04-27 </div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度宣布开放自动驾驶平台 汽车产业迎来变革契机</a>
+                  <div class="news-time">
+                    2017-04-19 </div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度自动驾驶高速开跑 与博世打造可量产解决方案</a>
+                  <div class="news-time">
+                    2017-04-18 </div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度收购硅谷公司xPerception 增强机器视觉能力</a>
+                  <div class="news-time">
+                    2017-04-13 </div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="decoration">
+                  <div class="news-circle">
+                    <div class="solid-circle"></div>
+                  </div>
+                </div>
+                <div class="news-box">
+                  <a href="#" class="news-title" target="_blank">百度人工智能帮被拐27年孩子回家</a>
+                  <div class="news-time">
+                    2017-04-12 </div>
+                </div>
+              </div>
+            </div>
+            <div class="more-news text-center">
+              <a href="#" target="_blank">
+                    更多新闻
+                    </a>
+              <div class="circle"></div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="topic">专题</div>
+            <div class="row">
+              <div class="col-sm-6 col-xs-6">
+                <div class="img-inner">
+                  <img class="img3" src="./images/apollo.jpg" alt="">
+                  <div class="card">
+                    百度发布Apollo计划
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-6">
+                <div class="img-inner">
+                  <img class="img3" src="./images/ar.jpg" alt="">
+                  <div class="card">
+                    百度AR复现北京九大城门
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-xs-6">
+                <div class="img-inner">
+                  <img class="img3" src="./images/wurenche.jpg" alt="">
+                  <div class="card">
+                    百度无人车
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-6">
+                <div class="img-inner">
+                  <img class="img3" src="./images/duer.jpg" alt="">
+                  <div class="card">
+                    DuerOS
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg2">
+    <div class="container section">
+      <div class="section-title">工作在百度</div>
+      <div class="">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <div class="thumbnail bg3">
+              <div class="caption text-center">
+                <h3>我们的故事</h3>
+              </div>
+              <img src="./images/bd_home_work01.jpg" alt="...">
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <div class="thumbnail bg3">
+              <div class="caption text-center">
+                <h3>加入我们</h3>
+              </div>
+              <img src="./images/bd_home_work01.jpg" alt="...">
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <div class="thumbnail bg3">
+              <div class="caption text-center">
+                <h3>在这里工作</h3>
+              </div>
+              <img src="./images/bd_home_work01.jpg" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid ">
+    <div class="container ">
+      <div class="section-title">我们的Doodle</div>
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="thumbnail bg3">
+            <div class="caption text-center">
+              <h3>哈渤升空</h3>
+            </div>
+            <img src="./images/baidu.gif" alt="...">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="thumbnail bg3">
+            <div class="caption text-center">
+              <h3>清明节</h3>
+            </div>
+            <img src="./images/qingming.png" alt="...">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="thumbnail bg3">
+            <div class="caption text-center">
+              <h3>妇女节</h3>
+            </div>
+            <img src="./images/funv.png" alt="...">
+          </div>
+        </div>
+      </div>
+
+      <div class="section-foot">查看更多</div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid  bg4">
+    <div class="container section">
+      <div class="section-title">百度公司介绍</div>
+      <div class="row jj1">
+        <div class="col-sm-12 col-md-3">
+          <div class="thumbnail core1 ">
+            <img src="./images/bd_desc_bg01.jpg" alt="...">
+            <div class="caption">
+              <div class="card-cover core1">我们的核心价值观</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+          <div class="thumbnail core2">
+            <img src="./images/bd_desc_bg02.jpg" alt="...">
+            <div class="caption">
+              <div class="card-cover">我们的公司</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+          <div class="thumbnail core3">
+            <img src="./images/bd_desc_bg03.jpg" alt="...">
+            <div class="caption">
+              <div class="card-cover">百度之路</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+          <div class="thumbnail core4">
+            <img src="./images/bd_desc_bg04.jpg" alt="...">
+            <div class="caption">
+              <div class="card-cover">我们的管理团队</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container bg5">
+    <div class="section-t">
+      实时咨询请关注
+        &nbsp;&nbsp;
+      <a href="#"><img src="./images/wechat.png" alt=""></a>
+      &nbsp;&nbsp;
+      <a href=""><img src="./images/weibo.png" alt=""></a>
+        &nbsp;&nbsp;
+      <a href=""><img src="./images/twitter.png" alt=""></a>
+        &nbsp;&nbsp;
+      <a href=""><img src="./images/facebook.png" alt=""></a>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <div class="more">
+              <dl>
+                <dd>更多信息</dd>
+                <dt><a href="#">社会责任</a></dt>
+                <dt><a href="#">百度公益</a></dt>
+                <dt><a href="#">联系我们</a></dt>
+              </dl>
+            </div>
+          </div>
+            <div class="col-xs-6 col-md-6">
+            <div class="more">
+              <dl>
+                <dd>商业合作</dd>
+                <dt><a href="#">百度推广</a></dt>
+                <dt><a href="#">营销中心</a></dt>
+                <dt><a href="#">百度联盟</a></dt>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery-3.0.0.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dataTransfer 传递数据</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding:0;
+      }
+      .elems{
+        height: 100px;
+        margin-bottom: 20px;
+      }
+      .f{
+        height: 100px;
+        width: 100px;
+        background: yellow;
+        float: left;
+        margin-left: 20px;
+      }
+      .box{
+        height: 500px;
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+  <div class="elems">
+    <div draggable="true" class="f"></div>
+    <div draggable="true" class="f"></div>
+  </div>
+  <div class="box" id="box"></div>
+  <script>
+  var f = document.querySelectorAll(".f");
+  var box = document.querySelector("#box");
+  f[0].addEventListener("dragstart",function(e){
+    var obj = {"dom" : 0};
+    e.dataTransfer.setData("one",JSON.stringify(obj));
+  },false)
+  f[1].addEventListener("dragstart",function(e){
+    var obj = {"dom" : 1};
+    e.dataTransfer.setData("one",JSON.stringify(obj));
+  },false)
+  box.addEventListener("dragover",function(e){
+    e.preventDefault();
+  },false)
+  box.addEventListener("drop",function(e){
+   var index = JSON.parse(e.dataTransfer.getData("one")).dom;
+   this.appendChild(f[index]);
+ },false);
+  </script>
+  </body>
+</html>

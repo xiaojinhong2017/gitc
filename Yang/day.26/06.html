@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>元素大小</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  .f{
+    width:200px;
+    height: 100px;
+    padding:10px;
+    border: 5px solid red;
+    background: yellow;
+    position: relative;
+    top: 0px;
+    left: 200px;
+  }
+  .s{
+    width: 50px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  </style>
+</head>
+<body>
+<div class="f">
+<div class="s"></div>
+</div>
+<script type="text/javascript">
+  var f = document.getElementsByClassName('f')[0];
+  var s = document.getElementsByClassName('s')[0];
+  //border + padding + content
+  console.log("f.offsetHight",f.offsetHeight);
+  console.log("f.offsetWidth",f.offsetWidth);
+  //padding + content
+console.log("clientHeight = ",f.clientHeight);
+console.log("clientWidth = ",f.clientWidth);
+//content
+var styles = window.getComputedStyle(f);
+console.log("content height = ",styles.getPropertyValue("height"));
+console.log("content width = ",styles.getPropertyValue("width"));
+//offset...
+console.log("offsetLeft = ",s.offsetLeft);
+console.log("offsetTop = ",s.offsetTop);
+console.log("offsetParent = ",s.offsetParent);
+s.offsetTop = 100;
+console.log(s.offsetTop);
+//修改偏移量
+s.style.top = "100px";
+console.log("offsetTop = ",s.offsetTop);
+
+</script>
+</body>
+</html>

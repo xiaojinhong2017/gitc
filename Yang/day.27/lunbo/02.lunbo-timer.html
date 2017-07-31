@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lunbo</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  .box{
+    width: 1226px;
+    height: 460px;
+    margin:50px auto;
+    overflow: hidden;
+    position: relative;
+  }
+  ul{
+    list-style: none;
+  }
+  .image{
+    height: 460px;
+    width: 400%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  ,image li {
+    float: left;
+  }
+  .point{
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+  }
+  .point span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <div id="box-id" class="box">
+    <ul class="image" id="img-id">
+      <li><a href="#"><img src="./mi/1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./mi/2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./mi/3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./mi/4.jpg" alt=""></a></li>
+    </ul>
+    <div class="point" id = "point-id"></div>
+  </div>
+</body>
+</html>

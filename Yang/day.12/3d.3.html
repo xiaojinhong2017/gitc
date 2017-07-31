@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  body{
+   background: pink;
+
+  }
+  .f{
+    height: 300px;
+    width: 300px;
+    margin:100px auto;
+    position: relative;
+    transition: all 1s ;
+    transform-origin: center;
+    transform-style: preserve-3d;
+  }
+  .s{
+    height: 300px;
+    width: 300px;
+    margin:100px auto;
+    position: absolute;
+    transition: all 1s ;
+    top: 0px;
+    left: 0px;
+  }
+  .f1{
+    background: url("./image/image/bg.png") -305px 0px;
+
+    transform: rotateY(180deg);
+  }
+  .f2{
+    background: url("./image/image/bg.png");
+  }
+  .f:hover{
+    transform: rotateY(180deg);
+  }
+  </style>
+</head>
+<body>
+<div class="f">
+  <div class="s f1"></div>
+  <div class="s f2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数柯里化</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function price(rate,cost){
+      console.log(rate);
+      return rate * cost ;
+    }
+    function curry(fn,rate){
+      return fn.bind(null,rate);
+    }
+    var food = curry(price,0.99);
+    console.log(food);
+    console.log(food(100));
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组常用方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    console.log("-----------join方法---------");
+    var a = [1,2,3,4,5];
+    console.log(a.join());
+    var ret1 = a.join("");
+    var ret2 = a.join("+");
+    var ret3 = a.join("-");
+    console.log("ret1 = ",ret1);
+    console.log("ret2 = ",ret2);
+    console.log("ret3 = ",ret3);
+    console.log(eval(ret2));
+
+    console.log("----------reverse方法--------");
+    a = [1,2,3,4,5,6,7];
+    var ret = a.reverse();
+    console.log(ret);
+    console.log(a);//reverse方法直接改变数组本身
+
+ console.log("------------sort方法------------");
+   var a = [10,2,5,15];
+    var ret = a.sort();
+    console.log(ret);
+
+  </script>
+</body>
+</html>

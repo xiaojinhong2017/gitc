@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>错误处理</title>
+</head>
+<body>
+  <script type="text/javascript">
+  try{
+    fun();
+    var a = 100,b = 0;
+    var c = a / b;
+    console.log(c);
+    var ret = 2 * Number.MAX_VALUE;
+    console.log(ret);
+    JSON.parse("helloworld");
+  }catch(error){
+    if(error instanceof ReferenceError){
+      console.log("ReferenceError.....");
+    }else{
+
+    console.log(error);
+    }
+  }
+  </script>
+</body>
+</html>

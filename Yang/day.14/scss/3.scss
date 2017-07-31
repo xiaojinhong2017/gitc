@@ -1,0 +1,41 @@
+.class-one{
+  color: red;
+  font-size: 40px;
+  .class-one-one{
+    text-align: center;
+    line-height: 100px;
+  }
+  li{
+    float: left;
+    &::before{
+      content: "helloworld";
+    }
+  }
+  a{
+    padding:20px;
+    &:hover{
+      background: yellow;
+    }
+  }
+}
+.class-two{
+  border: {
+    style:solid;
+    left:{
+      width: 10px;
+      color: red;
+    }
+    right: {
+      width: 10px;
+      color: red;
+    }
+    top:{
+      width: 10px;
+      color: red;
+    }
+  }
+  background: {
+    color:red;
+    image:url()
+  }
+}

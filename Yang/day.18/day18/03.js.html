@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    outer: for (var i = 0; i < 10; i++) {
+        console.log("i = ", i);
+        for (var j = 0; j < 5; j++) {
+            if (j == 3) {
+                break outer;
+            }
+        }
+    }
+
+    console.log("after outer ....");
+
+    for (var i = 0; i < 10; i++) {
+        switch (i) {
+            case 2:
+                console.log("i = 2");
+                break;
+            case 3:
+                console.log("i = 3");
+                break;
+        }
+
+        console.log("for i = ", i);
+    }
+    </script>
+</body>
+
+</html>

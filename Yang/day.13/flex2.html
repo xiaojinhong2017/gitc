@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .f{
+      height: 300px;
+      width: 100%;
+      border: 1px dotted gray ;
+    }
+    ul{
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      /*flex-direction: column;*/
+      /*flex-direction: row-reverse;*/
+    }
+    /*.clearfix::after,
+    .clearfix::before{
+      content: "";
+      height: 0;
+      display: block;
+      clear: both;
+      visibility: hidden;
+    }*/
+    ul li{
+      /*float: left;*/
+      height: 200px;
+      width: 200px;
+      border: 1px solid red;
+      /*flex-grow: 1;*/
+    }
+    li:nth-child(1){
+      flex-shrink: 1;
+      align-self:  flex-end;
+    }
+    li:nth-child(2){
+      flex-shrink: 2;
+      align-self: flex-start;
+    }
+    li:nth-child(3){
+      flex-shrink: 3;
+      align-self: center;
+    }
+
+</style>
+</head>
+<body>
+  <div class="f">
+    <ul class="clearfix">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>
+</body>
+</html>

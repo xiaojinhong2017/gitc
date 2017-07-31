@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>document</title>
+  <script src="https://cdn.bootcss.com/react/15.6.0/react.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
+  <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+  <div id="example">
+        <script type="text/babel">
+        var Input = React.createClass({
+          getInitialState:function(){
+            return {inputText:'',inputTexta:''};
+          },
+          handlerchange:function(event){
+            this.setState({inputText:event.target.value})
+          },
+          handlerchangea:function(event){
+
+            if(this.state.inputText == event.target.value){
+
+            this.setState({inputTexta:event.target.value,pwdstate:true})
+          }else{
+
+            this.setState({inputTexta:event.target.value,pwdstate:false})
+          }
+          },
+      render(){
+        var inputText = this.state.inputText;
+        var inputTexta = this.state.inputTexta;
+        var display = this.state.pwdstate? <i className="fa fa-check" aria-hidden="true"></i> : null;
+        // if(inputText == inputTexta){
+        //   check = <i className="fa fa-check" aria-hidden="true"></i>
+        // }
+        return(<div>
+          <h1>input:{inputText}</h1>
+          <h1><input type="email" onChange = {this.handlerchange}/ ></h1>
+          <h1>age:{inputTexta}</h1>
+          <h1><input type="text" onChange = {this.handlerchangea}/>{display}</h1>
+          </div>)
+      }
+        })
+
+        ReactDOM.render(
+          <Input/>,
+          document.getElementById("example")
+        )
+  </script>
+<!-- </div> -->
+</body>
+
+</html>

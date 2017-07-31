@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定时器setInterval三种写法</title>
+</head>
+<body>
+  <button id="start">start</button>
+  <button id="end">end</button>
+<script type="text/javascript">
+  var id;
+  document.getElementById("start").onclick = function (){
+    id = setInterval(function(){
+      console.log("hello");
+    },1000);
+  }
+  document.getElementById("end").onclick = function(){
+    clearInterval(id);
+  }
+  id = setInterval("console.log('hello')",1000);
+  function callback (){
+    console.log("nihao");
+  }
+  setInterval(callback,1000);
+</script>
+</body>
+</html>
