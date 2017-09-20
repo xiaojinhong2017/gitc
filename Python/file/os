@@ -1,0 +1,24 @@
+文件夹操作：
+os.remove('文件路径')//删除文件
+os.removedirs('test')//删除目录
+os.path.isfile('file.txt')//判断是不是文件
+os.path.isdir('file.txt')//判断是不是路径
+os.path.isabs('file.txt')//判断是否是绝对路径
+os.path.exists()
+os.path.split('/home/summer/file.txt')
+os.path.join(, , ,)//拼接
+os.path.splitext('')//扩展名
+os.path.dirname('')//提取路径
+os.path.basename()//提取文件名
+os.rename('','')//重命名
+so.makedirs('test/dir')
+os.removedirs()
+os.mkdir('')
+os.stat()
+os.path.getsize('file.txt')//获取文件大小
+os.listdir('.')
+os.getcwd()//获取绝对路径功能
+import shutil
+shutil.copyfile('file.txt','file1.txt')//复制文件
+shutil.copy('file.txt','test')//把文件复制到文件夹
+shutil.copytree('test','test1')//把文件夹复制到文件夹

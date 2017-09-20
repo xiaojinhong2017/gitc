@@ -1,0 +1,63 @@
+1.事件委托
+事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。
+适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。
+值得注意的是，mouseover和mouseout虽然也有事件冒泡，但是处理它们的时候需要特别的注意，因为需要经常计算它们的位置，处理起来不太容易。
+不适合的就有很多了，举个例子，mousemove，每次都要计算它的位置，非常不好把控，在不如说focus，blur之类的，本身就没用冒泡的特性，自然就不能用事件委托了。
+
+2.javascript的typeof返回哪些数据类型
+Object number function boolean underfind string;
+
+3.例举3种强制类型转换和2种隐式类型转换?
+强制（parseInt,parseFloat,number）隐式（== – ===）
+
+4.数组方法pop() push() unshift() shift()
+Push()尾部添加 pop()尾部删除
+Unshift()头部添加 shift()头部删除
+
+5.ajax请求的时候get 和post方式的区别?
+一个在url后面 一个放在虚拟载体里面
+有大小限制
+安全问题
+
+6.添加 删除 替换 插入到某个结点的方法
+obj.appendChild
+obj.innersertBefore
+obj.replaceChild
+obj.removeChild
+
+7说说写JavaScript的基本规范
+1.不要在同一行声明多个变量。
+2.请使用 ===/!==来比较true/false或者数值
+3.使用对象字面量替代new Array这种形式
+4.不要使用全局函数。
+5.Switch语句必须带有default分支
+6.函数不应该有时候有返回值，有时候没有返回值。
+7.For循环必须使用大括号
+8.If语句必须使用大括号
+9.for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。
+
+中间件：
+更好的响应http请求
+
+异步 同步
+
+node模块化 commonjs   moudule.export 引出 require引入 AMD UMD ES6
+ 同步 ：就近依赖，阻塞加载
+ node require module.export
+ commonjs:
+ 特点:同步加载，就近依赖
+ amd:异步加载，全局依赖
+ requirejs就是
+ umd :通用
+ browserify:命令行工具
+
+前端如何向后端发送请求
+
+
+多线程库
+
+
+开场白：前端开发
+
+
+模板引擎

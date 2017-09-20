@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-image: url('/static/11.jpeg');
+      /*background: #fffbf0;*/
+      /*background: #fffbf0;*/
+      height: 100%;
+      width:100%;
+      background-size: cover;
+
+    }
+
+    #nav {
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      /*background: #fffbf0;*/
+      /*opacity: 0.7;*/
+
+    }
+
+    #nav ul {
+      list-style: none;
+      width: 100%;
+    }
+
+     .nav a {
+      /*float: left;*/
+      font-size: 18px;
+      padding: 0px 20px;
+      color: #827717;
+      text-decoration: none;
+    }
+
+    .active  {
+      color: black;
+      background:  #fffbf0;
+      text-decoration: none;
+    }
+
+    .box img{
+      width: 580px;
+      height: 280px;
+      float: left;
+      /*overflow: hidden;*/
+    }
+    .box{
+      width:300%;
+      position: absolute;
+      left: 0px;
+    }
+    .lunbo{
+      width: 80%;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+    .lunbo img{
+      height: 280px;
+      width: 580px;
+    }
+    .blogs{
+      padding: 30px 0;
+      position: relative;
+      border-bottom: #BFAB86 1px solid;
+      overflow: hidden;
+    }
+    .list h2{
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 36px;
+      color: #333;
+      border-bottom: #db6d4c 4px solid;
+    }
+    .blogs figure {
+    float: left;
+    width: 25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+  .blogs ul {
+    float: right;
+    line-height: 22px;
+    width: 72%;
+    color: #263238;
+}
+.blogs  ul h3 {
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .5s;
+    margin-bottom: 10px;
+}
+.author {
+    overflow: hidden;
+    clear: both;
+    margin: 10px 0;
+    display: inline-block;
+    color: #827717;
+    width: 100%;
+  }
+  .author span {
+    margin: 0 10px 0 0;
+    padding-left: 25px;
+}
+.lm {
+    background: url(/static/jlt.png) no-repeat center;
+        background-position-x: center;
+        background-position-y: center;
+    background-position: 0px 4px;
+  }
+  .f_l {
+    float: left;
+}
+.dtime {
+    background: url(/static/jlt.png) no-repeat center;
+        background-position-x: center;
+        background-position-y: center;
+    background-position: 0px -45px;
+}
+p a{
+  font-size: 14px;
+  color: #827717;
+}
+
+  .viewnum {
+    background: url(/static/jlt.png) no-repeat center;
+        background-position-x: center;
+        background-position-y: center;
+    background-position: 0px -70px;
+}
+
+.pingl {
+    background: url(/static/jlt.png) no-repeat center;
+        background-position-x: center;
+        background-position-y: center;
+    background-position: 0px -20px;
+}
+.title h3 {
+    line-height: 40px;
+    color: #827717;
+    font-size: 18px;
+    border-bottom: 1px solid #E6E6E6;
+    height: 40px;
+}
+.connect ul {
+    width: 100%;
+    margin: 30px 0;
+    overflow: hidden;
+}
+ul {
+    list-style: none;
+  }
+.connect ul li a {
+    color: #827717;
+    width: 70px;
+    text-align: center;
+    padding-top: 60px;
+    float: left;
+    font-size: 12px;
+    padding-left: 0px;
+}
+.connect .xlwb {
+    background: url(/static/xinlang.jpg) no-repeat scroll 0% 0% transparent;
+}
+.connect .txwb {
+    background: url(/static/tengxun.jpg) no-repeat scroll 0% 0% transparent;
+}
+.connect .yx {
+    background: url(/static/youxiang.jpg) no-repeat scroll 0% 0% transparent;
+}
+.connect .yjfk {
+    background: url(/static/feedback.jpg) no-repeat scroll 0% 0% transparent;
+}
+.r_box {
+    width: 300px;
+}
+.f_r {
+    float: right;
+}
+.connect li {
+    width: 52px;
+    margin: 0 18px 0 5px;
+    float: left;
+}
+.about{
+  width: 90%;
+background: #fff;
+height: 220px;
+overflow: hidden;
+border: 1px solid #fff3e0;
+border-radius: 2px;
+/*background-color: #ffefd5;*/
+}
+/*.about {
+
+    margin: 0px auto;
+    margin-bottom: 0px;
+    margin-bottom: 4px;
+}*/
+section h3 {
+    font-size: 14px;
+    font-weight: bold;
+    transition: all .5s;
+    margin-bottom: 10px;
+    background: #fff3e0;
+    /*opacity: 0.5*/
+}
+section img{
+  padding:4px 4px;
+  height: 160px;
+  width: 160px;
+  float: left;
+}
+ section p {
+  padding:4px 4px;
+    color: #827717;
+    line-height: 18px;
+    font-size: 12px;
+    word-break: break-all;
+}
+.most{
+  width: 90%;
+background: #fff;
+height: 400px;
+overflow: hidden;
+border: 1px solid #fff3e0;
+border-radius: 2px;
+/*background-color: #ffefd5;*/
+margin-top: 30px;
+}
+/*.header{
+  height: 60px;
+  font-weight: bold;
+  background-image: url(/static/bg1.jpg);
+}*/
+.most li a{
+  color: #827717;
+}
+.core{
+  height: 80%;
+  background: #fffbf0;
+  opacity: 0.9;
+  margin-top: 0px;
+}
+.jian {
+  display: block;
+  height: 69px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.jian {
+}
+.most ul li{
+}
+  </style>
+</head>
+
+<body>
+  <div class="container header">
+
+    <h3>django的个人博客</h3>
+    <p>业精于勤荒于嬉，行成于思毁于随开房间观看地方和你开啥地方</p>
+  <!-- </div> -->
+
+  <nav id="nav">
+    <!-- <div class="container"> -->
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class=""><a href="/blog/?a=0">首页</a></li>
+  <li role="presentation"><a href="/blog/?a=1">我的生活</a></li>
+  <li role="presentation"><a href="/blog/?a=2">旅游心情</a></li>
+  <li role="presentation"><a href="/blog/?a=3">技术达人</a></li>
+  <li role="presentation"><a href="/blog/?a=4">电影推荐</a></li>
+  <li role="presentation"><a href="/blog/write">写博客</a></li>
+</ul>
+  </nav>
+</div>
+  <div class="container core">
+    <div class="row">
+      <div class="col-md-8 col-sm-6">
+        <div class="lunbo">
+          <div class="box">
+          <img src="/static/1.jpg" alt="">
+          <img src="/static/2.gif" alt="">
+          <img src="/static/3.jpg" alt="">
+
+          </div>
+        </div>
+
+   <div class="list">
+     {%if title == 0%}
+     <h2>最新文章</h2>
+     {%elif title == 1%}
+     <h2>我的生活</h2>
+     {%elif title == 2%}
+     <h2>旅游心情</h2>
+     {%elif title == 3%}
+     <h2>技术达人</h2>
+     {%elif title == 4%}
+     <h2>电影推荐</h2>
+     {%endif%}
+
+     {%for list in blog_list%}
+<div class="blogs">
+       <figure>
+         <img src="/static/7.png" alt="">
+       </figure>
+     <ul>
+       <h3><a href="/blog/content/{{list.id}}">{{list.title}}</a></h3>
+       <p class="jian">{{list.content}} </p>
+       <a href="/blog/content/{{list.id}}">展开>></a>
+       <p class="author">
+         <span class="lm f_l"><a href="#">{{list.tag}}</a></span>
+         <span class="dtime f_l">{{list.time}}</span>
+         <span class="viewnum f_l"> <a href="#">浏览({{list.see}})</a></span>
+         <span class="pingl f_l"><a href="#">评论({{list.comment}})</a></span>
+       </p>
+
+     </ul>
+   </div>
+   {%endfor%}
+
+
+   </div>
+
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="r_box f_r">
+          <div class="title">
+            <h3>关注我</h3>
+            <div class="connect">
+              <ul>
+                <li class="xlwb"><a href="#">新浪微博</a></li>
+                <li class="txwb"><a href="#">腾讯微博</a></li>
+                <li class="yx"><a href="#">邮箱</a></li>
+                <li class="yjfk"><a href="#">意见反馈</a></li>
+              </ul>
+
+            </div>
+            <div class="about">
+              <section>
+                <h3>个人档</h3>
+                <div class="avater">
+                  <img src="/static/tx.jpg" alt="">
+                </div>
+                <p>个人资料<br>
+                   九零后，IT女 <br>
+                   狮子座，IT界最不着调的程序员
+                    爱好：写文字、涂鸦 </p>
+              </section>
+            </div>
+              <div class="most">
+              <section>
+                <h3>最新日志</h3>
+                <ul>
+                  {%for list in blog_list%}
+                  <li><a href="/blog/content/{{list.id}}">{{list.title}}</a></li>
+                  {%endfor%}
+                </ul>
+              </section>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+ </div>
+
+
+  <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+  <script>
+
+    var box = document.querySelector('.box')
+    setInterval(function(){
+      if(box.style.left >= -950)
+      {
+      box.style.left = box.offsetLeft  - 480 +'px'
+    }
+    else{
+      box.style.left = '0px';
+    }
+    },1000)
+     {%if title == 0%}
+    //  $(".nav-tabs li").eq(0).click(function(){
+    //  $(this).addClass("active")
+    //  $(this).siblings().removeClass('active')
+    //  })
+
+     $(".nav-tabs li").eq(0).addClass("active")
+     console.log($(".nav-tabs li"));
+    //  $(".nav-tabs li").siblings().removeClass("active")
+
+     {%elif title == 1%}
+
+     $(".nav-tabs li").eq(1).addClass("active")
+     {%elif title == 2%}
+     $(".nav-tabs li").eq(2).addClass("active")
+
+     {%elif title == 3%}
+     $(".nav-tabs li").eq(3).addClass("active")
+
+     {%elif title == 4%}
+     $(".nav-tabs li").eq(4).addClass("active")
+     {%endif%}
+
+  </script>
+</body>
+
+</html>

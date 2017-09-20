@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "try1.py", line 7, in div
+    return a / b
+ZeroDivisionError: integer division or modulo by zero

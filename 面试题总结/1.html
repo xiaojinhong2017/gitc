@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<i class="fa fa-thermometer-full" aria-hidden="true"></i>
+<script>
+ var table = document.createElement('table')
+ var tr = document.createElement('tr')
+ var td1 = document.createElement('td')
+ var td2 = document.createElement('td')
+ var td3 = document.createElement('td')
+ td1.innerHTML = 'name'
+ td2.innerHTML = 'age'
+ td3.innerHTML = 'sex'
+ tr.appendChild(td1)
+ tr.appendChild(td2)
+ tr.appendChild(td3)
+ table.appendChild(tr)
+ document.body.appendChild(table)
+ var str = 'helloworld'
+
+ console.log(typeof(str));
+</script>
+</body>
+</html>

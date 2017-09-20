@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>分享非常漂亮的网站评论文本框表情选择插件 - JS代码网</title>
+<meta name="Keywords" content="文本框表情,评论框表情插件,表情插件输入,评论文本框表情" />
+<meta name="description" content="非常漂亮的评论框表情选择插件,值得拿了下来使用。" />
+<link href="css/smohan.face.css" type="text/css" rel="stylesheet">
+<!--JS代码网顶部CSS-->
+<link href="http://www.js-css.cn/jscode/jscode.css" rel="stylesheet" />
+<!--JS代码网顶部CSS-->
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/smohan.face.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+
+<div id="Smohan_FaceBox">
+   <textarea name="text" id="Smohan_text" class="smohan_text"></textarea>
+   <p>
+   <a href="javascript:void(0)" class="face" title="表情"></a>
+   <button class="button" id="Smohan_Showface">提交评论</button>
+   </p>
+</div>
+<!--/表情盒子-->
+<!--解析表情-->
+<div id="Zones"></div>
+<!--/DEMO-->
+<script type="text/javascript">
+$(function (){
+	$("a.face").smohanfacebox({
+		Event : "click",	//触发事件
+		divid : "Smohan_FaceBox", //外层DIV ID
+		textid : "Smohan_text" //文本框 ID
+	});
+	//解析表情  $('#Zones').replaceface($('#Zones').html());
+});
+//Demo测试
+$('#Smohan_Showface').click(function() {
+	 $('#Zones').fadeIn(360);
+	 $('#Zones').html($('#Smohan_text').val());
+	 $('#Zones').replaceface($('#Zones').html());//替换表情
+	});
+</script>
+</body>
+</html>

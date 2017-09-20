@@ -1,0 +1,9 @@
+adium-theme-ubuntu==0.3.4
+decorator==4.0.6
+ipython==2.4.1
+pexpect==4.0.1
+ptyprocess==0.5
+pygobject==3.20.0
+pyxdg==0.25
+simplegeneric==0.8.1
+unity-lens-photos==1.0

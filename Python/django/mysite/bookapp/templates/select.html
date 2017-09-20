@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  {{a}}<br>
+  {%for i in a%}<br>
+  {{i.title}}
+  {%endfor%}
+  {{b}}<br>
+  {%for i in b%}
+  {{i.title}}<br>
+  {%endfor%}
+
+  {{c}}
+  {%for i in c%}
+  {{i.0}}
+  {%endfor%}
+  <hr>
+  <hr>
+  {{book.title}}<br>
+   {{p.name}}<br>
+   {{book_list.0.title}}<br>
+   {{auth.first_name}}<br>
+   {{book_list1}}<br>
+</body>
+</html>
