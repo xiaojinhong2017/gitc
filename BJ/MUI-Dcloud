@@ -1,0 +1,44 @@
+初学mui会发现大量的demo中，都需要调用mui.init()和mui.plusReady()，可见这两东西在app开发中的重要性
+
+首先请注意一点，如果不是做app开发（非hbuilder基座运行），做web开发的话（在浏览器运行html），plusReady是没有意义的，不会执行，为什么？
+
+
+tml5：万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言（HTML）的第五次重大修改，于2014年发布，之后的浏览器必须遵守这个开发规范实现对html，css，javascript的解释，其中css遵守最新的css3规范，javascript遵守最新的ECMAScript6。
+
+html5+：其实还是html5，只是在html5针对手机开发app时补充了对大量原生功能支持，包括摄像头，wifi，震动，gps等等的软硬件功能，通过js封装调用安卓原生接口使得h5开发app更加的强大，所以称之为html5+（app的开发必须要使用html5+）
+
+plusReady：对于 HTML5+应用的页面有一个很重要的 “plusready”事件，此事件会在页面加载后自动触发，表示所有 HTML5+ API 可以使用， 在此事件触发之前不能调用 HTML5+ API
+
+init：mui本身只是一个html5的前端框架而已，类似于react.js，jquery mobile或者说像是bootstrap的针对手机简化版，本身不具备开发app的功能，适合wap开发，但其中包含了html5+的方法，如果不使用上述html5+ plus对象，而只需要mui框架包含的wap开发功能，则是使用mui.init之后即可调用。
+
+当然在app开过程中使用了mui框架作为css，js的渲染框架亦可：此时任然需要用到mui.init()初始化框架的
+
+并且mui框架将很多功能配置都集中在mui.init方法中，所以只需要在mui.init方法中完成对应参数配置即可
+
+目前支持在mui.init方法中配置的功能包括：创建子页面、关闭页面、手势事件配置、预加载、下拉刷新、上拉加载。
+
+无论做wap网页，还是app开发，只要需要用到mui框架，都需要mui.init初始化框架功能，而plusready仅仅在app开发中使用
+
+
+
+mui个人习惯：
+
+
+每个用到mui的页面都调用下mui.init，直接放在js最前方
+除了function定义函数之外，全都写在plusReady之中，function调用也放在其中，毕竟做app开发调用html5+api十分的频繁，就像jq的$(document).ready()一样的道理，尤其是出现plus对象的一定放在plusReady里面！
+
+
+目前尚不清楚plusReady过分臃肿对性能是否造成伤害。理论上只是在html5+加载完之后执行其中的代码罢了，是不会影响性能，只会晚一点执行（延迟并不会感受到）
+
+关于mui plusReady的注意点：
+
+mui.plusReady()中的代码不执行
+
+可能1：
+
+你在浏览器下运行了html
+
+可能2：
+
+plusReady事件仅在webview首次创建时触发，使用mui.openWindow方法多次打开已存在的同样id的webview时，是不会重复触发plusReady事件的； 因此若业务写在plusReady事件中，可能会出现执行结果和预期不一致的情况；此时可通过自定义事件触发
+
