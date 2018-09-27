@@ -42,3 +42,81 @@ mui.plusReady()中的代码不执行
 
 plusReady事件仅在webview首次创建时触发，使用mui.openWindow方法多次打开已存在的同样id的webview时，是不会重复触发plusReady事件的； 因此若业务写在plusReady事件中，可能会出现执行结果和预期不一致的情况；此时可通过自定义事件触发
 
+
+
+
+
+HTML5 Screen Orientation API实现横屏或竖屏
+
+在手机开发中横屏或竖屏是我们常用到的两种方式了，因为现在的智能手机都可以根据用户的一个侧重来实现是横屏或竖屏显示了，下面我们介绍HTML5 Screen Orientation API实现横屏或竖屏例子。
+媒体查询允许网站根据智能手机和平板的方向来调整布局。但有时候你希网站锁定到一个特定的方向，横屏或竖屏，此时，原生应用的格式是可以被指定的。APP只在预设格式下显示—独立于实际的设备方向。通过使用HTML5的 Screen Orientation API, 可以在JavaScript定义屏幕方向。
+
+ 
+
+为一个文档定义屏幕方向
+
+通过screen.orientation属性的lock()方法可以调整屏幕方向，其默认值是any，这允许设备根据其物理方向来应用任何方向。值”natural”将在设备的自然方向上显示网站，因设备而异。智能手机通常使用横屏，平板则使用竖屏。
+
+screen.orientation.lock("natural");
+
+上面的示例中，为设备设置自然方向。 
+当然，Screen Orientation API也允许你定义一个独立的方向，其有四个值可以选择，这已经包含了移动设备所有可能的方向。这四个值分别是： “portrait-primary”, “portrait-secondary”, “landscape-primary”和 “landscape-secondary”。
+
+
+上图显示了所有四个值的方向： “portrait-primary”, “portrait-secondary”, “landscape-primary”和 “landscape-secondary”。 
+对于智能手机，值portrait-primary和值natural是一样的，并等同于默认方向。值portrait-secondary将横屏模式旋转180°，所以设置成设别的自然模式时，网站看起来几乎时颠倒的。
+
+screen.orientation.lock("portrait-primary");
+同样，landscape-secondary和landscape-primary不同之处是前者将屏幕旋转了180°。 
+你也可以不用secondary和primary，仅适用landscape和portrait作为关键字，这将允许设备在两种方向模（portrait-primary、 portrait-secondary或landscape-primary、 landscape-secondary）式下显示。
+
+
+如果想删除定义的方向，可以调用unlock()方法。
+
+screen.orientation.unlock();
+仅用于全屏模式
+通过screen.orientation定义屏幕的方向有两个要求，第一：lock()方法仅在浏览器已经通过requestFullscreen()切换到全屏模式时起作用；第二：和第一点相关，由于全屏模式需要用户的许可，而不是自动切换，这同样适用于Screen Orientation API。 
+因此，对于点击事件，应该绑定这两种方法。
+
+document.getElementById("button").addEventListener("click", function() {
+  document.documentElement.requestFullScreen();
+  screen.orientation.lock("portrait-primary");
+ }, false);
+
+调用lock()方法之前开启全屏模式是非常重要的，正如上面的例子。结束全屏模式将释放锁定的方向。 
+如果你在浏览器中打开了一个新文档，例如，当点击一个链接时，定义的方向将随着全屏模式同时结束。Screen Orientation API仅对当前文档有效。
+
+读取Orientation
+
+不能总是预先确定方向，有时你仅想知道智能手机和平板的方向。这种情况下，可以使用Screen Orientation API读取方向，类型属性值是显示定位的关键字之一。
+
+alert(screen.orientation.type);
+
+使用angle属性还可以显示方向的角度
+
+alert(screen.orientation.angle);
+
+角度为0等同于自然方向，大部分智能手机的自然方向是portrait-primary；90°等同于landscape-primary；180°等同portrait-secondary；270°等同landscape-secondary。不同的设备，angle代表不同的关键字。 
+为了获取方向值，浏览器需要运行在全屏模式下。 
+通过change事件改变屏幕方向也是可以的，只需要调用addEventListener()为orientation属性注册change事件并添加一个函数（作为事件处理程序）。
+
+screen.orientation.addEventListener("change", function(e) {
+  alert(screen.orientation.type + " " + screen.orientation.angle);
+}, false);
+
+每一次屏幕方向的改变都会触发弹框，显示当前的方向关键字和角度。
+
+浏览器支持
+Screen Orientation API在Chrome 38+ and Opera 25+不需要私有前缀，但 API仅能在移动设备上起作用。你可以使用一个if语句判断浏览器是否支持API
+
+if ("orientation" in screen) {
+  …
+}
+Screen Orientation API是很新的API，API的早期发展阶段使用不同的方法名。例如：使用lockOrientation()而不是lock(),使用unlockOrientation()而不是unlock(),不应该在Chrome and Opera使用这些旧的方法名。 
+IE 11+和Firefox 33+也支持Screen Orientation API，但需要对应的私有前缀
+
+screen.msLockOrientation.lock("portrait-primary");
+screen.mozLockOrientation.lock("portrait-primary");
+
+在IE 11+和Firefox 33+中，检测方向变化的事件名也不同，你应该使用带对应前缀的orientationchange，而不是change. 
+当使用Screen Orientation API时，还需要记住一件事：由于要Fullscreen API一起使用才能起作用，所以不应该使用它来设计网站之类的。对于需要全屏模式的浏览器游戏或其他应用程序，它能有更好的效果。
